@@ -7,7 +7,7 @@ import NotFoundPage from "./views/components/NotFound";
 const App = () => {
   return (
     <Routes>
-      <Route path="/home" exact element={<HomePage />} />
+      <Route path="/" exact element={<HomePage />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
