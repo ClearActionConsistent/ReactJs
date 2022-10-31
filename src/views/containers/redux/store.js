@@ -1,6 +1,10 @@
-import { legacy_createStore as createStore } from "redux";
-import Reducers from "./reducers";
+import { legacy_createStore as createStore, combineReducers } from 'redux';
+import Reducers from './reducers.js';
 
-const store = createStore(Reducers);
+const rootReducer = combineReducers({
+    taskReducer: Reducers
+})
 
-export default store
+const store = createStore(rootReducer);
+
+export default store;
