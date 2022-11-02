@@ -1,24 +1,27 @@
-%btn-shared {
+.btn-closed {
     border-radius: 5px;
     padding: 0px 20px;
     border: 1px solid;
     color: white;
     font-size: 20px;
-}
-
-.btn-closed {
-    @extend %btn-shared;
     background-color: red;
 }
 
 .btn-add {
-    @extend %btn-shared;
+    border-radius: 5px;
+    padding: 0px 20px;
+    border: 1px solid;
+    color: white;
+    font-size: 20px;
     background-color: green;
 }
 
 .btn-save {
-    @extend %btn-shared;
-    //background-color: black;
+    border-radius: 5px;
+    padding: 0px 20px;
+    border: 1px solid;
+    color: white;
+    font-size: 20px;
     width: 100%;
     height: 38px;
 }
@@ -44,10 +47,10 @@
 
 .task-item-container {
     margin-top: 20px;
+}
 
-    &__list {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+.task-item-container__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
