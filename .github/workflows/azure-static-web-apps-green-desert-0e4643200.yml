@@ -2,8 +2,6 @@ name: UAT CI/CD
 
 on:
   workflow_dispatch:
-    branches:
-      - main
       
 jobs:
   build_and_deploy_job:
