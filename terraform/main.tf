@@ -26,3 +26,10 @@ resource "azurerm_resource_group" "createresourcegroup" {
   name     = "rgreactjs"
   location = "East Asia"
 }
+
+resource "azurerm_static_site" "swa" {
+  name                = "ReactJS"
+  resource_group_name = azurerm_resource_group.createresourcegroup.name
+  location            = azurerm_resource_group.createresourcegroup.location
+  sku_tier = "Free"
+}
