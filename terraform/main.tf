@@ -32,4 +32,7 @@ resource "azurerm_static_site" "swa" {
   resource_group_name = azurerm_resource_group.createresourcegroup.name
   location            = azurerm_resource_group.createresourcegroup.location
   sku_tier = "Free"
+  depends_on = [
+    azurerm_resource_group.createresourcegroup
+  ]
 }
