@@ -13,7 +13,7 @@ import {
 import "./style.css";
 import { unwrapResult } from "@reduxjs/toolkit";
 
-class SignUp extends Component {
+class SignupPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -23,6 +23,10 @@ class SignUp extends Component {
       },
     };
   }
+
+  componentDidMount() { console.log('Register componentDidMount'); }
+
+  componentWillUnmount() { console.log('Register componentWillUnmount'); }
 
   // componentDidUpdate(prevProps) {
   //   const { number, history } = this.props;
@@ -44,7 +48,6 @@ class SignUp extends Component {
 
   render() {
     const {
-      number,
       increaseNumber,
       decreaseNumber,
       updateHistory,
@@ -72,7 +75,6 @@ class SignUp extends Component {
 
     return (
       <div className="sign-up-form">
-        <p>{number}</p>
         <Box
           component="form"
           sx={{
@@ -206,4 +208,4 @@ const mapDispatchToProps = (dispatch) => ({
   },
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);
