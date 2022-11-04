@@ -1,15 +1,11 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Header from '../Header';
+import React, { Component } from 'react';
 
-const HomePage = () => {
-    const navigate = useNavigate();
-
-    return (
-        <div>
-            <Header className='btn-add' onClick={() => navigate('/add')} title='Add' />
-        </div>
-    )
-};
+class HomePage extends Component {
+    render() {
+        return (
+            <div>HomePage</div>
+        )
+    }
+}
 
 export default HomePage;
