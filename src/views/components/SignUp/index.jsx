@@ -1,18 +1,18 @@
-import React, { Component } from "react";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-import { connect } from "react-redux";
-import { Navigate } from "react-router-dom";
+import React, { Component } from 'react';
+import Box from '@mui/material/Box';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import { connect } from 'react-redux';
+import { Navigate } from 'react-router-dom';
 import {
   increaseNumber,
   decreaseNumber,
   updateHistory,
   getPostsThunk,
-} from "../../../slices/countSlice";
+} from '../../../slices/countSlice';
 
-import "./style.css";
-import { unwrapResult } from "@reduxjs/toolkit";
+import './style.css';
+import { unwrapResult } from '@reduxjs/toolkit';
 
 class SignupPage extends Component {
   constructor(props) {
@@ -20,34 +20,34 @@ class SignupPage extends Component {
     this.handleSignup = this.handleSignup.bind(this);
     this.state = {
       Auth: {
-        username: "",
-        email: "",
+        username: '',
+        email: '',
       },
       IsRegister: false,
     };
   }
 
   componentDidMount() {
-    console.log("Register componentDidMount");
+    console.log('Register componentDidMount');
   }
 
   componentWillUnmount() {
-    console.log("Register componentWillUnmount");
+    console.log('Register componentWillUnmount');
   }
 
   // componentDidUpdate(prevProps) {
   //   const { number, history } = this.props;
-  //   console.log("History", history);
+  //   console.log('History', history);
   //   if (number != prevProps.number) {
-  //     console.log("Prev", prevProps.number);
-  //     console.log("After", number);
+  //     console.log('Prev', prevProps.number);
+  //     console.log('After', number);
   //   }
   // }
 
   // shouldComponentUpdate(nextProps) {
   //   if (nextProps.number !== this.props.number) {
-  //     console.log("Prev", this.props.number);
-  //     console.log("After", nextProps.number);
+  //     console.log('Prev', this.props.number);
+  //     console.log('After', nextProps.number);
   //     return true;
   //   }
   //   return false;
@@ -55,8 +55,8 @@ class SignupPage extends Component {
 
   handleSignup() {
     if (
-      this.state.Auth.email === "test@gmail.com" &&
-      this.state.Auth.username === "test"
+      this.state.Auth.email === 'test@gmail.com' &&
+      this.state.Auth.username === 'test'
     ) {
       this.setState((prevState) => ({
         IsRegister: {
@@ -65,22 +65,20 @@ class SignupPage extends Component {
         },
       }));
     } else {
-      alert("Sign up fail");
+      alert('Sign up fail');
     }
   }
 
   componentDidUpdate() {
     if (this.state.IsRegister) {
-      alert("Sign up successfully, redirect to home page !");
+      alert('Sign up successfully, redirect to home page !');
     }
   }
 
   render() {
     const {
-      number,
       increaseNumber,
       decreaseNumber,
-      updateHistory,
       getPostsThunkAPI,
     } = this.props;
 
@@ -90,9 +88,6 @@ class SignupPage extends Component {
     //   const response2 = await stravaApi.getbyPosts(1);
     // };
 
-    // const handleAddHistory = async (e) => {
-    //   updateHistory(e);
-    // };
 
     const handleIncreaseNumber = async () => {
       increaseNumber();
@@ -104,28 +99,28 @@ class SignupPage extends Component {
     };
 
     return (
-      <div className="sign-up-form">
-        <p>{number}</p>
+      <div className='sign-up-form'>
+        {this.state.IsRegister && <Navigate to='/home' replace={true} />}
         <Box
-          component="form"
+          component='form'
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            width: "20%",
+            display: 'flex',
+            flexDirection: 'column',
+            width: '20%',
           }}
           noValidate
-          autoComplete="off"
+          autoComplete='off'
         >
-          <Typography sx={{ fontWeight: "bold" }} variant="h4" gutterBottom>
+          <Typography sx={{ fontWeight: 'bold' }} variant='h4' gutterBottom>
             Sign up with email
           </Typography>
           <TextField
             InputLabelProps={{
-              style: { color: "#000000", fontWeight: "bold" },
+              style: { color: '#000000', fontWeight: 'bold' },
             }}
-            margin="normal"
-            label="Username"
-            variant="standard"
+            margin='normal'
+            label='Username'
+            variant='standard'
             onChange={(e) => {
               this.setState((prevState) => ({
                 Auth: {
@@ -137,13 +132,13 @@ class SignupPage extends Component {
           />
           <TextField
             InputLabelProps={{
-              style: { color: "#000000", fontWeight: "bold" },
+              style: { color: '#000000', fontWeight: 'bold' },
             }}
             fullWidth
-            label="Email"
-            variant="standard"
-            helperText="Passwords must contain at leat 8 characters"
-            style={{ marginBottom: "20px" }}
+            label='Email'
+            variant='standard'
+            helperText='Passwords must contain at leat 8 characters'
+            style={{ marginBottom: '20px' }}
             onChange={(e) => {
               this.setState((prevState) => ({
                 Auth: {
@@ -154,54 +149,54 @@ class SignupPage extends Component {
             }}
           />
           <Typography
-            sx={{ fontWeight: "light" }}
-            variant="caption"
+            sx={{ fontWeight: 'light' }}
+            variant='caption'
             gutterBottom
-            margin="normal"
+            margin='normal'
           >
-            By siging up you are agreeing to our{" "}
-            <a className="link" href="https://www.izibds.com/">
+            By siging up you are agreeing to our{' '}
+            <a className='link' href='https://www.izibds.com/'>
               Ters of Service.
             </a>
           </Typography>
           <Typography
-            margin="normal"
-            sx={{ fontWeight: "light" }}
-            variant="caption"
+            margin='normal'
+            sx={{ fontWeight: 'light' }}
+            variant='caption'
             gutterBottom
-            style={{ marginBottom: "20px" }}
+            style={{ marginBottom: '20px' }}
           >
-            View our{" "}
-            <a className="link" href="https://www.izibds.com/">
+            View our{' '}
+            <a className='link' href='https://www.izibds.com/'>
               Privacy Policy.
             </a>
           </Typography>
           <button
-            type="button"
+            type='button'
             onClick={() => this.handleSignup()}
-            className="btn-signup"
+            className='btn-signup'
           >
             Agree and Sign Up
           </button>
 
           <button
-            type="button"
+            type='button'
             onClick={() => handleIncreaseNumber()}
-            className="btn-layout bg-fb"
+            className='btn-layout bg-fb'
           >
-            <span className="icon">
-              <i className="fab fa-facebook"></i>
+            <span className='icon'>
+              <i className='fab fa-facebook'></i>
             </span>
-            <span className="">Continue with Facebook</span>
+            <span className=''>Continue with Facebook</span>
           </button>
 
           <button
-            type="button"
+            type='button'
             onClick={() => handleDecreaseNumber()}
-            className="btn-layout bg-gg"
+            className='btn-layout bg-gg'
           >
-            <span className="icon icon-google"></span>
-            <span className="">Continue with Google</span>
+            <span className='icon icon-google'></span>
+            <span className=''>Continue with Google</span>
           </button>
         </Box>
       </div>
@@ -228,7 +223,7 @@ const mapDispatchToProps = (dispatch) => ({
     dispatch(getPostsThunk(page))
       .then(unwrapResult)
       .then((rs) => {
-        console.log("Promise", rs);
+        console.log('Promise', rs);
       })
       .catch((err) => {
         console.error(err);
