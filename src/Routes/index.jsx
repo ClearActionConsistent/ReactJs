@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import { Routes, Route } from "react-router-dom";
-import AboutPage from "../views/components/About";
-import LoginPage from "../views/components/Login";
-import SignupPage from "../views/components/Signup";
-import PrivateRoute from "../views/components/PrivateRoute";
-import HomePage from "../views/components/Home";
+import React, { Component } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import AboutPage from '../views/components/About';
+import LoginPage from '../views/components/Login';
+import SignupPage from '../views/components/Signup';
+import PrivateRoute from '../views/components/PrivateRoute';
+import HomePage from '../views/components/Home';
 
 class Router extends Component {
   constructor(props) {
@@ -15,11 +15,11 @@ class Router extends Component {
   }
 
   componentDidMount() {
-    console.log("Router componentDidMount");
+    console.log('Router componentDidMount');
   }
 
   componentWillUnmount() {
-    console.log("Router componentWillUnmount");
+    console.log('Router componentWillUnmount');
   }
 
   render() {
@@ -29,13 +29,13 @@ class Router extends Component {
       <Routes>
         <Route
           exact
-          path="/"
+          path='/'
           element={<PrivateRoute isLoggedIn={loggedIn} />}
         />
-        <Route path="/home" element={<HomePage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/register" element={<SignupPage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/register' element={<SignupPage />} />
+        <Route path='/about' element={<AboutPage />} />
       </Routes>
     );
   }
