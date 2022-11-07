@@ -3,6 +3,7 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import { connect } from "react-redux";
+import { Navigate } from "react-router-dom";
 import {
   increaseNumber,
   decreaseNumber,
@@ -16,17 +17,23 @@ import { unwrapResult } from "@reduxjs/toolkit";
 class SignupPage extends Component {
   constructor(props) {
     super(props);
+    this.handleSignup = this.handleSignup.bind(this);
     this.state = {
       Auth: {
         username: "",
         email: "",
       },
+      IsRegister: false,
     };
   }
 
-  componentDidMount() { console.log('Register componentDidMount'); }
+  componentDidMount() {
+    console.log("Register componentDidMount");
+  }
 
-  componentWillUnmount() { console.log('Register componentWillUnmount'); }
+  componentWillUnmount() {
+    console.log("Register componentWillUnmount");
+  }
 
   // componentDidUpdate(prevProps) {
   //   const { number, history } = this.props;
@@ -46,13 +53,30 @@ class SignupPage extends Component {
   //   return false;
   // }
 
+  handleSignup() {
+    if (
+      this.state.Auth.email === "test@gmail.com" &&
+      this.state.Auth.username === "test"
+    ) {
+      this.setState((prevState) => ({
+        IsRegister: {
+          ...prevState.IsRegister,
+          IsRegister: true,
+        },
+      }));
+    } else {
+      alert("Sign up fail");
+    }
+  }
+
+  componentDidUpdate() {
+    if (this.state.IsRegister) {
+      alert("Sign up successfully, redirect to home page !");
+    }
+  }
+
   render() {
-    const {
-      increaseNumber,
-      decreaseNumber,
-      updateHistory,
-      getPostsThunkAPI,
-    } = this.props;
+    const { increaseNumber, decreaseNumber, getPostsThunkAPI } = this.props;
 
     // const handleCallAxios = async () => {
     //   const response = await stravaApi.getPosts();
@@ -60,9 +84,9 @@ class SignupPage extends Component {
     //   const response2 = await stravaApi.getbyPosts(1);
     // };
 
-    const handleAddHistory = async (e) => {
-      updateHistory(e);
-    };
+    // const handleAddHistory = async (e) => {
+    //   updateHistory(e);
+    // };
 
     const handleIncreaseNumber = async () => {
       increaseNumber();
@@ -75,12 +99,12 @@ class SignupPage extends Component {
 
     return (
       <div className="sign-up-form">
+        {this.state.IsRegister && <Navigate to="/home" replace={true} />}
         <Box
           component="form"
           sx={{
             display: "flex",
             flexDirection: "column",
-            // border: 2,
             width: "20%",
           }}
           noValidate
@@ -90,9 +114,9 @@ class SignupPage extends Component {
             Sign up with email
           </Typography>
           <TextField
-            // InputLabelProps={{
-            //   style: { color: "#000000", fontWeight: "bold" },
-            // }}
+            InputLabelProps={{
+              style: { color: "#000000", fontWeight: "bold" },
+            }}
             margin="normal"
             label="Username"
             variant="standard"
@@ -148,7 +172,7 @@ class SignupPage extends Component {
           </Typography>
           <button
             type="button"
-            onClick={() => handleAddHistory(Date.now())}
+            onClick={() => this.handleSignup()}
             className="btn-signup"
           >
             Agree and Sign Up
@@ -159,9 +183,9 @@ class SignupPage extends Component {
             onClick={() => handleIncreaseNumber()}
             className="btn-layout bg-fb"
           >
-            <div className="icon">
+            <span className="icon">
               <i className="fab fa-facebook"></i>
-            </div>
+            </span>
             <span className="">Continue with Facebook</span>
           </button>
 
@@ -170,9 +194,7 @@ class SignupPage extends Component {
             onClick={() => handleDecreaseNumber()}
             className="btn-layout bg-gg"
           >
-            <div className="icon">
-              <span className="icon-google"></span>
-            </div>
+            <span className="icon icon-google"></span>
             <span className="">Continue with Google</span>
           </button>
         </Box>
