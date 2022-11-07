@@ -1,4 +1,4 @@
-.sign-up-form{
+.sign-up-form {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -7,12 +7,12 @@
     flex-direction: column;
 }
 
-.link{
+.link {
     color: black;
     font-weight: lighter;
 }
 
-.btn-signup{
+.btn-signup {
     background-color: #DFDFE9;
     color: black;
     margin-bottom: 10px;
@@ -23,7 +23,7 @@
     cursor: pointer;
 }
 
-.btn-layout{
+.btn-layout {
     position: relative;
     cursor: pointer;
     border: 1px solid black;
@@ -37,21 +37,21 @@
     justify-content: center;
 }
 
-.bg-fb{
+.bg-fb {
     background-color: #3B5997;
     color: white;
 }
 
-.bg-gg{
+.bg-gg {
     background-color: white;
     color: black;
 }
 
-.icon{
-   position: absolute;
-   left: 2vh;
-   display: flex;
-   align-items: center;
+.icon {
+    position: absolute;
+    left: 2vh;
+    display: flex;
+    align-items: center;
 }
 
 .icon-google {
@@ -67,4 +67,3 @@
     background-color: #3B5997;
     line-height: 22px;
 }
-
