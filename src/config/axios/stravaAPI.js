@@ -1,9 +1,9 @@
-import axiosClient from "./axiosClient";
+import axiosClient from './axiosClient';
 
 const stravaApi = {
   //Get Method
   getPosts: () => {
-    const url = "posts";
+    const url = 'posts';
     return axiosClient.get(url);
   },
 
@@ -15,7 +15,7 @@ const stravaApi = {
 
   //Post Method with params
   postPosts: () => {
-    const url = "posts";
+    const url = 'posts';
     return axiosClient.get(url);
   },
 
