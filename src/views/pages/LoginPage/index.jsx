@@ -1,36 +1,64 @@
 import React, { Component } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { TextField } from '@mui/material';
+import { IconButton, OutlinedInput, InputAdornment } from '@mui/material';
+import { Visibility, VisibilityOff } from '@mui/icons-material';
 import './styles.css';
 
 class LoginPage extends Component {
     constructor(props) {
         super(props);
-        this.LoginSuccess = this.LoginSuccess.bind(this);
+        this.LoginRequest = this.LoginRequest.bind(this);
+        this.ChangeUserName = this.ChangeUserName.bind(this);
+        this.ChangePassword = this.ChangePassword.bind(this);
+        this.handleClickShowPassword = this.handleClickShowPassword.bind(this);
+        this.handleMouseDownPassword = this.handleMouseDownPassword.bind(this);
         this.state = {
             isLoggedIn: false,
-            isShow: false
+            username: '',
+            password: '',
+            isHide: false
         }
     }
 
     componentDidMount() {
         console.log('Login componentDidMount');
-        console.log('=========================================');
     }
 
     componentWillUnmount() {
         console.log('Login componentWillUnmount');
-        console.log('=========================================');
     }
 
-    LoginSuccess() {
-        console.log('login');
-        if (!this.state.isShow) {
-            this.setState({ isShow: true });
-        } else {
+    ChangeUserName(event) {
+        const value = event.target.value;
+        this.setState({ username: value });
+    }
+
+    ChangePassword(event) {
+        const value = event.target.value;
+        this.setState({ password: value });
+    }
+
+    LoginRequest() {
+        if (this.state.username === 'tuananh@gmail.com' && this.state.password === '12345678x@X') {
             this.setState({ isShow: false });
             this.setState({ isLoggedIn: true });
+            alert('Login successfully!');
         }
+        else {
+            this.setState({ isShow: true });
+            this.setState({ isLoggedIn: false });
+            this.setState({ username: '' });
+            this.setState({ password: '' });
+            alert('Email or password is correctly. Please enter your email and password again!')
+        }
+    }
+
+    handleMouseDownPassword(event) {
+        event.preventDefault();
+    }
+
+    handleClickShowPassword() {
+        this.setState({ isHide: !this.state.isHide });
     }
 
     render() {
@@ -42,13 +70,36 @@ class LoginPage extends Component {
                 <div className='form-login'>
                     <div className='login'>
                         <p>Already have an account?</p>
-                        {
-                            this.state.isShow && <div>
-                                <TextField className='input-user' label='Username' type='email' />
-                                <TextField className='input-user' label='Password' type='password' />
-                            </div>
-                        }
-                        <button className='btn btn-login' onClick={() => this.LoginSuccess()}>Log In</button>
+                        <div>
+                            <OutlinedInput
+                                className='input-user'
+                                placeholder='Email'
+                                type='email'
+                                value={this.state.username}
+                                onChange={this.ChangeUserName}
+                            />
+                            <OutlinedInput
+                                placeholder='Password'
+                                className='input-user'
+                                type={this.state.isHide ? 'text' : 'password'}
+                                value={this.state.password}
+                                onChange={this.ChangePassword}
+                                endAdornment={
+                                    <InputAdornment position='end'>
+                                        <IconButton
+                                            aria-label='toggle password visibility'
+                                            onClick={this.handleClickShowPassword}
+                                            onMouseDown={this.handleMouseDownPassword}
+                                            edge='end'
+                                        >
+                                            {this.state.isHide ? <Visibility /> : <VisibilityOff />}
+                                        </IconButton>
+                                    </InputAdornment>
+                                }
+                                autoFocus={false}
+                            />
+                        </div>
+                        <button className='btn btn-login' onClick={() => this.LoginRequest()}>Log In</button>
                         {this.state.isLoggedIn && <Navigate to='/home' />}
                         <Link to='/register' className='sign-up'>New to Strava? Sign up.</Link>
                     </div>
@@ -65,10 +116,9 @@ class LoginPage extends Component {
                         </button>
                     </div>
                 </div>
-            </div>
+            </div >
         )
     }
 }
-
 
 export default LoginPage;
