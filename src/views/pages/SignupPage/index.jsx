@@ -27,14 +27,6 @@ class SignupPage extends Component {
         };
     }
 
-    componentDidMount() {
-        console.log('Register componentDidMount');
-    }
-
-    componentWillUnmount() {
-        console.log('Register componentWillUnmount');
-    }
-
     // componentDidUpdate(prevProps) {
     //   const { number, history } = this.props;
     //   console.log('History', history);
