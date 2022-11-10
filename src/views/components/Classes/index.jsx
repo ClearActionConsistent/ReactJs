@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import Categories from './categories'
-import "./styles.css"
+import React, { Component } from 'react';
+import Categories from './categories';
 import ListItem from './listItem';
+import './styles.css';
 
-export class Classes extends Component {
+class Classes extends Component {
     render() {
         return (
-            <div className="all">
+            <div className='container-classes'>
                 <Categories />
                 <ListItem />
             </div>
@@ -14,4 +14,4 @@ export class Classes extends Component {
     }
 }
 
-export default Classes
+export default Classes;

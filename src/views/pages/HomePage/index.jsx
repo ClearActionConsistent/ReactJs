@@ -1,26 +1,20 @@
 import React, { Component } from 'react';
 import Header from '../../components/Header';
-import "./style.css"
 import Classes from '../../components/Classes';
+import Subscribe from '../../components/Subscribe';
+import './style.css';
 class HomePage extends Component {
 
 
     render() {
         return (
-            <div>
+            <div className='container-home-page'>
                 <Header />
-
                 <Classes />
-
-                <div className="horizon">
+                <div className='horizon'>
                     <hr />
                 </div>
-                {/* <div className='subcribe'>
-                    <div className='subcribe_inform'>
-                        <span>Subcribe to receive challenge for each day</span>
-                    </div>
-                </div> */}
-
+                <Subscribe />
             </div>
         )
     }

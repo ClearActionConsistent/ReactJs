@@ -1,6 +1,6 @@
 .navbar {
     position: fixed;
-    box-shadow: 0px 0px 2px 2px #999999;
+    box-shadow: rgb(0 0 0 / 30%) 0px 2px 8px 0px;
     width: 100%;
     display: flex;
     margin-bottom: 2rem;
@@ -35,18 +35,28 @@
 }
 
 .navbar_item>span:hover {
-    font-weight: bold;
+    font-weight: 600;
     text-decoration: underline;
     text-decoration-color: #F26922;
-    text-decoration-thickness: 4px;
+    text-decoration-thickness: 2px;
     cursor: pointer;
     text-underline-offset: 10px;
 
 }
 
 .cus_span {
-    background-color: white;
+    font-family: 'Source Sans Pro';
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    text-align: center;
+    color: #9b9b9b;
 }
+
+/* .active {
+    color: #6f767b;
+    border-bottom: 2px solid #f58220;
+} */
 
 .signout {
     display: flex;
@@ -74,8 +84,4 @@ button.signout:focus {
 button.signout:active {
     outline: none;
     border: none;
-}
-
-.demo_class {
-    padding-top: 5rem;
 }
