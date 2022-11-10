@@ -1,0 +1,20 @@
+.img-footer {
+    width: 95%;
+    margin-top: 30px;
+}
+
+.subscribe {
+    border: 1px solid gray;
+    padding: 50px;
+    margin-right: 100px;
+}
+
+.subscribe>p {
+    font-family: 'Source Sans Pro';
+    margin-left: 20rem;
+}
+
+.footer {
+    margin-top: 2.5rem;
+    padding: 1rem;
+}
