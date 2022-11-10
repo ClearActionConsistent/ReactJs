@@ -5,7 +5,8 @@ import LoginPage from '../views/pages/LoginPage';
 import SignupPage from '../views/pages/SignupPage';
 import PrivateRoute from '../views/components/PrivateRoute';
 import HomePage from '../views/pages/HomePage';
-import { Classes } from './../views/components/Classes/index';
+import Classes from './../views/components/Classes';
+import Subscribe from '../views/components/Subscribe';
 
 class Router extends Component {
   constructor(props) {
@@ -38,6 +39,7 @@ class Router extends Component {
         <Route path='/register' element={<SignupPage />} />
         <Route path='/about' element={<AboutPage />} />
         <Route path='/classes' element={<Classes />} />
+        <Route path='/subscribe' element={<Subscribe />} />
       </Routes>
     );
   }

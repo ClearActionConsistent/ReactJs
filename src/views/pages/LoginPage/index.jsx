@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { IconButton, OutlinedInput, InputAdornment } from '@mui/material';
-import { Visibility, VisibilityOff } from '@mui/icons-material';
+import { OutlinedInput } from '@mui/material';
 import './styles.css';
 
 class LoginPage extends Component {
@@ -9,13 +8,11 @@ class LoginPage extends Component {
         super(props);
         this.LoginRequest = this.LoginRequest.bind(this);
         this.ChangeUserName = this.ChangeUserName.bind(this);
-        this.ChangePassword = this.ChangePassword.bind(this);
-        this.handleClickShowPassword = this.handleClickShowPassword.bind(this);
-        this.handleMouseDownPassword = this.handleMouseDownPassword.bind(this);
+        this.ChangeEmail = this.ChangeEmail.bind(this);
         this.state = {
             isLoggedIn: false,
             username: '',
-            password: '',
+            email: '',
             isHide: false
         }
     }
@@ -33,13 +30,13 @@ class LoginPage extends Component {
         this.setState({ username: value });
     }
 
-    ChangePassword(event) {
+    ChangeEmail(event) {
         const value = event.target.value;
-        this.setState({ password: value });
+        this.setState({ email: value });
     }
 
     LoginRequest() {
-        if (this.state.username === 'tuananh@gmail.com' && this.state.password === '12345678x@X') {
+        if (this.state.username === 'tuananh18' && this.state.email === 'tuananh@gmail.com') {
             this.setState({ isShow: false });
             this.setState({ isLoggedIn: true });
             alert('Login successfully!');
@@ -48,24 +45,16 @@ class LoginPage extends Component {
             this.setState({ isShow: true });
             this.setState({ isLoggedIn: false });
             this.setState({ username: '' });
-            this.setState({ password: '' });
-            alert('Email or password is correctly. Please enter your email and password again!')
+            this.setState({ email: '' });
+            alert('Email or uername is correctly. Please enter your email and username again!')
         }
-    }
-
-    handleMouseDownPassword(event) {
-        event.preventDefault();
-    }
-
-    handleClickShowPassword() {
-        this.setState({ isHide: !this.state.isHide });
     }
 
     render() {
         return (
             <div className='container'>
                 <div className='img-logo'>
-                    <img src='https://www.actualidadiphone.com/wp-content/uploads/2013/03/strava-logo.png' alt='strava logo' />
+                    <img style={{ height: '300px' }} src='https://www.fitnesstogether.gr/wp-content/uploads/2021/06/Kick-Boxing-1-1024x529.jpg' alt='strava logo' />
                 </div>
                 <div className='form-login'>
                     <div className='login'>
@@ -73,30 +62,17 @@ class LoginPage extends Component {
                         <div>
                             <OutlinedInput
                                 className='input-user'
-                                placeholder='Email'
-                                type='email'
+                                placeholder='Username'
+                                type='text'
                                 value={this.state.username}
                                 onChange={this.ChangeUserName}
                             />
                             <OutlinedInput
-                                placeholder='Password'
+                                placeholder='Email'
                                 className='input-user'
-                                type={this.state.isHide ? 'text' : 'password'}
-                                value={this.state.password}
-                                onChange={this.ChangePassword}
-                                endAdornment={
-                                    <InputAdornment position='end'>
-                                        <IconButton
-                                            aria-label='toggle password visibility'
-                                            onClick={this.handleClickShowPassword}
-                                            onMouseDown={this.handleMouseDownPassword}
-                                            edge='end'
-                                        >
-                                            {this.state.isHide ? <Visibility /> : <VisibilityOff />}
-                                        </IconButton>
-                                    </InputAdornment>
-                                }
-                                autoFocus={false}
+                                type='email'
+                                value={this.state.email}
+                                onChange={this.ChangeEmail}
                             />
                         </div>
                         <button className='btn btn-login' onClick={() => this.LoginRequest()}>Log In</button>

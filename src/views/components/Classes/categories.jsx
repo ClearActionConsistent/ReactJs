@@ -7,22 +7,22 @@ export class Categories extends Component {
                 <p>Demo Classes</p>
                 <div className='categories'>
                     <div>
-                        Logo
+                        <span className='icon-logo'></span>
                         <p>Run</p>
                     </div>
                     <div>
-                        Logo
+                        <span className='icon-logo'></span>
                         <p>Ride</p>
                     </div>
                     <div>
-                        Logo
+                        <span className='icon-logo'></span>
                         <p>Walk</p>
                     </div>        <div>
-                        Logo
+                        <span className='icon-logo'></span>
                         <p>Hike</p>
                     </div>
                     <div>
-                        Logo
+                        <span className='icon-logo'></span>
                         <p>Distance</p>
                     </div>
                 </div>

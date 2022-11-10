@@ -7,12 +7,12 @@ export class ItemCard extends Component {
             <div className='inform-item'>
                 <div className='class-item'>
                     <div className='logo' />
-                    <div className="inform">
+                    <div className='inform'>
                         <p>ORANGE 60 - VIRTUAL</p>
-                        <Item item={{ field: "Coach Name", value: "Adrea" }} />
-                        <Item item={{ field: "Date of Class", value: "CLass Ended" }} />
-                        <Item item={{ field: "Time of Class", value: "Class Ended" }} />
-                        <Item item={{ field: "Duaration of Class", value: "60 Minutes" }} />
+                        <Item item={{ field: 'Coach Name', value: 'Adrea' }} />
+                        <Item item={{ field: 'Date of Class', value: 'CLass Ended' }} />
+                        <Item item={{ field: 'Time of Class', value: 'Class Ended' }} />
+                        <Item item={{ field: 'Duaration of Class', value: '60 Minutes' }} />
                     </div>
                 </div>
             </div>
