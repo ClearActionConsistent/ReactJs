@@ -1,6 +1,7 @@
 import React from 'react';
 import { OutlinedInput, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff } from '@mui/icons-material';
+import './styles.css';
 
 const FormInput = ({ email, password, changeEmail, changePassword, onClick, isHide, error }) => {
     return (
