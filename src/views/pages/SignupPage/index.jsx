@@ -48,6 +48,24 @@ class SignupPage extends Component {
         };
     }
 
+    // componentDidUpdate(prevProps) {
+    //   const { number, history } = this.props;
+    //   console.log('History', history);
+    //   if (number != prevProps.number) {
+    //     console.log('Prev', prevProps.number);
+    //     console.log('After', number);
+    //   }
+    // }
+
+    // shouldComponentUpdate(nextProps) {
+    //   if (nextProps.number !== this.props.number) {
+    //     console.log('Prev', this.props.number);
+    //     console.log('After', nextProps.number);
+    //     return true;
+    //   }
+    //   return false;
+    // }
+    
     handleSignup() {
         if (
             this.state.Auth.email === 'test@gmail.com' &&
