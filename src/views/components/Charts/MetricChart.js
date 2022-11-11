@@ -1,4 +1,4 @@
-import { BarChart, XAxis, YAxis, Bar, ResponsiveContainer } from 'recharts';
+import { BarChart, XAxis, YAxis, Bar, ResponsiveContainer, Cell } from 'recharts';
 
 const ChartComponent = () => {
     const data = [
@@ -26,7 +26,10 @@ const ChartComponent = () => {
             'name': 'Miles',
             'qty': 36
         }
-    ]
+    ];
+
+    const colors = ['grey', 'blue', 'green', 'orange', 'red', 'red'];
+
     return (
         <ResponsiveContainer minWidth={700} minHeight={500}>
             <BarChart data={data}>
