@@ -1,4 +1,4 @@
-import { BarChart, XAxis, YAxis, Bar, ResponsiveContainer } from 'recharts';
+import { BarChart, XAxis, YAxis, Bar, ResponsiveContainer, Cell } from 'recharts';
 
 const ChartComponent = (props) => {
     const data = [
@@ -26,12 +26,21 @@ const ChartComponent = (props) => {
             "name": "Breaths",
             "qty": 36
         }
-    ]
+    ];
+
+    const colors = ['grey', 'blue', 'green', 'orange', 'red', 'red'];
+
     return (
         <ResponsiveContainer minWidth={700} minHeight={500}>
             <BarChart data={data}>
-                <Bar dataKey="qty" fill="#82ca9d" label={{ fill: 'red', fontSize: 20 }} />
-                <XAxis dataKey="name"/>
+                <Bar dataKey="qty" label={{ fontSize: 20, position: 'top' }} >
+                    {
+                        data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} stroke={colors[index]} fill={colors[index]} />
+                        ))
+                    }
+                </Bar>
+                <XAxis dataKey="name" />
                 <YAxis dataKey="qty" hide="true" />
             </BarChart>
         </ResponsiveContainer>
