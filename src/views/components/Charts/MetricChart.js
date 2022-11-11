@@ -1,42 +1,40 @@
-import { BarChart, XAxis, YAxis, Bar } from 'recharts';
+import { BarChart, XAxis, YAxis, Bar, ResponsiveContainer } from 'recharts';
 
 const ChartComponent = (props) => {
     const data = [
         {
-            "name": "8",
-            "uv": 8
+            "name": "Calories",
+            "qty": 3
         },
         {
-            "name": "6",
-            "uv": 6
+            "name": "Splat Points",
+            "qty": 10
         },
         {
-            "name": "9",
-            "uv": 9
+            "name": "AVG. Heart Rate",
+            "qty": 90
         },
         {
-            "name": "0",
-            "uv": 0
+            "name": "MAX Heart Rate",
+            "qty": 116
         },
         {
-            "name": "25",
-            "uv": 25
+            "name": "Steps",
+            "qty": 20
         },
         {
-            "name": "36",
-            "uv": 36
-        },
-        {
-            "name": "8",
-            "uv": 8
+            "name": "Breaths",
+            "qty": 36
         }
     ]
     return (
-        <BarChart width={530} height={550} data={data}>
-            <Bar dataKey="name" fill="#82ca9d" />
-            <XAxis dataKey="name" />
-            <YAxis dataKey="uv" />
-        </BarChart>
+        <ResponsiveContainer minWidth={700} minHeight={500}>
+            <BarChart data={data}>
+                <Bar dataKey="qty" fill="#82ca9d" label={{ fill: 'red', fontSize: 20 }} />
+                <XAxis dataKey="name"/>
+                <YAxis dataKey="qty" hide="true" />
+            </BarChart>
+        </ResponsiveContainer>
     );
 }
 
