@@ -1,0 +1,10 @@
+.input-user {
+    margin-top: 20px !important;
+    width: 100% !important;
+}
+
+.error {
+    color: red;
+    font-family: 'Source Sans Pro';
+    text-align: left !important;
+}

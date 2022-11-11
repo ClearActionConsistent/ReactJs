@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { Link, Navigate } from 'react-router-dom';
-import { OutlinedInput } from '@mui/material';
+import FormInput from '../../components/FormInput';
 import './styles.css';
 
 class LoginPage extends Component {
     constructor(props) {
         super(props);
         this.LoginRequest = this.LoginRequest.bind(this);
-        this.ChangeUserName = this.ChangeUserName.bind(this);
         this.ChangeEmail = this.ChangeEmail.bind(this);
+        this.ChangePassword = this.ChangePassword.bind(this);
+        this.handleClickShowPassword = this.handleClickShowPassword.bind(this);
         this.state = {
             isLoggedIn: false,
-            username: '',
             email: '',
-            isHide: false
+            password: '',
+            isHide: false,
+            error: false
         }
     }
 
@@ -25,30 +27,34 @@ class LoginPage extends Component {
         console.log('Login componentWillUnmount');
     }
 
-    ChangeUserName(event) {
-        const value = event.target.value;
-        this.setState({ username: value });
-    }
-
     ChangeEmail(event) {
         const value = event.target.value;
         this.setState({ email: value });
     }
 
+    ChangePassword(event) {
+        const value = event.target.value;
+        this.setState({ password: value });
+    }
+
     LoginRequest() {
-        if (this.state.username === 'tuananh18' && this.state.email === 'tuananh@gmail.com') {
+        if (this.state.email === 'tuananh@gmail.com' && this.state.password === '12345678') {
             this.setState({ isShow: false });
             this.setState({ isLoggedIn: true });
-            alert('Login successfully!');
+            this.setState({ error: false });
         }
         else {
+            this.setState({ error: true });
             this.setState({ isShow: true });
             this.setState({ isLoggedIn: false });
-            this.setState({ username: '' });
             this.setState({ email: '' });
-            alert('Email or uername is correctly. Please enter your email and username again!')
+            this.setState({ password: '' });
         }
     }
+
+    handleClickShowPassword() {
+        this.setState({ isHide: !this.state.isHide });
+    };
 
     render() {
         return (
@@ -59,22 +65,15 @@ class LoginPage extends Component {
                 <div className='form-login'>
                     <div className='login'>
                         <p>Already have an account?</p>
-                        <div>
-                            <OutlinedInput
-                                className='input-user'
-                                placeholder='Username'
-                                type='text'
-                                value={this.state.username}
-                                onChange={this.ChangeUserName}
-                            />
-                            <OutlinedInput
-                                placeholder='Email'
-                                className='input-user'
-                                type='email'
-                                value={this.state.email}
-                                onChange={this.ChangeEmail}
-                            />
-                        </div>
+                        <FormInput
+                            email={this.state.email}
+                            password={this.state.password}
+                            changeEmail={this.ChangeEmail}
+                            changePassword={this.ChangePassword}
+                            error={this.state.error}
+                            isHide={this.state.isHide}
+                            onClick={this.handleClickShowPassword}
+                        />
                         <button className='btn btn-login' onClick={() => this.LoginRequest()}>Log In</button>
                         {this.state.isLoggedIn && <Navigate to='/home' />}
                         <Link to='/register' className='sign-up'>New to Strava? Sign up.</Link>
