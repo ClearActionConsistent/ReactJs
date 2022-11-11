@@ -1,8 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 export class Item extends Component {
     render() {
-        console.log(this.props)
         const { item } = this.props
         return (
             <div className='inform-class'>
@@ -13,4 +12,4 @@ export class Item extends Component {
     }
 }
 
-export default Item
+export default Item;
