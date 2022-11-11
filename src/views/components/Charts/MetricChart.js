@@ -33,10 +33,17 @@ const ChartComponent = () => {
     return (
         <ResponsiveContainer minWidth={700} minHeight={500}>
             <BarChart data={data}>
-                <Bar dataKey='qty' fill='#82ca9d' label={{ fill: 'red', fontSize: 20 }} />
-                <XAxis dataKey='name' />
-                <YAxis dataKey='qty' hide='true' />
+            <Bar dataKey="qty" label={{ fontSize: 20, position: 'top' }} >
+                {
+                    data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} stroke={colors[index]} fill={colors[index]} />
+                    ))
+                }
+                </Bar>
+                <XAxis dataKey="name" />
+                <YAxis dataKey="qty" hide="true" />
             </BarChart>
+
         </ResponsiveContainer>
     );
 }
