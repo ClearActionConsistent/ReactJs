@@ -7,8 +7,6 @@ import PrivateRoute from '../views/components/PrivateRoute';
 import HomePage from '../views/pages/HomePage';
 import Classes from './../views/components/Classes';
 import Subscribe from '../views/components/Subscribe';
-import ChallengeBoard from '../views/components/ChallengeBoard';
-import WorkoutHistory from '../views/components/WorkoutHistory';
 
 class Router extends Component {
   constructor(props) {
@@ -28,6 +26,7 @@ class Router extends Component {
 
   render() {
     const loggedIn = this.state.isLoggedIn;
+    console.log(loggedIn);
     return (
       <Routes>
         <Route
@@ -41,8 +40,6 @@ class Router extends Component {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/classes' element={<Classes />} />
         <Route path='/subscribe' element={<Subscribe />} />
-        <Route path='/workout' element={<ChallengeBoard />} />
-        <Route path='/summary' element={<WorkoutHistory />} />
       </Routes>
     );
   }

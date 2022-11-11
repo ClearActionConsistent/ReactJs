@@ -34,25 +34,14 @@
     background-color: white;
 }
 
-.navbar_item a {
-    font-family: 'Source Sans Pro';
-    font-size: 18px;
+.navbar_item>span:hover {
     font-weight: 600;
-    line-height: 23px;
-    text-align: center;
-    color: #9b9b9b;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-color: #F26922;
+    text-decoration-thickness: 2px;
+    cursor: pointer;
+    text-underline-offset: 10px;
 
-}
-
-.navbar_item a.active {
-    color: #6f767b;
-    border-bottom: 2px solid #f58220;
-}
-
-.navbar_item a.inactive {
-    color: #6f767b;
-    border-bottom: 2px solid #f58220;
 }
 
 .cus_span {
@@ -64,10 +53,10 @@
     color: #9b9b9b;
 }
 
-.active {
+/* .active {
     color: #6f767b;
     border-bottom: 2px solid #f58220;
-}
+} */
 
 .signout {
     display: flex;
