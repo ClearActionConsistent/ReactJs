@@ -8,7 +8,6 @@ export class WorkoutHistory extends Component {
 
     render() {
         return (
-            // <div className='container_workout'>
             <div className='main_container'>
                 <span className='title'>YOUR WORKOUT HISTORY</span>
                 <div className='lst_workout'>
@@ -19,7 +18,6 @@ export class WorkoutHistory extends Component {
                     }
                 </div>
             </div>
-            // </div>
         )
     }
 }
