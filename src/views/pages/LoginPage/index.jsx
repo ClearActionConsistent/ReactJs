@@ -60,7 +60,7 @@ class LoginPage extends Component {
         return (
             <div className='container'>
                 <div className='img-logo'>
-                    <img style={{ height: '300px' }} src='https://www.fitnesstogether.gr/wp-content/uploads/2021/06/Kick-Boxing-1-1024x529.jpg' alt='GTT logo' />
+                    <img style={{ height: '300px' }} src='https://www.fitnesstogether.gr/wp-content/uploads/2021/06/Kick-Boxing-1-1024x529.jpg' alt='strava logo' />
                 </div>
                 <div className='form-login'>
                     <div className='login'>
@@ -76,7 +76,7 @@ class LoginPage extends Component {
                         />
                         <button className='btn btn-login' onClick={() => this.LoginRequest()}>Log In</button>
                         {this.state.isLoggedIn && <Navigate to='/home' />}
-                        <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
+                        <Link to='/register' className='sign-up'>New to Strava? Sign up.</Link>
                     </div>
                     <div className='login-with'>
                         <button className='btn login-with__facebook'>
