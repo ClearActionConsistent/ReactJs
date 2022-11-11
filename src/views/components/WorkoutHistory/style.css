@@ -41,17 +41,6 @@
     height: 5px;
 }
 
-
-/* .lst_workout::-webkit-scrollbar-button {
-    width: 20px;
-} */
-
-/* Handle on hover */
-/* .lst_workout::-webkit-scrollbar-thumb:hover {
-    background: #ADA19B;
-} */
-
-
 .header_workout {
     display: flex;
     justify-content: space-between;
@@ -67,8 +56,8 @@
     color: #0673B7;
 }
 
-.performance:hover {
-    cursor: pointer;
+.header_workout a {
+    text-decoration: none;
 }
 
 .horizon {

@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export class ItemWorkout extends Component {
     render() {
@@ -9,10 +10,9 @@ export class ItemWorkout extends Component {
                     <span className='date'>
                         {value.date || null}
                     </span>
-
-                    <span className='performance'>
+                    <NavLink to='/challenge' className='performance'>
                         View Performance
-                    </span>
+                    </NavLink>
                 </div>
 
                 <div className="horizon">
