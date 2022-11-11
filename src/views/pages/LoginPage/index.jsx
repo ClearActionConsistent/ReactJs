@@ -25,6 +25,11 @@ class LoginPage extends Component {
 
     componentWillUnmount() {
         console.log('Login componentWillUnmount');
+        this.setState({ isLoggedIn: true });
+        this.setState({ email: '' });
+        this.setState({ password: '' });
+        this.setState({ error: false });
+        this.setState({ isHide: false });
     }
 
     ChangeEmail(event) {
