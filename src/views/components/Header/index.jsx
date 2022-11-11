@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, NavLink } from 'react-router-dom';
 import './style.css';
 
 class Header extends Component {
@@ -7,7 +7,6 @@ class Header extends Component {
         super(props);
         this.state = {
             isLogout: false,
-            isActive: false
         }
         this.SignOut = this.SignOut.bind(this);
     }
@@ -20,12 +19,12 @@ class Header extends Component {
         return (
             <div className='navbar'>
                 <div className='navbar_item'>
-                    <span className='cus_span'>Upcomming Classes</span>
+                    {/* <span className='cus_span'>Upcomming Classes</span>
                     <span className='cus_span'>Your Workout Summary</span>
-                    <span className='cus_span'>Our Communnity</span>
-                    {/* <NavLink to='/upcoming' className={`${this.state.isActive ? 'cus_span active' : 'cus_span'}`}>Upcomming Classes</NavLink>
-                        <NavLink to='/workout' className={`${this.state.isActive ? 'cus_span active' : 'cus_span'}`}>Your Workout Summary</NavLink>
-                        <NavLink to='/community' className={`${this.state.isActive ? 'cus_span active' : 'cus_span'}`}>Our Communnity</NavLink> */}
+                    <span className='cus_span'>Our Communnity</span> */}
+                    <NavLink to='/upcoming' className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Upcomming Classes</NavLink>
+                    <NavLink to='/workout' className={({ isActive }) => (isActive ? ' active' : 'inactive')}>Your Workout Summary</NavLink>
+                    <NavLink to='/community' className={({ isActive }) => (isActive ? ' active' : 'inactive')}>Our Communnity</NavLink>
                 </div>
                 <div className='user'>
                     <div className='user_inform'>
