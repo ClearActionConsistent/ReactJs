@@ -1,12 +1,9 @@
 .navbar {
-    position: fixed;
     box-shadow: rgb(0 0 0 / 30%) 0px 2px 8px 0px;
     width: 100%;
     display: flex;
-    margin-bottom: 2rem;
     justify-content: space-between;
     background-color: white;
-    z-index: 1;
 }
 
 .navbar_item {
