@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import ChartComponent from '../Charts/MetricChart';
 import './styles.css';
+import Header from '../Header';
 
 class ChallengeBoard extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <ChartComponent />
                 <div className='zone'>
                     <h1>Mintues / Zone</h1>
