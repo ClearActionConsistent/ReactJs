@@ -78,6 +78,7 @@ class LoginPage extends Component {
                             error={this.state.error}
                             isHide={this.state.isHide}
                             onClick={this.handleClickShowPassword}
+                            isRegister={false}
                         />
                         <button className='btn btn-login' onClick={() => this.LoginRequest()}>Log In</button>
                         {this.state.isLoggedIn && <Navigate to='/home' />}

@@ -8,3 +8,9 @@
     font-family: 'Source Sans Pro';
     text-align: left !important;
 }
+
+.register {
+    color: rgb(111, 118, 123);
+    margin: 0.5rem 0px;
+    font-size: 14px;
+}

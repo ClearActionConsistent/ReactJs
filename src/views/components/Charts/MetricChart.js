@@ -44,7 +44,6 @@ const ChartComponent = () => {
                 <XAxis dataKey="name" />
                 <YAxis dataKey="qty" hide="true" />
             </BarChart>
-
         </ResponsiveContainer>
     );
 }
