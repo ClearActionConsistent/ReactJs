@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export class ItemWorkout extends Component {
     render() {
@@ -11,9 +11,9 @@ export class ItemWorkout extends Component {
                         {value.date || null}
                     </h1>
                     <div className='performance-container'>
-                        <NavLink to='/challenge' className='performance'>
+                        <Link to='/workout/challenge' className='performance'>
                             View Performance
-                        </NavLink>
+                        </Link>
                     </div>
                 </div>
 
