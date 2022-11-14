@@ -1,18 +1,4 @@
 .container-home-page {
-    background-color: #F7F7F7;
-}
-
-.horizon {
-    margin-top: 2.5rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    justify-items: center;
-}
-
-.horizon hr {
-    background: #B3B3B3;
-    height: 3px;
-    width: 80%;
-    border-radius: 15px;
+    max-width: 1400px;
+    margin: auto;
 }
