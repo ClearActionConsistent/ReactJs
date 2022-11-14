@@ -7,8 +7,7 @@ class ListItem extends Component {
 
     render() {
         return (
-            <div className='lst_item '>
-                <ItemCard />
+            <div className='lst_item'>
                 <ItemCard />
                 <ItemCard />
                 <ItemCard />
