@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
+
 import { connect } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 import {
@@ -14,16 +12,39 @@ import {
 import './styles.css';
 import { unwrapResult } from '@reduxjs/toolkit';
 
+import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/Input';
+import FilledInput from '@mui/material/FilledInput';
+import OutlinedInput from '@mui/material/OutlinedInput';
+import InputLabel from '@mui/material/InputLabel';
+import InputAdornment from '@mui/material/InputAdornment';
+import FormHelperText from '@mui/material/FormHelperText';
+import FormControl from '@mui/material/FormControl';
+import TextField from '@mui/material/TextField';
+import Visibility from '@mui/icons-material/Visibility';
+import VisibilityOff from '@mui/icons-material/VisibilityOff';
+
+
 class SignupPage extends Component {
     constructor(props) {
         super(props);
         this.handleSignup = this.handleSignup.bind(this);
+
         this.state = {
             Auth: {
                 username: '',
                 email: '',
             },
             IsRegister: false,
+            values: {
+                amount: '',
+                password: '',
+                weight: '',
+                weightRange: '',
+                showPassword: false,
+            }
         };
     }
 
@@ -44,7 +65,7 @@ class SignupPage extends Component {
     //   }
     //   return false;
     // }
-
+    
     handleSignup() {
         if (
             this.state.Auth.email === 'test@gmail.com' &&
@@ -58,12 +79,6 @@ class SignupPage extends Component {
             }));
         } else {
             alert('Sign up fail');
-        }
-    }
-
-    componentDidUpdate() {
-        if (this.state.IsRegister) {
-            alert('Sign up successfully, redirect to home page !');
         }
     }
 
@@ -81,14 +96,14 @@ class SignupPage extends Component {
         // };
 
 
-        const handleIncreaseNumber = async () => {
-            increaseNumber();
-            await getPostsThunkAPI(1);
-        };
+        // const handleIncreaseNumber = async () => {
+        //     increaseNumber();
+        //     await getPostsThunkAPI(1);
+        // };
 
-        const handleDecreaseNumber = () => {
-            decreaseNumber();
-        };
+        // const handleDecreaseNumber = () => {
+        //     decreaseNumber();
+        // };
 
         return (
             <div className='sign-up-form'>
@@ -127,7 +142,7 @@ class SignupPage extends Component {
                             style: { color: '#000000', fontWeight: 'bold' },
                         }}
                         fullWidth
-                        label='Email'
+                        label='Password'
                         variant='standard'
                         helperText='Passwords must contain at leat 8 characters'
                         style={{ marginBottom: '20px' }}
@@ -139,7 +154,36 @@ class SignupPage extends Component {
                                 },
                             }));
                         }}
+                        type={this.state.values.showPassword ? 'text' : 'password'}
+                        endAdornment={
+                            <InputAdornment position="end">
+                                <IconButton
+                                    aria-label="toggle password visibility"
+                                >
+                                    {this.state.values.showPassword ? <VisibilityOff /> : <Visibility />}
+                                </IconButton>
+                            </InputAdornment>
+                        }
                     />
+
+
+                    <FormControl sx={{ m: 1, width: '40ch' }} variant="standard">
+                        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
+                        <Input
+                            id="standard-adornment-password"
+                            type={'password'}
+                            endAdornment={
+                                <InputAdornment position="end">
+                                    <IconButton
+                                        aria-label="toggle password visibility"
+                                    >
+                                        <VisibilityOff />
+                                    </IconButton>
+                                </InputAdornment>
+                            }
+                        />
+                    </FormControl>
+
                     <Typography
                         sx={{ fontWeight: 'light' }}
                         variant='caption'
@@ -171,7 +215,7 @@ class SignupPage extends Component {
                         Agree and Sign Up
                     </button>
 
-                    <button
+                    {/* <button
                         type='button'
                         onClick={() => handleIncreaseNumber()}
                         className='btn-layout bg-fb'
@@ -189,7 +233,7 @@ class SignupPage extends Component {
                     >
                         <span className='icon icon-google'></span>
                         <span className=''>Continue with Google</span>
-                    </button>
+                    </button> */}
                 </Box>
             </div>
         );

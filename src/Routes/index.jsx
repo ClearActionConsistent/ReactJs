@@ -40,6 +40,8 @@ class Router extends Component {
         <Route path='/about' element={<AboutPage />} />
         <Route path='/classes' element={<Classes />} />
         <Route path='/subscribe' element={<Subscribe />} />
+        <Route path='/workout' element={<ChallengeBoard />} />
+        <Route path='/summary' element={<WorkoutHistory />} />
       </Routes>
     );
   }

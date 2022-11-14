@@ -1,12 +1,9 @@
 .navbar {
-    position: fixed;
     box-shadow: rgb(0 0 0 / 30%) 0px 2px 8px 0px;
     width: 100%;
     display: flex;
-    margin-bottom: 2rem;
     justify-content: space-between;
     background-color: white;
-    z-index: 1;
 }
 
 .navbar_item {
@@ -34,29 +31,31 @@
     background-color: white;
 }
 
-.navbar_item>span:hover {
+.navbar_item a {
+    font-size: 18px;
     font-weight: 600;
-    text-decoration: underline;
-    text-decoration-color: #F26922;
-    text-decoration-thickness: 2px;
-    cursor: pointer;
-    text-underline-offset: 10px;
+    line-height: 23px;
+    text-align: center;
+    color: #9b9b9b;
+    text-decoration: none;
+}
 
+.navbar_item .active {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    text-align: center;
+    color: #9b9b9b;
+    border-bottom: 2px solid #f58220;
 }
 
 .cus_span {
-    font-family: 'Source Sans Pro';
     font-size: 18px;
     font-weight: 600;
     line-height: 23px;
     text-align: center;
     color: #9b9b9b;
 }
-
-/* .active {
-    color: #6f767b;
-    border-bottom: 2px solid #f58220;
-} */
 
 .signout {
     display: flex;
