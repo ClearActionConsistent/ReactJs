@@ -31,14 +31,15 @@ const ChartComponent = () => {
     const colors = ['grey', 'blue', 'green', 'orange', 'red', 'red'];
 
     return (
+        //Chart by John
         <ResponsiveContainer minWidth={700} minHeight={500}>
             <BarChart data={data}>
-            <Bar dataKey="qty" label={{ fontSize: 20, position: 'top' }} >
-                {
-                    data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} stroke={colors[index]} fill={colors[index]} />
-                    ))
-                }
+                <Bar dataKey="qty" label={{ fontSize: 20, position: 'top' }} >
+                    {
+                        data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} stroke={colors[index]} fill={colors[index]} />
+                        ))
+                    }
                 </Bar>
                 <XAxis dataKey="name" />
                 <YAxis dataKey="qty" hide="true" />
