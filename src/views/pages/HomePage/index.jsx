@@ -4,18 +4,15 @@ import Classes from '../../components/Classes';
 import Subscribe from '../../components/Subscribe';
 import './style.css';
 class HomePage extends Component {
-
-
     render() {
         return (
-            <div className='container-home-page'>
+            <>
                 <Header />
-                <Classes />
-                <div className='horizon'>
-                    <hr />
+                <div className='container-home-page'>
+                    <Classes />
+                    <Subscribe />
                 </div>
-                <Subscribe />
-            </div>
+            </>
         )
     }
 }
