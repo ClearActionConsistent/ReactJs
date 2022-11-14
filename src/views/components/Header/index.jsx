@@ -25,9 +25,9 @@ class Header extends Component {
         return (
             <div className='navbar'>
                 <div className='navbar_item'>
-                    <NavLink to='/home' className={({ isActive }) => (isActive ? 'active' : 'inactive')}>Upcomming Classes</NavLink>
-                    <NavLink to='/workout' className={({ isActive }) => (isActive ? ' active' : 'inactive')}>Your Workout Summary</NavLink>
-                    <NavLink to='/community' className={({ isActive }) => (isActive ? ' active' : 'inactive')}>Our Communnity</NavLink>
+                    <NavLink to='/upcoming'>Upcomming Classes</NavLink>
+                    <NavLink to='/workout'>Your Workout Summary</NavLink>
+                    <NavLink to='/community'>Our Communnity</NavLink>
                 </div>
                 <div className='user'>
                     <div className='user_inform'>

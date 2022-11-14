@@ -32,38 +32,29 @@
 }
 
 .navbar_item a {
-    font-family: 'Source Sans Pro';
     font-size: 18px;
     font-weight: 600;
     line-height: 23px;
     text-align: center;
     color: #9b9b9b;
     text-decoration: none;
-
 }
 
-.navbar_item a.active {
-    color: #6f767b;
-    border-bottom: 2px solid #f58220;
-}
-
-.navbar_item a.inactive {
-    color: #6f767b;
-    border-bottom: 2px solid #f58220;
-}
-
-.cus_span {
-    font-family: 'Source Sans Pro';
+.navbar_item .active {
     font-size: 18px;
     font-weight: 600;
     line-height: 23px;
     text-align: center;
     color: #9b9b9b;
+    border-bottom: 2px solid #f58220;
 }
 
-.active {
-    color: #6f767b;
-    border-bottom: 2px solid #f58220;
+.cus_span {
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 23px;
+    text-align: center;
+    color: #9b9b9b;
 }
 
 .signout {
