@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AboutPage from '../views/pages/AboutPage';
 import LoginPage from '../views/pages/LoginPage';
@@ -10,10 +10,10 @@ import Subscribe from '../views/components/Subscribe';
 import ChallengeBoard from '../views/components/ChallengeBoard';
 import WorkoutHistory from '../views/components/WorkoutHistory';
 import ListPost from '../views/components/Posts';
+import { useSelector } from 'react-redux';
 
 const Router = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false); 
-
+  const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
   return (
     <Routes>
       <Route

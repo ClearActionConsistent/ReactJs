@@ -1,13 +1,44 @@
+import {createSlice, configureStore} from '@reduxjs/toolkit';
+
+const initialAuthState = {
+    isLoggedIn : false, 
+    credentials: {
+        useName: ''
+    }
+};
+const authSlice = createSlice({
+    name: 'auth',
+    initialState: initialAuthState,
+    reducers: {
+        login(state, payload){
+            state.credentials.userName = payload.userName;
+        },
+        logout(state){},
+        signin(state, payload){}
+    }
+});
+
+export const authActions = authSlice.actions;
+
+const store = configureStore({
+    reducer: {
+        authReducer: authSlice.reducer
+    }
+});
+
+export default store;
+
+/*
 import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk';
 
-import countReducer from './../slices/countSlice';
+import authReducer from './../slices/authSlice';
 
 const reducer = combineReducers({
-    count: countReducer
+    auth: authReducer
 });
 
 //blacklist: After render state will reset to init
@@ -15,7 +46,7 @@ const reducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['count'],
+    blacklist: ['auth'],
     whitelist: []
 };
 
@@ -27,3 +58,4 @@ const store = configureStore({
 })
 
 export default store;
+*/
