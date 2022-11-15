@@ -13,7 +13,7 @@ import ListPost from '../views/components/Posts';
 import { useSelector } from 'react-redux';
 
 const Router = () => {
-  const isLoggedIn = useSelector((state) => state.authReducer.isLoggedIn);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   return (
     <Routes>
       <Route
