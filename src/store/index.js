@@ -5,9 +5,11 @@ import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk';
 
 import countReducer from './../slices/countSlice';
+import popupReducer from './../slices/popupSlice'
 
 const reducer = combineReducers({
-    count: countReducer
+    count: countReducer,
+    popup: popupReducer
 });
 
 //blacklist: After render state will reset to init
@@ -15,7 +17,7 @@ const reducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['count'],
+    blacklist: ['count', 'popup'],
     whitelist: []
 };
 

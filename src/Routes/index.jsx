@@ -10,6 +10,7 @@ import Subscribe from '../views/components/Subscribe';
 import ChallengeBoard from '../views/components/ChallengeBoard';
 import WorkoutHistory from '../views/components/WorkoutHistory';
 import ListPost from '../views/components/Posts';
+import ShowDetail from '../views/components/ShowDetailClass';
 
 class Router extends Component {
   constructor(props) {
@@ -45,6 +46,7 @@ class Router extends Component {
         <Route path='/workout/challenge' element={<ChallengeBoard />} />
         <Route path='/workout' element={<WorkoutHistory />} />
         <Route path='/community' element={<ListPost />} />
+        <Route path='/show' element={<ShowDetail />} />
       </Routes>
     );
   }

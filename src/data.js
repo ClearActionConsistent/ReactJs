@@ -108,7 +108,10 @@ export const classes = {
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Chạy bộ nhanh", "chạy bộ 69p"
+            ]
         },
         {
             name: 'CHẠY BỘ QUÃNG TRUNG',
@@ -116,7 +119,10 @@ export const classes = {
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
-            duration: '30 Minutes'
+            duration: '30 Minutes',
+            detail: [
+                "Chạy bộ nhanh", "chạy bộ 35p"
+            ]
         },
         {
             name: 'CHẠY BỘ NGẮN',
@@ -124,7 +130,10 @@ export const classes = {
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
-            duration: '15 Minutes'
+            duration: '15 Minutes',
+            detail: [
+                "Chạy bộ 30p", "chạy bộ full"
+            ]
         }
     ],
     ride: [
@@ -134,7 +143,10 @@ export const classes = {
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Chèo thuyền lướt"
+            ]
         },
         {
             name: 'CHÈO THUYỀN QUÃNG TRUNG',
@@ -142,7 +154,10 @@ export const classes = {
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
-            duration: '30 Minutes'
+            duration: '30 Minutes',
+            detail: [
+                "Chèo thuyền nhanh"
+            ]
         },
         {
             name: 'CHÈO THUYỀN QUÃNG DÀI',
@@ -150,7 +165,10 @@ export const classes = {
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Chèo thuyền vượt"
+            ]
         }
     ],
     walk: [
@@ -160,7 +178,10 @@ export const classes = {
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Đi bộ hoạt náo"
+            ]
         },
         {
             name: 'ĐI BỘ QUÃNG TRUNG',
@@ -168,7 +189,10 @@ export const classes = {
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
-            duration: '30 Minutes'
+            duration: '30 Minutes',
+            detail: [
+                "Đi bộ nhanh"
+            ]
         },
         {
             name: 'ĐI BỘ QUÃNG DÀI',
@@ -176,7 +200,10 @@ export const classes = {
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Đi bộ 50p"
+            ]
         }
     ],
     hike: [
@@ -186,7 +213,10 @@ export const classes = {
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Leo Núi 50"
+            ]
         },
         {
             name: 'ĐI BỘ ĐƯỜNG QUÃNG TRUNG',
@@ -194,7 +224,10 @@ export const classes = {
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
-            duration: '30 Minutes'
+            duration: '30 Minutes',
+            detail: [
+                "Leo Núi 40"
+            ]
         },
         {
             name: 'ĐI BỘ ĐƯỜNG QUÃNG DÀI',
@@ -202,7 +235,10 @@ export const classes = {
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Leo Núi 30"
+            ]
         }
     ],
     distance: [
@@ -212,7 +248,10 @@ export const classes = {
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Leo Núi 20"
+            ]
         },
         {
             name: 'CHẠY PHỐI HỢP QUÃNG TRUNG',
@@ -220,7 +259,10 @@ export const classes = {
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
-            duration: '30 Minutes'
+            duration: '30 Minutes',
+            detail: [
+                "Leo Núi 10"
+            ]
         },
         {
             name: 'CHẠY PHỐI HỢP QUÃNG DÀI',
@@ -228,7 +270,10 @@ export const classes = {
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
-            duration: '60 Minutes'
+            duration: '60 Minutes',
+            detail: [
+                "Leo Núi 5"
+            ]
         }
     ],
 }
