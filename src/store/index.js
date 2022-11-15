@@ -1,27 +1,8 @@
-import {createSlice, configureStore} from '@reduxjs/toolkit';
-
-const initialAuthState = {
-    isLoggedIn : false, 
-    credentials: {
-        useName: ''
-    }
-};
-const authSlice = createSlice({
-    name: 'auth',
-    initialState: initialAuthState,
-    reducers: {
-        login(state, payload){
-            state.credentials.userName = payload.userName;
-        },
-        logout(state){},
-        signin(state, payload){}
-    }
-});
-
-export const authActions = authSlice.actions;
+import {configureStore} from '@reduxjs/toolkit';
+import authReducer from '../slices/authSlice';
 
 const store = configureStore({
-    reducer: authSlice.reducer
+    reducer: authReducer
 });
 
 export default store;
