@@ -15,7 +15,7 @@ export class ListPost extends Component {
           <div className='list_Post'>
             {
               lst_post.map((item) => {
-                return <Post key={uuidv4} value={item} />
+                return <Post key={uuidv4()} value={item} />
               })
             }
           </div>

@@ -5,8 +5,8 @@ export class Item extends Component {
         const { item } = this.props
         return (
             <div className='inform-class'>
-                <p className=''>{item.field || null}</p>
-                <p className=''>{item.value || null}</p>
+                <p >Coach Name</p>
+                <p>{item.coach_name || null}</p>
             </div>
         )
     }
