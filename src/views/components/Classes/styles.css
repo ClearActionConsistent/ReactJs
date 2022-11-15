@@ -112,9 +112,9 @@
 }
 
 .lst_item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 50px 60px;
 }
 
 .icon-logo {
