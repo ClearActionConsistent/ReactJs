@@ -19,10 +19,6 @@ const ChartComponent = () => {
             'qty': 116
         },
         {
-            'name': 'Steps',
-            'qty': 20
-        },
-        {
             'name': 'Miles',
             'qty': 36
         }
