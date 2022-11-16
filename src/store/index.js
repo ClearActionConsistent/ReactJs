@@ -6,11 +6,13 @@ import thunk from 'redux-thunk';
 
 import countReducer from './../slices/countSlice';
 import popupReducer from './../slices/popupSlice'
+import authReducer from './../slices/authSlice';
 import classReducer from './../slices/classSlice';
 
 const reducer = combineReducers({
     count: countReducer,
     popup: popupReducer,
+    auth: authReducer,
     class: classReducer
 });
 
@@ -19,7 +21,7 @@ const reducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['count', 'popup'],
+    blacklist: ['count', 'popup', 'auth'],
     whitelist: []
 };
 

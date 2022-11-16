@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import FormInput from '../../components/FormInput';
 import './styles.css';
 
+import { useSelector, useDispatch } from 'react-redux';
+import {authActions} from '../../../slices/authSlice';
+
 const LoginPage = (props) => {
 
-    //set default states
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isHide, setIsHide] = useState(false);
@@ -21,9 +24,11 @@ const LoginPage = (props) => {
         setPassword(event.target.value);
     }
 
+    const dispatch = useDispatch();
+
     const LoginRequest = () => {
         if (email === 'tuananh@gmail.com' && password === '12345678') {
-            setIsLoggedIn(true);
+            dispatch(authActions.login({userName: 'tuananh@gmail.com'}));
             setError(false);
         }
         else {

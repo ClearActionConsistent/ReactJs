@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import AboutPage from '../views/pages/AboutPage';
 import LoginPage from '../views/pages/LoginPage';
@@ -10,38 +10,31 @@ import Subscribe from '../views/components/Subscribe';
 import ChallengeBoard from '../views/components/ChallengeBoard';
 import WorkoutHistory from '../views/components/WorkoutHistory';
 import ListPost from '../views/components/Posts';
+import { useSelector } from 'react-redux';
 import ShowDetail from '../views/components/ShowDetailClass';
 
-class Router extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoggedIn: false,
-    };
-  }
-
-  render() {
-    const loggedIn = this.state.isLoggedIn;
-    return (
-      <Routes>
-        <Route
-          exact
-          path='/'
-          element={<PrivateRoute isLoggedIn={loggedIn} />}
-        />
-        <Route path='/home' element={<HomePage />} />
-        <Route path='/login' element={<LoginPage />} />
-        <Route path='/register' element={<SignupPage />} />
-        <Route path='/about' element={<AboutPage />} />
-        <Route path='/classes' element={<Classes />} />
-        <Route path='/subscribe' element={<Subscribe />} />
-        <Route path='/workout/challenge' element={<ChallengeBoard />} />
-        <Route path='/workout' element={<WorkoutHistory />} />
-        <Route path='/community' element={<ListPost />} />
-        <Route path='/show' element={<ShowDetail />} />
-      </Routes>
-    );
-  }
+const Router = () => {
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  console.log(isLoggedIn);
+  return (
+    <Routes>
+      <Route
+        exact
+        path='/'
+        element={<PrivateRoute isLoggedIn={isLoggedIn} />}
+      />
+      <Route path='/home' element={<HomePage />} />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='/register' element={<SignupPage />} />
+      <Route path='/about' element={<AboutPage />} />
+      <Route path='/classes' element={<Classes />} />
+      <Route path='/subscribe' element={<Subscribe />} />
+      <Route path='/workout/challenge' element={<ChallengeBoard />} />
+      <Route path='/workout' element={<WorkoutHistory />} />
+      <Route path='/community' element={<ListPost />} />
+      <Route path='/show' element={<ShowDetail />} />
+    </Routes>
+  );
 }
 
 export default Router;
