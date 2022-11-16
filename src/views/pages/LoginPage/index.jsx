@@ -8,7 +8,7 @@ import {authActions} from '../../../slices/authSlice';
 
 const LoginPage = (props) => {
 
-    const isLoggedIn = useSelector((state) => state.isLoggedIn);
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
