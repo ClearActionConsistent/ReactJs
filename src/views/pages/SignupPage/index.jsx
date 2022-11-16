@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Navigate, Link } from 'react-router-dom';
+import { Navigate, Link  } from 'react-router-dom';
 import { increaseNumber, decreaseNumber, updateHistory, getPostsThunk } from '../../../slices/countSlice';
 import './styles.css';
 import { unwrapResult } from '@reduxjs/toolkit';
 import FormInput from '../../components/FormInput';
+import { authActions } from '../../../slices/authSlice';
 
 class SignupPage extends Component {
     constructor(props) {
@@ -22,9 +23,13 @@ class SignupPage extends Component {
         };
     }
 
+    UserName = '';
+    
     changeEmail(event) {
         const value = event.target.value;
         this.setState({ email: value });
+
+        this.UserName = value;
     }
 
     changePassword(event) {
@@ -33,18 +38,8 @@ class SignupPage extends Component {
     }
 
     handleSignup() {
-        if (this.state.email === 'tuananh@gmail.com' && this.state.password === '12345678') {
-            this.setState({ isShow: false });
-            this.setState({ isRegister: true });
-            this.setState({ error: false });
-        }
-        else {
-            this.setState({ error: true });
-            this.setState({ isShow: true });
-            this.setState({ isRegister: false });
-            this.setState({ email: '' });
-            this.setState({ password: '' });
-        }
+
+        this.props.onSignUp({userName: this.UserName});
     }
 
     handleClickShowPassword() {
@@ -88,37 +83,23 @@ class SignupPage extends Component {
                     >
                         Agree and Sign Up
                     </button>
-                    {this.state.isRegister && <Navigate to='/home' replace={true} />}
+                    {this.props.isLoggedIn && <Navigate to='/home' replace={true} />}
                 </div>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => ({
-    number: state.count.number,
-    history: state.count.history,
-});
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: state.auth.isLoggedIn
+    }
+}
 
-const mapDispatchToProps = (dispatch) => ({
-    increaseNumber: () => {
-        dispatch(increaseNumber());
-    },
-    decreaseNumber: () => {
-        dispatch(decreaseNumber());
-    },
-    updateHistory: (item) => {
-        dispatch(updateHistory(item));
-    },
-    getPostsThunkAPI: (page) => {
-        dispatch(getPostsThunk(page))
-            .then(unwrapResult)
-            .then((rs) => {
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    },
-});
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSignUp: (payload) => dispatch(authActions.signUp(payload))    
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);

@@ -10,18 +10,18 @@ const authSlice = createSlice({
     name: 'auth',
     initialState: initialAuthState,
     reducers: {
-        login(state, action) {
-
-            console.log('login action');
+        login(state, action){
             state.isLoggedIn = true;
             state.credentials.userName = action.payload.userName;
-            //somehow to call api and return login status
         },
         logout(state) {
             state.isLoggedIn = false;
             state.credentials.userName = '';
         },
-        signin(state, action) { }
+        signUp(state, action){
+            state.isLoggedIn = true;
+            state.credentials.userName = action.payload.userName;
+        }
     }
 });
 
