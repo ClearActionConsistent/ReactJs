@@ -41,11 +41,6 @@
 }
 
 .navbar_item .active {
-    font-size: 18px;
-    font-weight: 600;
-    line-height: 23px;
-    text-align: center;
-    color: #9b9b9b;
     border-bottom: 2px solid #f58220;
 }
 
