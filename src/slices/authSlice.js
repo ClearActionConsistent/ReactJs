@@ -11,6 +11,8 @@ const authSlice = createSlice({
     initialState: initialAuthState,
     reducers: {
         login(state, action){
+
+            console.log('login action');
             state.isLoggedIn = true;
             state.credentials.userName = action.payload.userName;
             //somehow to call api and return login status

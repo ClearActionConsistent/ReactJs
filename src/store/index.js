@@ -1,22 +1,16 @@
-import {configureStore} from '@reduxjs/toolkit';
-import authReducer from '../slices/authSlice';
-
-const store = configureStore({
-    reducer: authReducer
-});
-
-export default store;
-
-/*
 import { configureStore } from '@reduxjs/toolkit';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist'
 import thunk from 'redux-thunk';
 
+import countReducer from './../slices/countSlice';
+import popupReducer from './../slices/popupSlice'
 import authReducer from './../slices/authSlice';
 
 const reducer = combineReducers({
+    count: countReducer,
+    popup: popupReducer,
     auth: authReducer
 });
 
@@ -25,7 +19,7 @@ const reducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['auth'],
+    blacklist: ['count', 'popup', 'auth'],
     whitelist: []
 };
 
@@ -37,4 +31,3 @@ const store = configureStore({
 })
 
 export default store;
-*/

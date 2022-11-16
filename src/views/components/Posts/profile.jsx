@@ -19,7 +19,7 @@ class Profile extends Component {
 
                 </div>
                 <div className='date'>
-                    {value.session || null}
+                    {value.session || null}  {value.className || null}
                 </div>
             </>
         )

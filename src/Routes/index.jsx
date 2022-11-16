@@ -11,9 +11,11 @@ import ChallengeBoard from '../views/components/ChallengeBoard';
 import WorkoutHistory from '../views/components/WorkoutHistory';
 import ListPost from '../views/components/Posts';
 import { useSelector } from 'react-redux';
+import ShowDetail from '../views/components/ShowDetailClass';
 
 const Router = () => {
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+  console.log(isLoggedIn);
   return (
     <Routes>
       <Route
@@ -30,6 +32,7 @@ const Router = () => {
       <Route path='/workout/challenge' element={<ChallengeBoard />} />
       <Route path='/workout' element={<WorkoutHistory />} />
       <Route path='/community' element={<ListPost />} />
+      <Route path='/show' element={<ShowDetail />} />
     </Routes>
   );
 }
