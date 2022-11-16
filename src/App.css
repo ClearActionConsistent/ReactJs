@@ -71,3 +71,35 @@
     flex-direction: row;
     justify-content: space-between;
 }
+
+.icon-run {
+    width: 22px;
+    height: 22px;
+    content: url('../src/assets/icons/run.svg');
+}
+
+.icon-ride {
+    width: 22px;
+    height: 22px;
+    content: url('../src/assets/icons/ride.svg');
+}
+
+.icon-walk {
+    width: 22px;
+    height: 22px;
+    content: url('../src/assets/icons/walk.svg');
+}
+
+.icon-hike {
+    width: 22px;
+    height: 22px;
+    content: url('../src/assets/icons/hike.svg');
+
+}
+
+.icon-distance {
+    width: 22px;
+    height: 22px;
+    content: url('../src/assets/icons/distance.svg');
+
+}

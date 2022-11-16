@@ -5,11 +5,11 @@ const popupSlice = createSlice({
     initialState: {
         isOpen: false,
         detail: {
-            name: 'Unknown',
-            coach_name: 'Unknown',
-            date: 'Unknown',
-            time: 'Unknown',
-            duration: 'Unknown',
+            name: '',
+            coach_name: '',
+            date: '',
+            time: '',
+            duration: '',
             listDetail: []
         },
     },

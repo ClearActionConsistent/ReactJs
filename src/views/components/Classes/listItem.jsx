@@ -1,17 +1,15 @@
 
-import React, { Component } from 'react'
-import { v4 as uuidv4 } from 'uuid';
-import ItemCard from './itemcard'
-import { classes } from "../../../data"
+import React, { Component } from 'react';
+import ItemCard from './itemcard';
 
 class ListItem extends Component {
-
     render() {
+        const { type } = this.props;
         return (
-            <div className='lst_item'>
+            <div className='list_item'>
                 {
-                    classes.run.map((item) => {
-                        return <ItemCard value={item} key={uuidv4()} />
+                    type.map((item, index) => {
+                        return <ItemCard value={item} key={index} />
                     })
                 }
             </div>
@@ -19,4 +17,4 @@ class ListItem extends Component {
     }
 }
 
-export default ListItem
+export default ListItem;

@@ -6,10 +6,12 @@ import thunk from 'redux-thunk';
 
 import countReducer from './../slices/countSlice';
 import popupReducer from './../slices/popupSlice'
+import classReducer from './../slices/classSlice';
 
 const reducer = combineReducers({
     count: countReducer,
-    popup: popupReducer
+    popup: popupReducer,
+    class: classReducer
 });
 
 //blacklist: After render state will reset to init

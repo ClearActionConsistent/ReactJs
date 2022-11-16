@@ -10,7 +10,7 @@ class Profile extends Component {
                     <div className='profile_detail'>
                         <span className='name'>{value.name || null}</span>
                         <div className='profile_location'>
-                            <img className='run' alt="run_icon" />
+                            <img className='run-icon' alt="run_icon" />
                             <span className='location'>
                                 {value.time || null} . {value.location || null}
                             </span>

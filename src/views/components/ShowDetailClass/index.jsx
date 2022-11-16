@@ -50,23 +50,21 @@ export default function ShowDetail() {
         dispatch(setPopup({
             isOpen: !popup.isOpen,
             data: {
-                name: 'Unknown',
-                coach_name: 'Unknown',
-                date: 'Unknown',
-                time: 'Unknown',
-                duration: 'Unknown',
+                name: '',
+                coach_name: '',
+                date: '',
+                time: '',
+                duration: '',
                 listDetail: []
             }
         }))
     }
 
     useEffect(() => {
-        console.log("redux", popup?.detail.listDetail)
     }, [popup])
 
     return (
         <div>
-            {/* <Button onClick={handleOpen}>Open modal</Button> */}
             <Modal
                 open={popup.isOpen}
                 onClose={() => handleClose()}
@@ -75,8 +73,8 @@ export default function ShowDetail() {
             >
                 <Box sx={style}>
                     <Box sx={styleItem}>
-                        <Typography sx={{ fontWeight: "bold", fontSize: 30 }} id="modal-modal-title" variant="h6" component="h2">
-                            {popup?.detail.name || "Unknown"}
+                        <Typography sx={{ fontWeight: "bold", fontSize: 20 }} id="modal-modal-title" variant="h6" component="h2">
+                            {popup?.detail.name || ""}
                         </Typography>
                     </Box>
 
@@ -85,7 +83,7 @@ export default function ShowDetail() {
                             Coach Name
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.coach_name || "Unknown"}
+                            {popup?.detail.coach_name || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
@@ -93,7 +91,7 @@ export default function ShowDetail() {
                             Date of  Class
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.date || "Unknown"}
+                            {popup?.detail.date || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
@@ -101,7 +99,7 @@ export default function ShowDetail() {
                             Time of  Class
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.time || "Unknown"}
+                            {popup?.detail.time || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
@@ -109,7 +107,7 @@ export default function ShowDetail() {
                             Duration Of Class
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.duration || "Unknown"}
+                            {popup?.detail.duration || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
