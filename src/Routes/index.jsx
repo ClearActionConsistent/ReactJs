@@ -20,14 +20,6 @@ class Router extends Component {
     };
   }
 
-  componentDidMount() {
-    console.log('Router componentDidMount');
-  }
-
-  componentWillUnmount() {
-    console.log('Router componentWillUnmount');
-  }
-
   render() {
     const loggedIn = this.state.isLoggedIn;
     return (

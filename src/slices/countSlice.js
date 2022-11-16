@@ -7,8 +7,6 @@ export const getPostsThunk = createAsyncThunk(
     async (params, { dispatch, getState }) => {
         // dispatch(increaseNumber());
         const rs = await stravaApi.getbyPosts(params);
-        console.log('GetPostsThunk-Params', params)
-        console.log('GetPostsThunk', rs)
         return rs;
     }
 );
@@ -38,16 +36,13 @@ const countSlice = createSlice({
     },
     extraReducers: {
         [getPostsThunk.pending]: (state, action) => {
-            console.log('pending');
             state.number = 1;
         },
         [getPostsThunk.fulfilled]: (state, action) => {
-            console.log('fulfilled', action.payload);
             state.number = state.number + 2;
             state.history.push(action.payload);
         },
         [getPostsThunk.rejected]: (state) => {
-            console.log('rejected');
             state.number = -99999;
         }
     }

@@ -114,7 +114,6 @@ const mapDispatchToProps = (dispatch) => ({
         dispatch(getPostsThunk(page))
             .then(unwrapResult)
             .then((rs) => {
-                console.log('Promise', rs);
             })
             .catch((err) => {
                 console.error(err);
