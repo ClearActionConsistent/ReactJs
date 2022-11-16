@@ -1,27 +1,23 @@
 import React, { Component } from 'react';
 import { Navigate, NavLink } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { authActions } from '../../../slices/authSlice';
+
 import './style.css';
 
 class Header extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            isLogout: false,
-            isLoggedIn: false
-        }
         this.SignOut = this.SignOut.bind(this);
     }
 
-    componentWillUnmount() {
-        this.setState({ isLoggedIn: false });
-        this.SignOut();
-    }
-
     SignOut() {
-        this.setState({ isLogout: true });
+        const { logout } = this.props;
+        logout();
     }
 
     render() {
+        const { isLoggedIn } = this.props
         return (
             <div className='navbar'>
                 <div className='navbar_item'>
@@ -36,7 +32,7 @@ class Header extends Component {
                     </div>
                     <button className='signout' onClick={this.SignOut}>
                         Sign Out
-                        {this.state.isLogout && <Navigate to='/login' />}
+                        {!isLoggedIn && <Navigate to='/login' />}
                     </button>
                 </div>
             </div>
@@ -44,4 +40,15 @@ class Header extends Component {
     }
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+    isLoggedIn: state.auth.isLoggedIn,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    logout: () => {
+        dispatch(authActions.logout());
+    },
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
