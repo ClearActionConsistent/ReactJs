@@ -8,12 +8,12 @@ import './styles.css';
 
 class Classes extends Component {
     render() {
-        const { classes, fetchRunClassesList, type, active } = this.props;
+        const { classes, fetchRunClassesList, type, active, isOpenPopup } = this.props;
         return (
             <div className='container-classes'>
                 <Categories classes={classes} fetchRunClassesList={fetchRunClassesList} active={active} />
                 <ListItem type={type} />
-                <ShowDetail />
+                {isOpenPopup && <ShowDetail />}
             </div>
         )
     }
@@ -22,7 +22,8 @@ class Classes extends Component {
 const mapStateToProps = state => ({
     classes: state.class.classList,
     type: state.class.type,
-    active: state.class.active
+    active: state.class.active,
+    isOpenPopup: state.popup.isOpen
 })
 
 const mapDispatchToProps = (dispatch) => ({
