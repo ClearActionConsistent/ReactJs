@@ -29,7 +29,6 @@ const LoginPage = (props) => {
     const LoginRequest = () => {
         if (email === 'tuananh@gmail.com' && password === '12345678') {
             dispatch(authActions.login({userName: 'tuananh@gmail.com'}));
-            setError(false);
         }
         else {
             setError(true);

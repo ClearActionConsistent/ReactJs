@@ -27,8 +27,8 @@ class Header extends Component {
                 </div>
                 <div className='user'>
                     <div className='user_inform'>
-                        <p id='user_usernname'>Welcome, Uyen</p>
-                        <p className='cus_span_right'>otfatchall+olivetwo@***</p>
+                        <p id='user_usernname'>Welcome, </p>
+                        <p className='cus_span_right'>{this.props.userName}</p>
                     </div>
                     <button className='signout' onClick={this.SignOut}>
                         Sign Out
@@ -40,9 +40,12 @@ class Header extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
-    isLoggedIn: state.auth.isLoggedIn,
-});
+const mapStateToProps = (state) => {
+    return {
+        isLoggedIn: state.auth.isLoggedIn,
+        userName: state.auth.credentials.userName
+    }
+};
 
 const mapDispatchToProps = (dispatch) => ({
     logout: () => {
