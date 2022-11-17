@@ -21,8 +21,8 @@ const reducer = combineReducers({
 const persistConfig = {
     key: 'root',
     storage,
-    blacklist: ['count', 'popup', 'auth'],
-    whitelist: []
+    blacklist: ['count', 'popup'],
+    whitelist: ['auth']
 };
 
 const persistedReducer = persistReducer(persistConfig, reducer);
