@@ -5,6 +5,7 @@ import './styles.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { authActions } from '../../../slices/authSlice';
+import { postMethod } from '../../../services/auth/authService';
 
 const LoginPage = (props) => {
 
@@ -23,7 +24,7 @@ const LoginPage = (props) => {
     const onChangePassword = (event) => {
         setPassword(event.target.value);
     }
-
+0
     const dispatch = useDispatch();
 
     const LoginRequest = (e) => {
@@ -40,13 +41,18 @@ const LoginPage = (props) => {
         setIsHide(!isHide);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        await postMethod(email,password);
+    }
+
     return (
         <div className='container'>
             <div className='img-logo'>
                 <img style={{ height: '300px' }} src='https://www.fitnesstogether.gr/wp-content/uploads/2021/06/Kick-Boxing-1-1024x529.jpg' alt='GTT logo' />
             </div>
             <div className='form-login'>
-                <form className='login' onSubmit={LoginRequest}>
+                <form className='login' onSubmit={handleSubmit}>
                     <p>Already have an account?</p>
                     <FormInput
                         email={email}
