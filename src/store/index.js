@@ -17,7 +17,7 @@ const reducer = combineReducers({
 });
 
 //blacklist: After render state will reset to init
-//whitelist: After render state will not update your current state
+//whitelist: After render state will not update your current state update
 const persistConfig = {
     key: 'root',
     storage,
