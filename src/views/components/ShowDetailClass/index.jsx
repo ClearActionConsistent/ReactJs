@@ -3,9 +3,10 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { setPopup } from '../../../slices/popupSlice';
+import { useEffect, useState } from 'react';
+import { setPopup, showChallenge } from '../../../slices/popupSlice';
 import { v4 as uuidv4 } from 'uuid';
+import Button from '@mui/material/Button';
 
 const style = {
     position: 'absolute',
@@ -22,6 +23,12 @@ const style = {
 const styleItem = {
     display: "flex",
     justifyContent: " space-between",
+    gap: "2rem",
+};
+
+const styleBtnArea = {
+    display: "flex",
+    justifyContent: " flex-end",
     gap: "2rem",
 };
 
@@ -44,8 +51,14 @@ const styleDetail = {
 }
 
 export default function ShowDetail() {
+    const [btn, setBtn] = useState({
+        color: "primary",
+        content: "Start"
+    })
+
     const popup = useSelector((state) => state.popup);
     const dispatch = useDispatch();
+
     const handleClose = () => {
         dispatch(setPopup({
             isOpen: !popup.isOpen,
@@ -59,6 +72,31 @@ export default function ShowDetail() {
             }
         }))
     }
+
+    const challengePromise = new Promise((resolve, reject) => {
+        resolve();
+        reject();
+    })
+
+    const handleAddChallenge = () => {
+        challengePromise
+            .then(() => {
+                setTimeout(() => {
+                    setBtn({
+                        ...btn, color: "error",
+                        content: "End"
+                    })
+                }, 500)
+            })
+    }
+
+    const handleOpenAddChallenge = () => {
+        dispatch(showChallenge({
+            isOpen: false,
+            isAddChallenge: !popup.isAddChallenge
+        }))
+    }
+
 
     useEffect(() => {
     }, [popup])
@@ -124,7 +162,9 @@ export default function ShowDetail() {
                             }
                         </Box>
                     </Box>
-
+                    <Box sx={styleBtnArea}>
+                        <Button onClick={() => btn.content == "Start" ? handleAddChallenge() : handleOpenAddChallenge()} sx={{ mt: 2 }} variant="contained" color={btn.color}>{btn.content || null}</Button>
+                    </Box>
                 </Box>
             </Modal>
         </div>

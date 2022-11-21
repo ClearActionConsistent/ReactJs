@@ -3,16 +3,37 @@ import React, { useState, useEffect } from 'react'
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { Button, TextField } from '@mui/material';
+import Typography from '@mui/material/Typography';
+import Modal from '@mui/material/Modal';
+import { useSelector, useDispatch } from 'react-redux';
+import { showChallenge } from '../../../slices/popupSlice';
+import { v4 as uuidv4 } from 'uuid';
 
 import './style.css'
-import Header from './../Header/index';
 
 const styleItem = {
     display: 'flex',
     justifyContent: 'flex-end',
 };
 
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 500,
+    bgcolor: 'background.paper',
+    boxShadow: 24,
+    p: 2,
+    borderRadius: "10px",
+    zindex: "100",
+    outline: "none"
+};
+
 const AddChallenge = () => {
+    const popup = useSelector((state) => state.popup);
+    const dispatch = useDispatch();
+
     const [value, setValue] = useState({
         calories: '',
         splatPoints: '',
@@ -22,10 +43,18 @@ const AddChallenge = () => {
         steps: '',
     });
 
-    const handleAddChallenge = (event) => {
-        event.preventDefault();
-        alert('Your metric' + '\n' + JSON.stringify(value));
-    }
+    useEffect(() => {
+        return () => {
+            setValue({
+                calories: '',
+                splatPoints: '',
+                avg: '',
+                max: '',
+                miles: '',
+                steps: '',
+            })
+        }
+    }, [])
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -35,13 +64,36 @@ const AddChallenge = () => {
         }))
     }
 
+    const handleAddChallenge = (event) => {
+        event.preventDefault();
+        alert(`Your metric for ClassID: ${uuidv4()}` + '\n' + JSON.stringify(value));
+        handleCloseChallenge();
+    }
+
+    const handleCloseChallenge = () => {
+        dispatch(showChallenge({
+            isAddChallenge: false
+        }))
+    }
+
     return (
         <>
-            <div className='challenge_body'>
-                <div className='challenge_container'>
-                    <Box sx={{ width: '50%', padding: "10px" }}>
+            <Modal
+                open={popup.isAddChallenge}
+                onClose={handleCloseChallenge}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                sx={{ width: '100%', padding: "10px" }}
+            >
+                <Box sx={style}>
+                    <Box sx={{ width: '100%', padding: "10px" }}>
                         <form onSubmit={handleAddChallenge}>
                             <Grid container spacing={2} >
+                                <Grid item xs={12}>
+                                    <Typography sx={{ fontWeight: "bold", fontSize: 25 }} id="modal-modal-title" variant="h6" component="h2">
+                                        Add your metric
+                                    </Typography>
+                                </Grid>
                                 <Grid item xs={6}>
                                     <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.calories} fullWidth label='Calories' variant='outlined' name='calories' />
                                 </Grid>
@@ -61,13 +113,13 @@ const AddChallenge = () => {
                                     <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.steps} fullWidth label='Steps' variant='outlined' name='steps' />
                                 </Grid>
                                 <Grid sx={styleItem} item xs={12}>
-                                    <Button type='submit' variant='outlined'> Add</Button>
+                                    <Button type='submit' variant='outlined'> Submit</Button>
                                 </Grid>
                             </Grid>
                         </form>
                     </Box>
-                </div>
-            </div>
+                </Box>
+            </Modal>
         </>
     )
 }
