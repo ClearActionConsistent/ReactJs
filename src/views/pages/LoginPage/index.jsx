@@ -24,7 +24,7 @@ const LoginPage = (props) => {
     const onChangePassword = (event) => {
         setPassword(event.target.value);
     }
-    0
+
     const dispatch = useDispatch();
 
     const LoginRequest = (e) => {
