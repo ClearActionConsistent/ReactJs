@@ -9,10 +9,18 @@ const axiosClient = axios.create({
   // paramsSerializer: (params) => queryString.stringify(params),
 });
 
-axiosClient.interceptors.request.use(async (config) => {
-  // Handle token here ...
-  return config;
-});
+axiosClient.interceptors.request.use(
+  async (config) => {
+    const token = '# Your token goes over here';
+    if (token) {
+      config.headers.accessToken = token;
+    }
+    return config;
+  },
+  function (error) {
+    return Promise.reject(error);
+  }
+);
 
 axiosClient.interceptors.response.use(
   (response) => {
@@ -23,7 +31,7 @@ axiosClient.interceptors.response.use(
   },
   (error) => {
     // Handle errors
-    throw error;
+    return Promise.reject(error);
   }
 );
 export default axiosClient;

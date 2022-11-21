@@ -5,6 +5,7 @@ import './styles.css';
 
 import { useSelector, useDispatch } from 'react-redux';
 import {authActions} from '../../../slices/authSlice';
+import axios from 'axios';
 
 const LoginPage = (props) => {
 
@@ -38,6 +39,30 @@ const LoginPage = (props) => {
         }
     }
 
+    //fake API 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('submit form');
+        axios.post('https://jsonplaceholder.typicode.com/post', {
+            email : email,
+            password: password
+        })
+        //alert when return response data success
+        .then((response) => {
+            console.log(response.data);
+            alert('Login Success')
+        })
+        //alert when return error
+        .catch((err) => {
+            console.log(err)
+            console.log(err.response)
+            alert('Login failed')
+        })
+
+        //login success without check API
+        dispatch(authActions.login({userName: 'tuananh@gmail.com'}));
+    }
+
     const handleClickShowPassword = () => {
         setIsHide(!isHide);
     };
@@ -60,7 +85,7 @@ const LoginPage = (props) => {
                         onClick={handleClickShowPassword}
                         isRegister={false}
                     />
-                    <button className='btn btn-login' onClick={LoginRequest}>Log In</button>
+                    <button className='btn btn-login' onClick={handleSubmit}>Log In</button>
                     {isLoggedIn && <Navigate to='/home' />}
                     <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
                 </div>
