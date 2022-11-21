@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { showChallenge } from '../../../slices/popupSlice';
-import { v4 as uuidv4 } from 'uuid';
+import { useNavigate } from "react-router-dom";
 
 import './style.css'
 
@@ -33,6 +33,8 @@ const style = {
 const AddChallenge = () => {
     const popup = useSelector((state) => state.popup);
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
 
     const [value, setValue] = useState({
         calories: '',
@@ -60,14 +62,14 @@ const AddChallenge = () => {
         const { name, value } = event.target;
         setValue((prev) => ({
             ...prev,
-            [name]: value.replace(/\D/g, '')
+            [name]: value
         }))
     }
 
     const handleAddChallenge = (event) => {
         event.preventDefault();
-        alert(`Your metric for ClassID: ${uuidv4()}` + '\n' + JSON.stringify(value));
         handleCloseChallenge();
+        navigate("/workout");
     }
 
     const handleCloseChallenge = () => {
@@ -95,22 +97,22 @@ const AddChallenge = () => {
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.calories} fullWidth label='Calories' variant='outlined' name='calories' />
+                                    <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.calories} fullWidth label='Calories' variant='outlined' name='calories' />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.splatPoints} fullWidth label='Splat Points' variant='outlined' name='splatPoints' />
+                                    <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.splatPoints} fullWidth label='Splat Points' variant='outlined' name='splatPoints' />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.avg} fullWidth label='AVG.HR' variant='outlined' name='avg' />
+                                    <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.avg} fullWidth label='AVG.HR' variant='outlined' name='avg' />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.max} fullWidth label='MAX HR' variant='outlined' name='max' />
+                                    <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.max} fullWidth label='MAX HR' variant='outlined' name='max' />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.miles} fullWidth label='Miles' variant='outlined' name='miles' />
+                                    <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.miles} fullWidth label='Miles' variant='outlined' name='miles' />
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.steps} fullWidth label='Steps' variant='outlined' name='steps' />
+                                    <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.steps} fullWidth label='Steps' variant='outlined' name='steps' />
                                 </Grid>
                                 <Grid sx={styleItem} item xs={12}>
                                     <Button type='submit' variant='outlined'> Submit</Button>

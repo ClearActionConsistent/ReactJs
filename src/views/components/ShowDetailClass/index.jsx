@@ -68,26 +68,18 @@ export default function ShowDetail() {
                 date: '',
                 time: '',
                 duration: '',
+                classId: '',
                 listDetail: []
             }
         }))
     }
 
-    const challengePromise = new Promise((resolve, reject) => {
-        resolve();
-        reject();
-    })
 
     const handleAddChallenge = () => {
-        challengePromise
-            .then(() => {
-                setTimeout(() => {
-                    setBtn({
-                        ...btn, color: "error",
-                        content: "End"
-                    })
-                }, 500)
-            })
+        setBtn({
+            ...btn, color: "error",
+            content: "End"
+        })
     }
 
     const handleOpenAddChallenge = () => {

@@ -10,9 +10,11 @@ const popupSlice = createSlice({
             date: '',
             time: '',
             duration: '',
+            classId: '',
             listDetail: []
         },
-        isAddChallenge: false
+        isAddChallenge: false,
+
     },
     reducers: {
         setPopup: (state, action) => {

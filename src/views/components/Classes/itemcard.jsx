@@ -13,6 +13,7 @@ export class ItemCard extends Component {
                 date: this.props.value.date,
                 time: this.props.value.time,
                 duration: this.props.value.duration,
+                classId: this.props.value.classId,
                 listDetail: this.props.value.detail
             },
         };
@@ -29,6 +30,7 @@ export class ItemCard extends Component {
                 date: value.date,
                 time: value.time,
                 duration: value.duration,
+                classId: value.classId,
                 listDetail: value.detail
             }
         });
