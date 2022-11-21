@@ -4,16 +4,16 @@ import FormInput from '../../components/FormInput';
 import './styles.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import {authActions} from '../../../slices/authSlice';
+import { authActions } from '../../../slices/authSlice';
 
 const LoginPage = (props) => {
 
     const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const isError = useSelector(state => state.auth.error);
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isHide, setIsHide] = useState(false);
-    const [error, setError] = useState(false);
 
     //events
     const onChangeEmail = (event) => {
@@ -28,13 +28,10 @@ const LoginPage = (props) => {
 
     const LoginRequest = () => {
         if (email === 'tuananh@gmail.com' && password === '12345678') {
-            dispatch(authActions.login({userName: 'tuananh@gmail.com'}));
+            dispatch(authActions.login({ userName: email }));
         }
         else {
-            setError(true);
-            setIsLoggedIn(false);
-            setEmail('');
-            setPassword('');
+            dispatch(authActions.loginFail());
         }
     }
 
@@ -48,22 +45,22 @@ const LoginPage = (props) => {
                 <img style={{ height: '300px' }} src='https://www.fitnesstogether.gr/wp-content/uploads/2021/06/Kick-Boxing-1-1024x529.jpg' alt='GTT logo' />
             </div>
             <div className='form-login'>
-                <div className='login'>
+                <form className='login' onSubmit={LoginRequest}>
                     <p>Already have an account?</p>
                     <FormInput
                         email={email}
                         password={password}
                         changeEmail={onChangeEmail}
                         changePassword={onChangePassword}
-                        error={error}
+                        error={isError}
                         isHide={isHide}
                         onClick={handleClickShowPassword}
                         isRegister={false}
                     />
-                    <button className='btn btn-login' onClick={LoginRequest}>Log In</button>
-                    {isLoggedIn && <Navigate to='/home' />}
+                    <button type='submit' className='btn btn-login'>Log In</button>
+                    {isLoggedIn && <Navigate to='/home' replace />}
                     <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
-                </div>
+                </form>
                 <div className='login-with'>
                     <button className='btn login-with__facebook'>
                         <div className='icon-facebook'><i className='fab fa-facebook'></i></div>

@@ -7,6 +7,7 @@ const FormInput = ({ email, password, changeEmail, changePassword, onClick, isHi
     return (
         <div>
             <OutlinedInput
+                required
                 className='input-user'
                 placeholder='Email'
                 type='text'
@@ -15,6 +16,7 @@ const FormInput = ({ email, password, changeEmail, changePassword, onClick, isHi
             />
             {error ? <p className='error'>Username is correct</p> : null}
             <OutlinedInput
+                required
                 placeholder='Password'
                 className='input-user'
                 type={isHide ? 'text' : 'password'}
