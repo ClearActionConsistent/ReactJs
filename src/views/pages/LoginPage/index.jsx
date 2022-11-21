@@ -57,7 +57,7 @@ const LoginPage = (props) => {
                         onClick={handleClickShowPassword}
                         isRegister={false}
                     />
-                    <button className='btn btn-login'>Log In</button>
+                    <button type='submit' className='btn btn-login'>Log In</button>
                     {isLoggedIn && <Navigate to='/home' replace />}
                     <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
                 </form>
