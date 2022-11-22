@@ -43,9 +43,9 @@ const LoginPage = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!isLoggedIn && email === 'tuananh@gmail.com' && password === '12345678') {
-            await login(email, password)
-            dispatch(authActions.login({ userName: email }))
+        if ( email === 'tuananh@gmail.com' && password === '12345678') {
+            const isLogin = await login(email, password) 
+            isLogin ?  dispatch(authActions.login({ userName: email })) : dispatch(authActions.loginFail())
         }
         else {
             dispatch(authActions.loginFail());

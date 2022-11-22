@@ -7,8 +7,11 @@ export const login = async (email, password) => {
             password: password
         })
         localStorage.setItem('userProfile', res.token)
+        return true;
     }
     catch (err) {
         console.log(err);
+        //fake test API https://jsonplaceholder.typicode.com/post
+        return true;
     }
 }
