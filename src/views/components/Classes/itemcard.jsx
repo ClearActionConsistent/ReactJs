@@ -20,16 +20,15 @@ export class ItemCard extends Component {
     }
 
     handlePopup() {
-        const { setDataPopup, setStatusPopup, } = this.props;
-
+        const { setDataPopup, setStatusPopup, value } = this.props;
         setDataPopup({
-            name: this.props.value.name,
-            coach_name: this.props.value.coach_name,
-            date: this.props.value.date,
-            time: this.props.value.time,
-            duration: this.props.value.duration,
-            classId: this.props.value.classId,
-            listDetail: this.props.value.detail
+            name: value.name,
+            coach_name: value.coach_name,
+            date: value.date,
+            time: value.time,
+            duration: value.duration,
+            classId: value.classId,
+            listDetail: value.detail
         });
 
         setStatusPopup({
