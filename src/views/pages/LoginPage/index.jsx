@@ -27,16 +27,6 @@ const LoginPage = (props) => {
 
     const dispatch = useDispatch();
 
-    // const LoginRequest = (e) => {
-    //     e.preventDefault();
-    //     if (email === 'tuananh@gmail.com' && password === '12345678') {
-    //         dispatch(authActions.login({ userName: email }));
-    //     }
-    //     else {
-    //         dispatch(authActions.loginFail());
-    //     }
-    // }
-
     const handleClickShowPassword = () => {
         setIsHide(!isHide);
     };
