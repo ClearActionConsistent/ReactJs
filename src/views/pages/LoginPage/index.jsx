@@ -4,7 +4,7 @@ import FormInput from '../../components/FormInput';
 import './styles.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { postMethod } from '../../../services/auth/authService';
+import { login} from '../../../services/auth/authService';
 import { authActions } from '../../../slices/authSlice';
 
 const LoginPage = (props) => {
@@ -24,18 +24,18 @@ const LoginPage = (props) => {
     const onChangePassword = (event) => {
         setPassword(event.target.value);
     }
-    0
+
     const dispatch = useDispatch();
 
-    const LoginRequest = (e) => {
-        e.preventDefault();
-        if (email === 'tuananh@gmail.com' && password === '12345678') {
-            dispatch(authActions.login({ userName: email }));
-        }
-        else {
-            dispatch(authActions.loginFail());
-        }
-    }
+    // const LoginRequest = (e) => {
+    //     e.preventDefault();
+    //     if (email === 'tuananh@gmail.com' && password === '12345678') {
+    //         dispatch(authActions.login({ userName: email }));
+    //     }
+    //     else {
+    //         dispatch(authActions.loginFail());
+    //     }
+    // }
 
     const handleClickShowPassword = () => {
         setIsHide(!isHide);
@@ -43,9 +43,9 @@ const LoginPage = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (email === 'tuananh@gmail.com' && password === '12345678') {
-            dispatch(authActions.login({ userName: email }));
-            await postMethod(email,password);
+        if (!isLoggedIn && email === 'tuananh@gmail.com' && password === '12345678') {
+            await login(email, password)
+            dispatch(authActions.login({ userName: email }))
         }
         else {
             dispatch(authActions.loginFail());

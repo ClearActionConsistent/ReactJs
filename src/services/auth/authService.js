@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const postMethod = async (email, password) => {
+export const login = async (email, password) => {
     try {
         const res = await axios.post('https://jsonplaceholder.typicode.com/post', {
             email: email,
