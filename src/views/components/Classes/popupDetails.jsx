@@ -3,8 +3,8 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
-import { setPopup, showChallenge } from '../../../slices/popupSlice';
+import { useState } from 'react';
+import { setStatusPopup, setDataPopup } from '../../../slices/popupSlice';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '@mui/material/Button';
 
@@ -60,20 +60,14 @@ export default function ShowDetail() {
     const dispatch = useDispatch();
 
     const handleClose = () => {
-        dispatch(setPopup({
-            isOpen: !popup.isOpen,
-            data: {
-                name: '',
-                coach_name: '',
-                date: '',
-                time: '',
-                duration: '',
-                classId: '',
-                listDetail: []
-            }
-        }))
-    }
+        dispatch(setStatusPopup({
+            isOpenDetailClass: false,
+        }));
 
+        dispatch(setDataPopup({
+            data: null
+        }));
+    }
 
     const handleAddChallenge = () => {
         setBtn({
@@ -83,20 +77,17 @@ export default function ShowDetail() {
     }
 
     const handleOpenAddChallenge = () => {
-        dispatch(showChallenge({
-            isOpen: false,
-            isAddChallenge: !popup.isAddChallenge
-        }))
+        const newState = {
+            isOpenDetailClass: false,
+            isOpenAddChallenge: true
+        }
+        dispatch(setStatusPopup(newState));
     }
-
-
-    useEffect(() => {
-    }, [popup])
 
     return (
         <div>
             <Modal
-                open={popup.isOpen}
+                open={popup.isOpenDetailClass}
                 onClose={() => handleClose()}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
@@ -104,7 +95,7 @@ export default function ShowDetail() {
                 <Box sx={style}>
                     <Box sx={styleItem}>
                         <Typography sx={{ fontWeight: "bold", fontSize: 20 }} id="modal-modal-title" variant="h6" component="h2">
-                            {popup?.detail.name || ""}
+                            {(popup.data && popup.isOpenDetailClass == true) && popup?.data.name || ""}
                         </Typography>
                     </Box>
 
@@ -113,7 +104,7 @@ export default function ShowDetail() {
                             Coach Name
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.coach_name || ""}
+                            {(popup.data && popup.isOpenDetailClass == true) && popup?.data.coach_name || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
@@ -121,7 +112,7 @@ export default function ShowDetail() {
                             Date of  Class
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.date || ""}
+                            {(popup.data && popup.isOpenDetailClass == true) && popup?.data.date || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
@@ -129,7 +120,7 @@ export default function ShowDetail() {
                             Time of  Class
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.time || ""}
+                            {(popup.data && popup.isOpenDetailClass == true) && popup?.data.time || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
@@ -137,7 +128,7 @@ export default function ShowDetail() {
                             Duration Of Class
                         </Typography>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                            {popup?.detail.duration || ""}
+                            {(popup.data && popup.isOpenDetailClass == true) && popup?.data.duration || ""}
                         </Typography>
                     </Box>
                     <Box sx={styleItem}>
@@ -146,7 +137,7 @@ export default function ShowDetail() {
                         </Typography>
                         <Box sx={detail}>
                             {
-                                popup?.detail.listDetail.length > 0 && popup?.detail.listDetail.map((item) => {
+                                (popup.data && popup.isOpenDetailClass == true) && popup?.data.listDetail.map((item) => {
                                     return <Typography key={uuidv4()} id="modal-modal-description" sx={styleDetail} >
                                         - {item}
                                     </Typography>
