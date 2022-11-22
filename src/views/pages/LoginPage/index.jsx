@@ -4,7 +4,7 @@ import FormInput from '../../components/FormInput';
 import './styles.css';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { postMethod } from '../../../services/auth/authService';
+import { login} from '../../../services/auth/authService';
 import { authActions } from '../../../slices/authSlice';
 
 const LoginPage = (props) => {
@@ -27,23 +27,19 @@ const LoginPage = (props) => {
 
     const dispatch = useDispatch();
 
-    const LoginRequest = (e) => {
-        e.preventDefault();
-        if (email === 'tuananh@gmail.com' && password === '12345678') {
-            dispatch(authActions.login({ userName: email }));
-        }
-        else {
-            dispatch(authActions.loginFail());
-        }
-    }
-
     const handleClickShowPassword = () => {
         setIsHide(!isHide);
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await postMethod(email,password);
+        if ( email === 'tuananh@gmail.com' && password === '12345678') {
+            const isLogin = await login(email, password) 
+            isLogin ?  dispatch(authActions.login({ userName: email })) : dispatch(authActions.loginFail())
+        }
+        else {
+            dispatch(authActions.loginFail());
+        }
     }
 
     return (
