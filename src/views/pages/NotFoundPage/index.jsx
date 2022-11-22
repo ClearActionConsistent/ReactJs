@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './404Style.css'
 
 const NotFoundPage = () => {
@@ -16,7 +17,7 @@ const NotFoundPage = () => {
                                     Look like you're lost
                                 </h3>
                                 <p>The page you are looking for not avaible!</p>
-                                <a href="/" class="link_404">Go back to Home</a>
+                                <Link to={'/'} class="link_404">Go back to Home</Link>
                             </div>
                         </div>
                     </div>
