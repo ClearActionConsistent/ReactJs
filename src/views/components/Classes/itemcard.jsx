@@ -17,7 +17,6 @@ export class ItemCard extends Component {
                 listDetail: this.props.value.detail
             },
         };
-
     }
 
     handlePopup() {
