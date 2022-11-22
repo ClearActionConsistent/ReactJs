@@ -6,7 +6,7 @@ import { Button, TextField } from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 import { useSelector, useDispatch } from 'react-redux';
-import { showChallenge } from '../../../slices/popupSlice';
+import { setStatusPopup, setDataPopup } from '../../../slices/popupSlice';
 import { useNavigate } from "react-router-dom";
 
 import './style.css'
@@ -69,19 +69,21 @@ const AddChallenge = () => {
     const handleAddChallenge = (event) => {
         event.preventDefault();
         handleCloseChallenge();
+        dispatch(setDataPopup(null));
         navigate("/workout");
     }
 
     const handleCloseChallenge = () => {
-        dispatch(showChallenge({
-            isAddChallenge: false
-        }))
+        dispatch(setStatusPopup({
+            isOpenAddChallenge: false
+        }));
+        dispatch(setDataPopup(null));
     }
 
     return (
         <>
             <Modal
-                open={popup.isAddChallenge}
+                open={popup.isOpenAddChallenge}
                 onClose={handleCloseChallenge}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"

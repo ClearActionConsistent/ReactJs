@@ -3,34 +3,24 @@ import { createSlice } from '@reduxjs/toolkit';
 const popupSlice = createSlice({
     name: 'popup',
     initialState: {
-        isOpen: false,
-        detail: {
-            name: '',
-            coach_name: '',
-            date: '',
-            time: '',
-            duration: '',
-            classId: '',
-            listDetail: []
-        },
-        isAddChallenge: false,
-
+        data: null,
+        isOpenDetailClass: false,
+        isOpenAddChallenge: false
     },
     reducers: {
-        setPopup: (state, action) => {
-            state.isOpen = action.payload.isOpen;
-            state.detail = action.payload.data
+        setStatusPopup: (state, action) => {
+            state.isOpenDetailClass = action.payload.isOpenDetailClass;
+            state.isOpenAddChallenge = action.payload.isOpenAddChallenge;
         },
-        showChallenge: (state, action) => {
-            state.isAddChallenge = action.payload.isAddChallenge;
-            state.isOpen = action.payload.isOpen
+        setDataPopup: (state, action) => {
+            state.data = action.payload;
         }
     }
 })
 
 export const {
-    setPopup,
-    showChallenge
+    setStatusPopup,
+    setDataPopup
 } = popupSlice.actions
 
 export default popupSlice.reducer

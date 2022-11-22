@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { setPopup } from '../../../slices/popupSlice';
+import { setDataPopup, setStatusPopup } from '../../../slices/popupSlice';
 
 export class ItemCard extends Component {
     constructor(props) {
@@ -20,19 +20,21 @@ export class ItemCard extends Component {
     }
 
     handlePopup() {
-        const { setPopup, popup, value } = this.props;
-        setPopup({
-            isOpen: !popup.isOpen,
-            data: {
-                name: value.name,
-                coach_name: value.coach_name,
-                date: value.date,
-                time: value.time,
-                duration: value.duration,
-                classId: value.classId,
-                listDetail: value.detail
-            }
+        const { setDataPopup, setStatusPopup, value } = this.props;
+        setDataPopup({
+            name: value.name,
+            coach_name: value.coach_name,
+            date: value.date,
+            time: value.time,
+            duration: value.duration,
+            classId: value.classId,
+            listDetail: value.detail
         });
+
+        setStatusPopup({
+            isOpenDetailClass: true,
+            isOpenAddChallenge: false
+        })
     }
 
     render() {
@@ -71,8 +73,11 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    setPopup: (payload) => {
-        dispatch(setPopup(payload));
+    setStatusPopup: (payload) => {
+        dispatch(setStatusPopup(payload));
+    },
+    setDataPopup: (payload) => {
+        dispatch(setDataPopup(payload));
     },
 });
 
