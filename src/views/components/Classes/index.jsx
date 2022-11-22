@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ShowDetail from '../ShowDetailClass';
+import ShowDetail from './popupDetails';
 import { connect } from 'react-redux';
 import { fetchRunClassesList } from '../../../slices/classSlice';
 import Categories from './categories';

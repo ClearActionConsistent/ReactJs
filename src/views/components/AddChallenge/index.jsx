@@ -97,7 +97,7 @@ const AddChallenge = () => {
                                     </Typography>
                                 </Grid>
                                 <Grid item xs={6}>
-                                    <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.calories} fullWidth label='Calories' variant='outlined' name='calories' />
+                                    <TextField autoFocus={true} type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.calories} fullWidth label='Calories' variant='outlined' name='calories' />
                                 </Grid>
                                 <Grid item xs={6}>
                                     <TextField type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.splatPoints} fullWidth label='Splat Points' variant='outlined' name='splatPoints' />
