@@ -27,6 +27,7 @@ const Router = () => {
       <Route path='/workout/challenge' element={<ChallengeBoard />} />
       <Route path='/workout' element={<WorkoutHistory />} />
       <Route path='/community' element={<ListPost />} />
+      <Route path='/not-found-page' element={<NotFoundPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );
