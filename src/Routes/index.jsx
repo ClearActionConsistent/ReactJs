@@ -12,6 +12,7 @@ import WorkoutHistory from '../views/components/WorkoutHistory';
 import ListPost from '../views/components/Posts';
 import { useSelector } from 'react-redux';
 import NotFoundPage from '../views/pages/NotFoundPage';
+import AddChallenge from './../views/components/AddChallenge/index';
 
 const Router = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -31,6 +32,7 @@ const Router = () => {
       <Route path='/workout/challenge' element={<ChallengeBoard />} />
       <Route path='/workout' element={<WorkoutHistory />} />
       <Route path='/community' element={<ListPost />} />
+      <Route path='/addChallenge' element={<AddChallenge />} />
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );

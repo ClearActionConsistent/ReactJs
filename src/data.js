@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from 'uuid';
+
 export const workout_summary = [
     {
         date: "THURSDAY, SEPTEMBER 1ST,2022",
@@ -111,7 +113,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Chạy bộ nhanh", "chạy bộ 69p"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'CHẠY BỘ QUÃNG TRUNG',
@@ -122,7 +125,8 @@ export const classes = {
             duration: '30 Minutes',
             detail: [
                 "Chạy bộ nhanh", "chạy bộ 35p"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'CHẠY BỘ NGẮN',
@@ -133,7 +137,8 @@ export const classes = {
             duration: '15 Minutes',
             detail: [
                 "Chạy bộ 30p", "chạy bộ full"
-            ]
+            ],
+            classId: uuidv4()
         }
     ],
     ride: [
@@ -146,7 +151,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Chèo thuyền lướt"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'CHÈO THUYỀN QUÃNG TRUNG',
@@ -157,7 +163,8 @@ export const classes = {
             duration: '30 Minutes',
             detail: [
                 "Chèo thuyền nhanh"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'CHÈO THUYỀN QUÃNG DÀI',
@@ -168,7 +175,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Chèo thuyền vượt"
-            ]
+            ],
+            classId: uuidv4()
         }
     ],
     walk: [
@@ -181,7 +189,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Đi bộ hoạt náo"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'ĐI BỘ QUÃNG TRUNG',
@@ -192,7 +201,8 @@ export const classes = {
             duration: '30 Minutes',
             detail: [
                 "Đi bộ nhanh"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'ĐI BỘ QUÃNG DÀI',
@@ -203,7 +213,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Đi bộ 50p"
-            ]
+            ],
+            classId: uuidv4()
         }
     ],
     hike: [
@@ -216,7 +227,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Leo Núi 50"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'ĐI BỘ ĐƯỜNG QUÃNG TRUNG',
@@ -227,7 +239,8 @@ export const classes = {
             duration: '30 Minutes',
             detail: [
                 "Leo Núi 40"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'ĐI BỘ ĐƯỜNG QUÃNG DÀI',
@@ -238,7 +251,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Leo Núi 30"
-            ]
+            ],
+            classId: uuidv4()
         }
     ],
     distance: [
@@ -251,7 +265,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Leo Núi 20"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'CHẠY PHỐI HỢP QUÃNG TRUNG',
@@ -262,7 +277,8 @@ export const classes = {
             duration: '30 Minutes',
             detail: [
                 "Leo Núi 10"
-            ]
+            ],
+            classId: uuidv4()
         },
         {
             name: 'CHẠY PHỐI HỢP QUÃNG DÀI',
@@ -273,7 +289,8 @@ export const classes = {
             duration: '60 Minutes',
             detail: [
                 "Leo Núi 5"
-            ]
+            ],
+            classId: uuidv4()
         }
     ],
 }
