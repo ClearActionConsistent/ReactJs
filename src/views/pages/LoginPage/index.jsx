@@ -43,7 +43,13 @@ const LoginPage = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await postMethod(email,password);
+        if (email === 'tuananh@gmail.com' && password === '12345678') {
+            dispatch(authActions.login({ userName: email }));
+            await postMethod(email,password);
+        }
+        else {
+            dispatch(authActions.loginFail());
+        }
     }
 
     return (
