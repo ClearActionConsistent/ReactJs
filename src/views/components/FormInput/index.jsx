@@ -13,6 +13,7 @@ const FormInput = ({ email, password, changeEmail, changePassword, onClick, isHi
                 type='text'
                 value={email}
                 onChange={changeEmail}
+                autoFocus={true}
             />
             {error ? <p className='error'>Username is correct</p> : null}
             <OutlinedInput
