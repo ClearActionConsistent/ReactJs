@@ -6,7 +6,7 @@ export const workout_summary = [
         time: "7:06 PM",
         sit: "SIT1",
         title: "MATT",
-        type: "VIRTUAL LIVE 50",
+        type: "GTT CLASS LIVE 50",
         metric: {
             heart: 1,
             otf: 2,
@@ -17,7 +17,7 @@ export const workout_summary = [
         time: "10:09 PM",
         sit: "SIT7",
         title: "MATT",
-        type: "VIRTUAL LIVE 60",
+        type: "GTT CLASS LIVE 60",
         metric: {
             heart: 10,
             otf: 4,
@@ -28,7 +28,7 @@ export const workout_summary = [
         time: "10:09 PM",
         sit: "SIT9",
         title: "MATT",
-        type: "VIRTUAL LIVE 90",
+        type: "GTT CLASS LIVE 90",
         metric: {
             heart: 90,
             otf: 100,
@@ -39,7 +39,7 @@ export const workout_summary = [
         time: "08:09 PM",
         sit: "SIT1",
         title: "MATT",
-        type: "VIRTUAL LIVE 30",
+        type: "GTT CLASS LIVE 30",
         metric: {
             heart: 100,
             otf: 20,
@@ -50,7 +50,7 @@ export const workout_summary = [
         time: "10:09 PM",
         sit: "SIT10",
         title: "MATT",
-        type: "VIRTUAL LIVE 160",
+        type: "GTT CLASS LIVE 160",
         metric: {
             heart: 10,
             otf: 200,
@@ -105,190 +105,190 @@ export const lst_post = [
 export const classes = {
     run: [
         {
-            name: 'CHẠY BỘ TỔNG HỢP',
+            name: '30-Minute Ladder Workout',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
-            duration: '60 Minutes',
+            duration: '30 Minutes',
             detail: [
-                "Chạy bộ nhanh", "chạy bộ 69p"
+                "Warm-up: 5 minutes of easy jogging", "Work interval: 20 minutes at marathon pace", "Recovery interval: 1 minute at easy pace", "Cool down: 5 minutes easy jogging"
             ],
             classId: uuidv4()
         },
         {
-            name: 'CHẠY BỘ QUÃNG TRUNG',
+            name: '30-Minute Run and Strength Combo Workout',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
             duration: '30 Minutes',
             detail: [
-                "Chạy bộ nhanh", "chạy bộ 35p"
+                "CWarm-up: 5-minute easy jog", "Run interval: 10 minute at 5K pace", "Strength interval: 10 minute squats", "Cool down: 5-minute easy jog"
             ],
             classId: uuidv4()
         },
         {
-            name: 'CHẠY BỘ NGẮN',
+            name: '60-Minute Sprint Interval Workout',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
-            duration: '15 Minutes',
+            duration: '60 Minutes',
             detail: [
-                "Chạy bộ 30p", "chạy bộ full"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         }
     ],
     ride: [
         {
-            name: 'CHÈO THUYỀN QUÃNG NGẮN',
+            name: '60-Minute Sprint Interval Workout',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Chèo thuyền lướt"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'CHÈO THUYỀN QUÃNG TRUNG',
+            name: 'MEDIUM DISTANCE ROWING',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
             duration: '30 Minutes',
             detail: [
-                "Chèo thuyền nhanh"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'CHÈO THUYỀN QUÃNG DÀI',
+            name: 'LONG DISTANCE ROWING',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Chèo thuyền vượt"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         }
     ],
     walk: [
         {
-            name: 'ĐI BỘ QUÃNG NGẮN',
+            name: 'SHORT WALKING',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Đi bộ hoạt náo"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'ĐI BỘ QUÃNG TRUNG',
+            name: 'MID WALKING',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
             duration: '30 Minutes',
             detail: [
-                "Đi bộ nhanh"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'ĐI BỘ QUÃNG DÀI',
+            name: 'LONG WALKING',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Đi bộ 50p"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         }
     ],
     hike: [
         {
-            name: 'ĐI BỘ ĐƯỜNG DÀI QUÃNG NGẮN',
+            name: 'LONG HIKE',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Leo Núi 50"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'ĐI BỘ ĐƯỜNG QUÃNG TRUNG',
+            name: 'MID HIKE',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
             duration: '30 Minutes',
             detail: [
-                "Leo Núi 40"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'ĐI BỘ ĐƯỜNG QUÃNG DÀI',
+            name: 'LONG HIKE',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Leo Núi 30"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         }
     ],
     distance: [
         {
-            name: 'CHẠY PHỐI HỢP QUÃNG NGẮN',
+            name: 'RUN COORDINARY WITH MANY DISTANCES',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Phát',
             date: '20/11/2022',
             time: '06:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Leo Núi 20"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'CHẠY PHỐI HỢP QUÃNG TRUNG',
+            name: 'RUN COORDINARY',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'Quang',
             date: '21/11/2022',
             time: '07:45 AM',
-            duration: '30 Minutes',
+            duration: '60 Minutes',
             detail: [
-                "Leo Núi 10"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         },
         {
-            name: 'CHẠY PHỐI HỢP QUÃNG DÀI',
+            name: 'RUN COORDINARY LONG DISTANCE',
             avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
             duration: '60 Minutes',
             detail: [
-                "Leo Núi 5"
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
         }
