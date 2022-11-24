@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../../services/auth/authService';
 import { authActions } from '../../../slices/authSlice';
 import LoginGoogle from '../../components/LoginGoogle';
+import LoginFacebook from '../../components/LoginFacebook';
 
 const LoginPage = (props) => {
 
@@ -64,15 +65,12 @@ const LoginPage = (props) => {
                     {isLoggedIn && <Navigate to='/home' replace />}
                     <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
                 </form>
-                <div className='login-with flex-container'>
-                    <button className='btn login-with__facebook'>
-                        <div className='icon-facebook'><i className='fab fa-facebook'></i></div>
-                        <p>Continue with Facebook</p>
-                        <div></div>
-                    </button>
-                    <div>
-                        <LoginGoogle />
-                    </div>
+                <div style={{alignItems : 'center', marginTop: '10px'}}>
+                    OR 
+                </div>
+                <div className='login-with'>
+                    <LoginFacebook />
+                    <LoginGoogle />
                 </div>
             </div>
         </div >

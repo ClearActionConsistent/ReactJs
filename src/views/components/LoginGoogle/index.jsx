@@ -27,7 +27,7 @@ const LoginGoogle = (props) => {
                 size='medium'
                 type='standard'
                 shape='rectangular'
-                width='400px'
+                width='275px'
             />
             {isLoggedIn && <Navigate to='/home' replace />}
         </div>
