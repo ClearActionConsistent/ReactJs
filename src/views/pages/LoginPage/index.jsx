@@ -65,11 +65,9 @@ const LoginPage = (props) => {
                     {isLoggedIn && <Navigate to='/home' replace />}
                     <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
                 </form>
-                <div style={{alignItems : 'center', marginTop: '10px'}}>
-                    OR 
-                </div>
                 <div className='login-with'>
                     <LoginFacebook />
+                    <div>OR</div>
                     <LoginGoogle />
                 </div>
             </div>
