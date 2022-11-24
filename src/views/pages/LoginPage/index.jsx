@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import FormInput from '../../components/FormInput';
 import './styles.css';
-
 import { useSelector, useDispatch } from 'react-redux';
-import { login} from '../../../services/auth/authService';
+import { login } from '../../../services/auth/authService';
 import { authActions } from '../../../slices/authSlice';
+import LoginGoogle from '../../components/LoginGoogle';
 
 const LoginPage = (props) => {
 
@@ -33,9 +33,9 @@ const LoginPage = (props) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if ( email === 'tuananh@gmail.com' && password === '12345678') {
-            const isLogin = await login(email, password) 
-            isLogin ?  dispatch(authActions.login({ userName: email })) : dispatch(authActions.loginFail())
+        if (email === 'tuananh@gmail.com' && password === '12345678') {
+            const isLogin = await login(email, password)
+            isLogin ? dispatch(authActions.login({ userName: email })) : dispatch(authActions.loginFail())
         }
         else {
             dispatch(authActions.loginFail());
@@ -64,17 +64,15 @@ const LoginPage = (props) => {
                     {isLoggedIn && <Navigate to='/home' replace />}
                     <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
                 </form>
-                <div className='login-with'>
+                <div className='login-with flex-container'>
                     <button className='btn login-with__facebook'>
                         <div className='icon-facebook'><i className='fab fa-facebook'></i></div>
                         <p>Continue with Facebook</p>
                         <div></div>
                     </button>
-                    <button className='btn login-with__google'>
-                        <span className='icon-google'></span>
-                        <p>Continue with Google</p>
-                        <div></div>
-                    </button>
+                    <div>
+                        <LoginGoogle />
+                    </div>
                 </div>
             </div>
         </div >
