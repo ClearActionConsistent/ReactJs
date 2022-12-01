@@ -40,7 +40,7 @@ export class ItemCard extends Component {
     render() {
         const { value } = this.props
         return (
-            <div className='inform-item ' style={{cursor : 'pointer'}} onClick={this.handlePopup}>
+            <div className='inform-item'  onClick={this.handlePopup}>
                     <div className='class-item'>
                         <img src={value.avatar || null} alt="class" className='logo' />
                     </div>

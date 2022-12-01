@@ -27,11 +27,11 @@ class Header extends Component {
                 </div>
                 <div className='user'>
                     <div className='circle'>
-                        <img src={this.props.avatar} alt='img'/>
+                        <img src={this.props.avatar}/>
                     </div>
                     <div className='user_inform'>
                         <p id='user_usernname'>Welcome, {this.props.name} </p>
-                        <p className='cus_span_right'>{this.props.userName}</p>
+                        <p className='cus_span_right'>{this.props.email}</p>
                     </div>
                     <button className='signout' onClick={this.SignOut}>
                         Sign Out
@@ -46,7 +46,7 @@ class Header extends Component {
 const mapStateToProps = (state) => {
     return {
         isLoggedIn: state.auth.isLoggedIn,
-        userName: state.auth.credentials.userName,
+        email: state.auth.credentials.email,
         name: state.auth.credentials.name,
         avatar: state.auth.credentials.avatar
     }

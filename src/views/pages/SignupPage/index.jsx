@@ -23,13 +23,13 @@ class SignupPage extends Component {
         };
     }
 
-    UserName = '';
+    Email = '';
 
     changeEmail(event) {
         const value = event.target.value;
         this.setState({ email: value });
 
-        this.UserName = value;
+        this.Email = value;
     }
 
     changePassword(event) {
@@ -39,7 +39,7 @@ class SignupPage extends Component {
 
     handleSignup(e) {
         e.preventDefault();
-        this.props.onSignUp({ userName: this.UserName });
+        this.props.onSignUp({ email: this.Email });
     }
 
     handleClickShowPassword() {

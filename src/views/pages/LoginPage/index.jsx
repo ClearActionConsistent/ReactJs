@@ -36,7 +36,7 @@ const LoginPage = (props) => {
         e.preventDefault();
         if (email === 'tuananh@gmail.com' && password === '12345678') {
             const isLogin = await login(email, password)
-            const userProfile = { userName: email , name : 'Tuan Anh', avatar : 'http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128' }
+            const userProfile = { email: email , name : 'Tuan Anh', avatar : 'http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128' }
             isLogin ? dispatch(authActions.login(userProfile)) : dispatch(authActions.loginFail())
         }
         else {

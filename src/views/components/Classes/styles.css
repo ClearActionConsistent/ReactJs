@@ -60,9 +60,10 @@
     background: white;
     box-shadow: rgb(0 0 0 / 30%) 0px 2px 8px 0px;
     height: 200px;
+    cursor: pointer;
 }
 .inform-item:hover {
-    background-color: #ED700F;
+    background-color: #ed700f;
 }
 
 .inform-item>p {
@@ -123,6 +124,6 @@
 }
 
 .categories .highlight {
-    background-color: #ED700F;
+    background-color: #ed700f;
     font-weight: bold;
 }

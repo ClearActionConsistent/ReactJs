@@ -15,7 +15,7 @@ const FormInput = ({ email, password, changeEmail, changePassword, onClick, isHi
                 onChange={changeEmail}
                 autoFocus={true}
             />
-            {error ? <p className='error'>Username is correct</p> : null}
+            {error ? <p className='error'>Email is correct</p> : null}
             <OutlinedInput
                 required
                 placeholder='Password'

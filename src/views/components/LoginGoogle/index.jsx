@@ -11,7 +11,7 @@ const LoginGoogle = (props) => {
 
     const onSuccess = (res) =>{
         const decoded = jwt_decode(res.credential);
-        const userProfile = { userName: decoded.email , name : decoded.family_name , avatar : decoded.picture}
+        const userProfile = { email: decoded.email , name : decoded.family_name , avatar : decoded.picture}
         dispatch(authActions.login(userProfile))
     }
 
