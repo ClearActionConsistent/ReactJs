@@ -1,30 +1,27 @@
 import { BarChart, XAxis, YAxis, Bar, ResponsiveContainer, Cell } from 'recharts';
-
+import getRandomNumber from '../../../common/getRandomNumber';
 const ChartComponent = () => {
+
     const data = [
         {
             'name': 'Calories',
-            'qty': 3
+            'qty': getRandomNumber(50)
         },
         {
             'name': 'Splat Points',
-            'qty': 10
+            'qty': getRandomNumber(100)
         },
         {
             'name': 'AVG. Heart Rate',
-            'qty': 90
+            'qty': getRandomNumber(200)
         },
         {
             'name': 'MAX Heart Rate',
-            'qty': 116
-        },
-        {
-            'name': 'Steps',
-            'qty': 20
+            'qty': getRandomNumber(200)
         },
         {
             'name': 'Miles',
-            'qty': 36
+            'qty': getRandomNumber(150)
         }
     ];
 
@@ -44,7 +41,6 @@ const ChartComponent = () => {
                 <XAxis dataKey="name" />
                 <YAxis dataKey="qty" hide="true" />
             </BarChart>
-
         </ResponsiveContainer>
     );
 }

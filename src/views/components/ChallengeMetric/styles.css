@@ -1,6 +1,6 @@
-.container-challenge-board {
+.container-challenge-metric {
     margin: auto;
-    max-width: 1400px;
+    max-width: 700px;
     padding: 1rem 0;
 }
 
@@ -9,7 +9,10 @@
     margin: auto;
 }
 
-.container-challenge-chart {}
+.container-challenge-chart {
+    max-width: 400rem;
+    margin: auto;
+}
 
 .container-challenge-chart h1 {
     width: 100%;
@@ -38,8 +41,8 @@
 }
 
 .container-challenge-data div h1 {
-    font-size: 90px;
-    line-height: 5rem;
+    font-size: 50px;
+    line-height: 1rem;
     text-align: center;
     color: rgba(0, 0, 0, 0.7);
     margin: 2rem 0px 0px;
@@ -47,16 +50,16 @@
 
 .container-challenge-data div h1 span {
     display: block;
-    font-size: 30px;
+    font-size: 20px;
     font-style: italic;
     font-weight: normal;
     text-transform: uppercase;
     line-height: 36px;
     color: rgba(0, 0, 0, 0.5);
-    margin: 20px 0px;
+    margin: 2rem 0px 0px;
 }
 
-.go-back {
+.go-back a {
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -68,8 +71,8 @@
     line-height: 22px;
 }
 
-.go-back :last-child {
-    margin-left: 1rem;
+.go-back span {
+    margin-left: 0.5rem;
 }
 
 .back-icon {

@@ -1,270 +1,104 @@
 import React, { Component } from 'react';
-
 import { connect } from 'react-redux';
-import { Navigate } from 'react-router-dom';
-import {
-    increaseNumber,
-    decreaseNumber,
-    updateHistory,
-    getPostsThunk,
-} from '../../../slices/countSlice';
-
+import { Navigate, Link } from 'react-router-dom';
+import { increaseNumber, decreaseNumber, updateHistory, getPostsThunk } from '../../../slices/countSlice';
 import './styles.css';
 import { unwrapResult } from '@reduxjs/toolkit';
-
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
-import TextField from '@mui/material/TextField';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-
+import FormInput from '../../components/FormInput';
+import { authActions } from '../../../slices/authSlice';
 
 class SignupPage extends Component {
     constructor(props) {
         super(props);
         this.handleSignup = this.handleSignup.bind(this);
-
+        this.changeEmail = this.changeEmail.bind(this);
+        this.changePassword = this.changePassword.bind(this);
+        this.handleClickShowPassword = this.handleClickShowPassword.bind(this);
         this.state = {
-            Auth: {
-                username: '',
-                email: '',
-            },
-            IsRegister: false,
-            values: {
-                amount: '',
-                password: '',
-                weight: '',
-                weightRange: '',
-                showPassword: false,
-            }
+            email: '',
+            password: '',
+            isRegister: false,
+            isHide: false,
+            error: false,
         };
     }
 
-    // componentDidUpdate(prevProps) {
-    //   const { number, history } = this.props;
-    //   console.log('History', history);
-    //   if (number != prevProps.number) {
-    //     console.log('Prev', prevProps.number);
-    //     console.log('After', number);
-    //   }
-    // }
+    UserName = '';
 
-    // shouldComponentUpdate(nextProps) {
-    //   if (nextProps.number !== this.props.number) {
-    //     console.log('Prev', this.props.number);
-    //     console.log('After', nextProps.number);
-    //     return true;
-    //   }
-    //   return false;
-    // }
-    
-    handleSignup() {
-        if (
-            this.state.Auth.email === 'test@gmail.com' &&
-            this.state.Auth.username === 'test'
-        ) {
-            this.setState((prevState) => ({
-                IsRegister: {
-                    ...prevState.IsRegister,
-                    IsRegister: true,
-                },
-            }));
-        } else {
-            alert('Sign up fail');
-        }
+    changeEmail(event) {
+        const value = event.target.value;
+        this.setState({ email: value });
+
+        this.UserName = value;
+    }
+
+    changePassword(event) {
+        const value = event.target.value;
+        this.setState({ password: value });
+    }
+
+    handleSignup(e) {
+        e.preventDefault();
+        this.props.onSignUp({ userName: this.UserName });
+    }
+
+    handleClickShowPassword() {
+        this.setState({ isHide: !this.state.isHide });
     }
 
     render() {
-        const {
-            increaseNumber,
-            decreaseNumber,
-            getPostsThunkAPI,
-        } = this.props;
-
-        // const handleCallAxios = async () => {
-        //   const response = await stravaApi.getPosts();
-        //   const response1 = await stravaApi.postPosts();
-        //   const response2 = await stravaApi.getbyPosts(1);
-        // };
-
-
-        // const handleIncreaseNumber = async () => {
-        //     increaseNumber();
-        //     await getPostsThunkAPI(1);
-        // };
-
-        // const handleDecreaseNumber = () => {
-        //     decreaseNumber();
-        // };
-
         return (
             <div className='sign-up-form'>
-                {this.state.IsRegister && <Navigate to='/home' replace={true} />}
-                <Box
-                    component='form'
-                    sx={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        width: '20%',
-                    }}
-                    noValidate
-                    autoComplete='off'
-                >
-                    <Typography sx={{ fontWeight: 'bold' }} variant='h4' gutterBottom>
-                        Sign up with email
-                    </Typography>
-                    <TextField
-                        InputLabelProps={{
-                            style: { color: '#000000', fontWeight: 'bold' },
-                        }}
-                        margin='normal'
-                        label='Username'
-                        variant='standard'
-                        onChange={(e) => {
-                            this.setState((prevState) => ({
-                                Auth: {
-                                    ...prevState.Auth,
-                                    username: e.target.value,
-                                },
-                            }));
-                        }}
+                <div className='title-signup'>
+                    <h1>Sign up with email</h1>
+                </div>
+                <form onSubmit={this.handleSignup}>
+                    <FormInput
+                        email={this.state.email}
+                        password={this.state.password}
+                        changeEmail={this.changeEmail}
+                        changePassword={this.changePassword}
+                        error={this.state.error}
+                        isHide={this.state.isHide}
+                        onClick={this.handleClickShowPassword}
+                        isRegister={true}
                     />
-                    <TextField
-                        InputLabelProps={{
-                            style: { color: '#000000', fontWeight: 'bold' },
-                        }}
-                        fullWidth
-                        label='Password'
-                        variant='standard'
-                        helperText='Passwords must contain at leat 8 characters'
-                        style={{ marginBottom: '20px' }}
-                        onChange={(e) => {
-                            this.setState((prevState) => ({
-                                Auth: {
-                                    ...prevState.Auth,
-                                    email: e.target.value,
-                                },
-                            }));
-                        }}
-                        type={this.state.values.showPassword ? 'text' : 'password'}
-                        endAdornment={
-                            <InputAdornment position="end">
-                                <IconButton
-                                    aria-label="toggle password visibility"
-                                >
-                                    {this.state.values.showPassword ? <VisibilityOff /> : <Visibility />}
-                                </IconButton>
-                            </InputAdornment>
-                        }
-                    />
-
-
-                    <FormControl sx={{ m: 1, width: '40ch' }} variant="standard">
-                        <InputLabel htmlFor="standard-adornment-password">Password</InputLabel>
-                        <Input
-                            id="standard-adornment-password"
-                            type={'password'}
-                            endAdornment={
-                                <InputAdornment position="end">
-                                    <IconButton
-                                        aria-label="toggle password visibility"
-                                    >
-                                        <VisibilityOff />
-                                    </IconButton>
-                                </InputAdornment>
-                            }
-                        />
-                    </FormControl>
-
-                    <Typography
-                        sx={{ fontWeight: 'light' }}
-                        variant='caption'
-                        gutterBottom
-                        margin='normal'
-                    >
-                        By siging up you are agreeing to our{' '}
-                        <a className='link' href='https://www.izibds.com/'>
-                            Ters of Service.
-                        </a>
-                    </Typography>
-                    <Typography
-                        margin='normal'
-                        sx={{ fontWeight: 'light' }}
-                        variant='caption'
-                        gutterBottom
-                        style={{ marginBottom: '20px' }}
-                    >
-                        View our{' '}
-                        <a className='link' href='https://www.izibds.com/'>
-                            Privacy Policy.
-                        </a>
-                    </Typography>
-                    <button
-                        type='button'
-                        onClick={() => this.handleSignup()}
-                        className='btn-signup'
-                    >
-                        Agree and Sign Up
-                    </button>
-
-                    {/* <button
-                        type='button'
-                        onClick={() => handleIncreaseNumber()}
-                        className='btn-layout bg-fb'
-                    >
-                        <span className='icon'>
-                            <i className='fab fa-facebook'></i>
+                    <div className='term-condititon'>
+                        <span> By siging up you are agreeing to our{' '}
+                            <Link to='/'> Ters of Service.</Link>
                         </span>
-                        <span className=''>Continue with Facebook</span>
-                    </button>
+                        <br />
+                        <span>
+                            View our{' '}
+                            <Link to='/'> Privacy Policy.</Link>
+                        </span>
+                    </div>
+                    <div>
+                        <button
+                            type='submit'
+                            className='btn btn-signup'
+                        >
+                            Agree and Sign Up
+                        </button>
+                        {this.props.isLoggedIn && <Navigate to='/home' replace={true} />}
+                    </div>
 
-                    <button
-                        type='button'
-                        onClick={() => handleDecreaseNumber()}
-                        className='btn-layout bg-gg'
-                    >
-                        <span className='icon icon-google'></span>
-                        <span className=''>Continue with Google</span>
-                    </button> */}
-                </Box>
+                </form>
             </div>
         );
     }
 }
 
-const mapStateToProps = (state) => ({
-    number: state.count.number,
-    history: state.count.history,
-});
+const mapStateToProps = state => {
+    return {
+        isLoggedIn: state.auth.isLoggedIn
+    }
+}
 
-const mapDispatchToProps = (dispatch) => ({
-    increaseNumber: () => {
-        dispatch(increaseNumber());
-    },
-    decreaseNumber: () => {
-        dispatch(decreaseNumber());
-    },
-    updateHistory: (item) => {
-        dispatch(updateHistory(item));
-    },
-    getPostsThunkAPI: (page) => {
-        dispatch(getPostsThunk(page))
-            .then(unwrapResult)
-            .then((rs) => {
-                console.log('Promise', rs);
-            })
-            .catch((err) => {
-                console.error(err);
-            });
-    },
-});
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onSignUp: (payload) => dispatch(authActions.signUp(payload))
+    };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupPage);

@@ -1,20 +1,20 @@
 
-import React, { Component } from 'react'
-import ItemCard from './itemcard'
-
+import React, { Component } from 'react';
+import ItemCard from './itemcard';
 
 class ListItem extends Component {
-
     render() {
+        const { type } = this.props;
         return (
-            <div className='lst_item '>
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
-                <ItemCard />
+            <div className='list_item'>
+                {
+                    type.map((item, index) => {
+                        return <ItemCard value={item} key={index} />
+                    })
+                }
             </div>
         )
     }
 }
 
-export default ListItem
+export default ListItem;

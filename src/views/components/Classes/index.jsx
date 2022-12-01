@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchRunClassesList } from '../../../slices/classSlice';
 import Categories from './categories';
 import ListItem from './listItem';
 import './styles.css';
 
 class Classes extends Component {
     render() {
+        const { classes, fetchRunClassesList, type, active } = this.props;
         return (
             <div className='container-classes'>
-                <Categories />
-                <ListItem />
+                <Categories classes={classes} fetchRunClassesList={fetchRunClassesList} active={active} />
+                <ListItem type={type} />
             </div>
         )
     }
 }
 
-export default Classes;
+const mapStateToProps = state => ({
+    classes: state.class.classList,
+    type: state.class.type,
+    active: state.class.active,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchRunClassesList: (payload) => {
+        dispatch(fetchRunClassesList(payload))
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Classes);

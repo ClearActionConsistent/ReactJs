@@ -26,7 +26,12 @@
 }
 
 .login-with {
-    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: stretch;
 }
 
 .login-with__facebook {
@@ -36,6 +41,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 250px;
+    height: 32px;
+    margin-top: 16px;
 }
 
 .login-with__google {
@@ -63,7 +71,7 @@
 }
 
 .icon-facebook i {
-    font-size: 20px;
+    font-size: 17px;
 }
 
 .icon-google {
