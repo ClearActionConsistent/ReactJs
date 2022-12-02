@@ -31,7 +31,7 @@ class Header extends Component {
                         <p className='font-bold'>Welcome, {this.props.name} </p>
                         <p >{this.props.email}</p>
                     </div>
-                    <button className='cursor-pointer w-36 h-12 bg-otf-orange-start font-bold rounded-3xl text-white' onClick={this.SignOut}>
+                    <button className='cursor-pointer w-36 h-12 bg-ct4-orange font-bold rounded-3xl text-white' onClick={this.SignOut}>
                         Sign Out
                         {!isLoggedIn && <Navigate to='/login' />}
                     </button>

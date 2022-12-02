@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import FormInput from '../../components/FormInput';
-import './styles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../../services/auth/authService';
 import { authActions } from '../../../slices/authSlice';
@@ -36,7 +35,7 @@ const LoginPage = (props) => {
         e.preventDefault();
         if (email === 'tuananh@gmail.com' && password === '12345678') {
             const isLogin = await login(email, password)
-            const userProfile = { email: email , name : 'Tuan Anh', avatar : 'http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128' }
+            const userProfile = { email: email, name: 'Tuan Anh', avatar: 'http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128' }
             isLogin ? dispatch(authActions.login(userProfile)) : dispatch(authActions.loginFail())
         }
         else {
@@ -45,12 +44,12 @@ const LoginPage = (props) => {
     }
 
     return (
-        <div className='container'>
-            <div className='img-logo'>
+        <div className='w-full text-center relative bg-cover pt-30 font-tnr'>
+            <div className='flex justify-center pb-3'>
                 <img style={{ height: '300px' }} src='https://www.fitnesstogether.gr/wp-content/uploads/2021/06/Kick-Boxing-1-1024x529.jpg' alt='GTT logo' />
             </div>
-            <div className='form-login'>
-                <form className='login' onSubmit={handleSubmit}>
+            <div className=' w-0.3 bg-white ml-0.35'>
+                <form onSubmit={handleSubmit}>
                     <p>Already have an account?</p>
                     <FormInput
                         email={email}
@@ -62,11 +61,11 @@ const LoginPage = (props) => {
                         onClick={handleClickShowPassword}
                         isRegister={false}
                     />
-                    <button type='submit' className='btn btn-login'>Log In</button>
+                    <button type='submit' className='btn bg-ct4-orange my-3 font-sans'>Log In</button>
                     {isLoggedIn && <Navigate to='/home' replace />}
-                    <Link to='/register' className='sign-up'>New to GTT? Sign up.</Link>
+                    <Link to='/register' className='text-sm hover:underline'>New to GTT? Sign up.</Link>
                 </form>
-                <div className='login-with'>
+                <div className='flex flex-row justify-between items-center'>
                     <LoginFacebook />
                     <div>OR</div>
                     <LoginGoogle />
