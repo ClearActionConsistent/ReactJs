@@ -3,8 +3,6 @@ import { Navigate, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authActions } from '../../../slices/authSlice';
 
-import './style.css';
-
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -19,21 +17,21 @@ class Header extends Component {
     render() {
         const { isLoggedIn } = this.props
         return (
-            <div className='navbar'>
-                <div className='navbar_item'>
+            <div className='w-full flex justify-between bg-white shadow-lg font-tnr'>
+                <div className='flex gap-4 p-6 ml-5 text-lg text-gray-400 font-bold'>
                     <NavLink to='/home'>Upcomming Classes</NavLink>
                     <NavLink to='/workout'>Your Workout Summary</NavLink>
                     <NavLink to='/community'>Our Communnity</NavLink>
                 </div>
-                <div className='user'>
-                    <div className='circle'>
-                        <img src={this.props.avatar}/>
+                <div className='flex gap-5 p-3'>
+                    <div className='w-12 h-12'>
+                        <img className='rounded-full' src={this.props.avatar} />
                     </div>
-                    <div className='user_inform'>
-                        <p id='user_usernname'>Welcome, {this.props.name} </p>
-                        <p className='cus_span_right'>{this.props.email}</p>
+                    <div >
+                        <p className='font-bold'>Welcome, {this.props.name} </p>
+                        <p >{this.props.email}</p>
                     </div>
-                    <button className='signout' onClick={this.SignOut}>
+                    <button className='cursor-pointer w-36 h-12 bg-otf-orange-start font-bold rounded-3xl text-white' onClick={this.SignOut}>
                         Sign Out
                         {!isLoggedIn && <Navigate to='/login' />}
                     </button>
