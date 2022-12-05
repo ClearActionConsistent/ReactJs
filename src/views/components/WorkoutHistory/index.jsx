@@ -11,9 +11,9 @@ export class WorkoutHistory extends Component {
         return (
             <>
                 <Header />
-                <div className='main_container'>
-                    <h1 className='title'>YOUR WORKOUT HISTORY</h1>
-                    <div className='lst_workout'>
+                <div className='max-w-1400 m-auto py-4 font-tnr'>
+                    <h1 className='text-3xl leading-9 text-center text-gray-500 my-12'>YOUR WORKOUT HISTORY</h1>
+                    <div className='max-w-800 m-auto'>
                         {
                             workout_summary.map((item) => {
                                 return <ItemWorkout value={item} key={uuidv4()} />;

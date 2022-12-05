@@ -49,28 +49,28 @@ export class Categories extends Component {
     render() {
         const { active } = this.props;
         return (
-            <div className='nav_categories'>
-                <p>Demo Classes</p>
-                <div className='categories'>
-                    <button className={active === 'run' ? 'highlight' : null} onClick={this.handleRun}>
-                        <span className='icon-run'></span>
-                        <p>Run</p>
+            <div className='flex gap-4 mb-1 items-center font-tnr'>
+                <p className='font-bold text-4xl'>Demo Classes</p>
+                <div className=' shadow-xl border flex justify-around gap-4 round h-60px'>
+                    <button className={`${active === 'run' ? ' bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleRun}>
+                        <span className='icon-run ml-2'></span>
+                        <p className='text-base mr-2'>Run</p>
                     </button>
-                    <button className={active === 'ride' ? 'highlight' : null} onClick={this.handleRide}>
-                        <span className='icon-ride'></span>
-                        <p >Ride</p>
+                    <button className={`${active === 'ride' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleRide}>
+                        <span className='icon-ride ml-2'></span>
+                        <p className='text-base mr-2'>Ride</p>
                     </button>
-                    <button className={active === 'walk' ? 'highlight' : null} onClick={this.handleWalk}>
-                        <span className='icon-walk'></span>
-                        <p >Walk</p>
+                    <button className={`${active === 'walk' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleWalk}>
+                        <span className='icon-walk ml-2'></span>
+                        <p className='text-base mr-2'>Walk</p>
                     </button>
-                    <button className={active === 'hike' ? 'highlight' : null} onClick={this.handleHike}>
-                        <span className='icon-hike'></span>
-                        <p >Hike</p>
+                    <button className={`${active === 'hike' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleHike}>
+                        <span className='icon-hike ml-2'></span>
+                        <p className='text-base mr-2'>Hike</p>
                     </button>
-                    <button className={active === 'distance' ? 'highlight' : null} onClick={this.handleDistance}>
-                        <span className='icon-distance'></span>
-                        <p >Distance</p>
+                    <button className={`${active === 'distance' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleDistance}>
+                        <span className='icon-distance ml-2'></span>
+                        <p className='text-base mr-2'>Distance</p>
                     </button>
                 </div>
             </div>

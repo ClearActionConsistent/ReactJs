@@ -3,13 +3,12 @@ import { connect } from 'react-redux';
 import { fetchRunClassesList } from '../../../slices/classSlice';
 import Categories from './categories';
 import ListItem from './listItem';
-import './styles.css';
 
 class Classes extends Component {
     render() {
         const { classes, fetchRunClassesList, type, active } = this.props;
         return (
-            <div className='container-classes'>
+            <div className='flex flex-col gap-4 py-4'>
                 <Categories classes={classes} fetchRunClassesList={fetchRunClassesList} active={active} />
                 <ListItem type={type} />
             </div>
