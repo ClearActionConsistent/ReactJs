@@ -9,8 +9,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setStatusPopup, setDataPopup } from '../../../slices/popupSlice';
 import { useNavigate } from "react-router-dom";
 
-import './style.css'
-
 const styleItem = {
     display: 'flex',
     justifyContent: 'flex-end',

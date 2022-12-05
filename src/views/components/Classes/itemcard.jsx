@@ -40,29 +40,29 @@ export class ItemCard extends Component {
     render() {
         const { value } = this.props
         return (
-            <div className='inform-item'  onClick={this.handlePopup}>
-                    <div className='class-item'>
-                        <img src={value.avatar || null} alt="class" className='logo' />
+            <div className='flex w-420 items-center border flex-row flex-wrap shadow-xl gap-1 min-h-200 font-tnr hover:bg-ct4-orange rounded-lg' onClick={this.handlePopup}>
+                <div className='mx-2'>
+                    <img src={value.avatar || null} alt="class" className='ml-1 w-100 h-100 bg-gray-400 rounded-full' />
+                </div>
+                <div className='w-2/3'>
+                    <h1 className='text-xl font-bold mb-4 tracking-tighter' >{value.name || null}</h1>
+                    <div className='flex justify-between mb-2 text-base'>
+                        <p >Coach Name</p>
+                        <p>{value.coach_name || null}</p>
                     </div>
-                    <div className='inform'>
-                        <h1 >{value.name || null}</h1>
-                        <div className='inform-class'>
-                            <p >Coach Name</p>
-                            <p>{value.coach_name || null}</p>
-                        </div>
-                        <div className='inform-class'>
-                            <p >Date of Class</p>
-                            <p>{value.date || null}</p>
-                        </div>
-                        <div className='inform-class'>
-                            <p >Time of Class</p>
-                            <p>{value.time || null}</p>
-                        </div>
-                        <div className='inform-class'>
-                            <p >Duaration of Class</p>
-                            <p>{value.duration || null}</p>
-                        </div>
+                    <div className='flex justify-between mb-2 text-base'>
+                        <p >Date of Class</p>
+                        <p>{value.date || null}</p>
                     </div>
+                    <div className='flex justify-between mb-2 text-base'>
+                        <p >Time of Class</p>
+                        <p>{value.time || null}</p>
+                    </div>
+                    <div className='flex justify-between mb-2 text-base'>
+                        <p >Duaration of Class</p>
+                        <p>{value.duration || null}</p>
+                    </div>
+                </div>
             </div>
         )
     }

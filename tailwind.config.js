@@ -16,6 +16,8 @@ module.exports = {
         'tnr': '"Times New Roman"',
       },
       height: {
+        '60px': '60px',
+        100: '100px',
         400: '400px'
       },
       margin: {
@@ -24,14 +26,28 @@ module.exports = {
         '50px': '50px'
       },
       maxWidth: {
+        500: '500px',
+        600: '600px',
+        700: '700px',
+        800: '800px',
         1400: '1400px',
       },
+      minWidth: {
+        280: '280px'
+      }
+      ,
+      minHeight: {
+        200: '200px'
+      },
       padding: {
-        30: '120px'
+        30: '120px',
+        240: '240px'
       },
       width: {
         0.3: '30%',
-        250: '250px'
+        100: '100px',
+        250: '250px',
+        420: '420px'
       },
     },
   },
