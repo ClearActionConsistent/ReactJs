@@ -8,6 +8,7 @@ import Modal from '@mui/material/Modal';
 import { useSelector, useDispatch } from 'react-redux';
 import { setStatusPopup, setDataPopup } from '../../../slices/popupSlice';
 import { useNavigate } from "react-router-dom";
+import CloseIcon from '@mui/icons-material/Close';
 
 const styleItem = {
     display: 'flex',
@@ -32,7 +33,6 @@ const AddChallenge = () => {
     const popup = useSelector((state) => state.popup);
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
 
     const [value, setValue] = useState({
         calories: '',
@@ -91,10 +91,11 @@ const AddChallenge = () => {
                     <Box sx={{ width: '100%', padding: "10px" }}>
                         <form onSubmit={handleAddChallenge}>
                             <Grid container spacing={2} >
-                                <Grid item xs={12}>
+                                <Grid item xs={12} className='flex justify-between'>
                                     <Typography sx={{ fontWeight: "bold", fontSize: 25 }} id="modal-modal-title" variant="h6" component="h2">
                                         Add your metric
                                     </Typography>
+                                    <CloseIcon onClick={() => handleCloseChallenge()} />
                                 </Grid>
                                 <Grid item xs={6}>
                                     <TextField autoFocus={true} type='number' required placeholder='Please input number' onChange={(e) => handleChange(e)} value={value.calories} fullWidth label='Calories' variant='outlined' name='calories' />

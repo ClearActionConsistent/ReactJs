@@ -18,7 +18,7 @@ class Header extends Component {
         const { isLoggedIn } = this.props
         return (
             <div className='w-full flex justify-between bg-white shadow-lg font-tnr'>
-                <div className='flex gap-4 p-6 ml-5 text-lg text-gray-400 font-bold'>
+                <div className='flex gap-4 p-6 ml-5 text-lg text-gray-600 font-bold'>
                     <NavLink to='/home'>Upcomming Classes</NavLink>
                     <NavLink to='/workout'>Your Workout Summary</NavLink>
                     <NavLink to='/community'>Our Communnity</NavLink>

@@ -100,7 +100,6 @@ export default function ShowDetail() {
                         </Typography>
                         <CloseIcon onClick={() => handleClose()} />
                     </Box>
-
                     <Box sx={styleItem}>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             Coach Name
