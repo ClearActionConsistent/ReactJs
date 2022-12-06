@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import Header from '../../components/Header';
 import Classes from '../../components/Classes';
 import Subscribe from '../../components/Subscribe';
-import './style.css';
 import ShowDetail from './../../components/Classes/popupDetails';
 import AddChallenge from '../../components/AddChallenge';
 
@@ -13,7 +12,7 @@ class HomePage extends Component {
         return (
             <>
                 <Header />
-                <div className='container-home-page'>
+                <div className='m-auto max-w-1400'>
                     <Classes />
                     <Subscribe />
                     {isOpenDetailClass && <ShowDetail />}
