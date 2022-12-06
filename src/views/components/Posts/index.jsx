@@ -11,8 +11,8 @@ export class ListPost extends Component {
     return (
       <>
         <Header />
-        <div className='list_container'>
-          <div className='list_Post'>
+        <div className='flex justify-center mt-8'>
+          <div className='w-2/5'>
             {
               lst_post.map((item) => {
                 return <Post key={uuidv4()} value={item} />
