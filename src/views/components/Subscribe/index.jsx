@@ -3,14 +3,14 @@ import React, { Component } from 'react';
 class Subscribe extends Component {
     render() {
         return (
-            <>
-                <div className='border border-gray-500 p-8 my-12 rounded-xl bg-gray-100 flex text-center justify-center'>
-                    <span className='font-tnr text-2xl font-bold'>Subscribe to receive challenge for each day.</span>
+            <div className='relative'>
+                <div className='bg-no-repeat bg-cover bg-center h-80 p-10 my-12 bg-ct4-subscribe blur-sm bg-img'>
                 </div>
-                <div className='w-full flex justify-center'>
-                    <img className='my-4' src='https://evogym.vn/wp-content/uploads/2021/08/youngfitnesscenter-evogym-setup-phong-gym-banner-aspect-ratio-1300-500.jpg' alt='footer' />
+                <div className='absolute w-800 h-40 bg-black/40 font-bold border top-1/2 left-1/2 border-gray-700 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl'>
+                    <p className='mt-5 p-1 text-2xl text-white flex justify-center'>Subscribe to receive challenge for each day.</p>
+                    <button className='p-2 text-2xl bg-gradient-to-r from-ct4-red-1 to-ct4-red mt-5 text-white rounded-xl ml-350'>Subcribe</button>
                 </div>
-            </>
+            </div>
         )
     }
 }
