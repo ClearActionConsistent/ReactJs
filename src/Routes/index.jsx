@@ -10,6 +10,7 @@ import ChallengeBoard from '../views/components/ChallengeBoard';
 import WorkoutHistory from '../views/components/WorkoutHistory';
 import ListPost from '../views/components/Posts';
 import NotFoundPage from '../views/pages/NotFoundPage';
+import MemberManagement from '../views/pages/AdminSide/MemberManagement';
 
 const Router = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -28,6 +29,7 @@ const Router = () => {
       <Route path='/workout' element={<WorkoutHistory />} />
       <Route path='/community' element={<ListPost />} />
       <Route path='/not-found-page' element={<NotFoundPage />} />
+      <Route path='/member-management' element={<MemberManagement />} />
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );
