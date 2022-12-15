@@ -2,7 +2,6 @@ import React from 'react'
 import { StyledTableCell, StyledTableRow } from './style';
 
 const MemberTR = ({ item, handleOpen }) => {
-
     return (
         <StyledTableRow>
             <StyledTableCell component="th" scope="row">
@@ -19,6 +18,6 @@ const MemberTR = ({ item, handleOpen }) => {
             <StyledTableCell align="left">{item.weight}</StyledTableCell>
         </StyledTableRow>
     )
-}
+};
 
 export default MemberTR;

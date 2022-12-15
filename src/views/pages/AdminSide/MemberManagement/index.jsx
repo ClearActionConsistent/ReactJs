@@ -6,7 +6,6 @@ import MemberModal from './MemberModal';
 import MemberTable from './MemberTable';
 
 const MemberManagement = () => {
-
     return (
         <div>
             <Header />
@@ -25,6 +24,6 @@ const MemberManagement = () => {
             </div>
         </div>
     )
-}
+};
 
 export default MemberManagement;

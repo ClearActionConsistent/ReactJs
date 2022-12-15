@@ -14,7 +14,7 @@ export const modalStyle = {
     p: 4,
 };
 
-export const styleButton = { width: '100px', height: '40px', fontWeight: 'bold', boxShadow: 2, borderRadius: '20px' }
+export const styleButton = { width: '100px', height: '40px', fontWeight: 'bold', boxShadow: 2, borderRadius: '20px' };
 
 export const modalTheme = createTheme({
     palette: {
@@ -34,7 +34,7 @@ export const modalTheme = createTheme({
             main: '#6b7280',
             contrastText: '#fff',
         }
-    },
+    }
 });
 
 export const StyledTableCell = styled(TableCell)(({ theme }) => ({
