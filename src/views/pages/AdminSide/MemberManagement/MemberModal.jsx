@@ -44,10 +44,10 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
     }, [data]);
 
 
-    const handleChangeUserName = (event) => {
+    const handleChangeUserEmail = (event) => {
         setFormState({
             ...formState,
-            username: event.target.value,
+            email: event.target.value,
         })
     }
 
@@ -61,7 +61,7 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
     const handleChangeGroupName = (event) => {
         setFormState({
             ...formState,
-            fullname: event.target.value,
+            groupName: event.target.value,
         })
     }
 
@@ -78,6 +78,10 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
             phoneNumber: event.target.value,
         })
     }
+
+    const stopPropagation = (e) => {
+        e.stopPropagation();
+    };
 
     const createRoleData = (role) => {
         return { role };
@@ -106,7 +110,7 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
                     </div>
                     <div className='mt-10 grid grid-cols-2'>
                         <div>
-                            <TextFields name='User Email' required={true} ml='26px' value={formState.username} onChange={handleChangeUserName} />
+                            <TextFields name='User Email' required={true} ml='26px' value={formState.email} onChange={handleChangeUserEmail} type='email' />
                             <TextFields name='Full Name' required={true} ml='32px' value={formState.fullname} onChange={handleChangeFullName} />
                             <div className='flex items-center text-lg  font-serif'>
                                 <p className='m-2'>Role <span className='text-red-600 ml-1'>*</span></p>
@@ -180,7 +184,7 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
                     <div className='flex justify-evenly mt-10'>
                         <ThemeProvider theme={modalTheme}>
                             <Button variant="outlined" color='cancel' sx={styleButton} onClick={() => onClose()} >Cancel</Button>
-                            <Button variant="contained" color='save' sx={styleButton} onClick={() => onClose()} >Save</Button>
+                            <Button submit variant="contained" color='save' sx={styleButton} onClick={stopPropagation} >Save</Button>
                         </ThemeProvider>
                     </div>
                 </Box>
