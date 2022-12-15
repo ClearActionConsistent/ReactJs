@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import TextField from '@mui/material/TextField';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -11,12 +10,14 @@ import { ThemeProvider } from '@mui/material/styles';
 import { modalStyle, modalTheme, styleButton } from './style';
 import CloseIcon from '@mui/icons-material/Close';
 import TextFields from '../../../components/TextField';
+import { defaultMember } from '../../../../constants';
 
-const MemberModal = ({ isShow, onClose }) => {
+const MemberModal = ({ isShow = false, onClose, data }) => {
     const [open, setOpen] = useState(isShow);
     const [role, setRole] = useState(1);
     const [gender, setGender] = useState(1);
     const [status, setStatus] = useState(1);
+    const [formState, setFormState] = useState(defaultMember)
 
     const handleChangeRole = (event) => {
         setRole(event.target.value);
@@ -34,6 +35,17 @@ const MemberModal = ({ isShow, onClose }) => {
         setOpen(isShow);
     }, [isShow]);
 
+    useEffect(() => {
+        setFormState({ ...data });
+    }, [data]);
+
+    const handleChangeEmail = (event) => {
+        setFormState({
+            ...formState,
+            email: event.target.value
+        })
+    }
+
     return (
         <div>
             <Modal
@@ -49,7 +61,7 @@ const MemberModal = ({ isShow, onClose }) => {
                     </div>
                     <div className='mt-10 grid grid-cols-2'>
                         <div>
-                            <TextFields name='User Email' required={true} ml='26px' />
+                            <TextFields name='User Email' required={true} ml='26px' value={formState.email || ''} onChange={handleChangeEmail} />
                             <TextFields name='Full Name' required={true} ml='32px' />
                             <div className='flex items-center text-lg  font-serif'>
                                 <p className='m-2'>Role <span className='text-red-600 ml-1'>*</span></p>

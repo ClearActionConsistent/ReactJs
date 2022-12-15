@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-const TextFields = ({ name, required, ml }) => {
+const TextFields = ({ name, required, value, onChange, ml }) => {
 
     return (
         <div className='flex items-center text-lg font-serif'>
@@ -20,6 +20,8 @@ const TextFields = ({ name, required, ml }) => {
                 <TextField
                     label={`Enter ${name}`}
                     size='small'
+                    value={value}
+                    onChange={onChange}
                 />
             </Box>
         </div>

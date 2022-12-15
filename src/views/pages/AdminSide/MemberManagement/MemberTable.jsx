@@ -5,14 +5,23 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper'
-import { StyledTableCell, StyledTableRow } from './style';
+import { StyledTableCell } from './style';
 import MemberModal from './MemberModal';
+import MemberTR from './MemberTR';
 
 const MemberTable = () => {
     const [showModal, setShowModal] = useState(false)
 
     const createData = (fullname, username, role, groupName, email, phoneNumber, DOB, weight) => {
         return { fullname, username, role, groupName, email, phoneNumber, DOB, weight };
+    }
+
+    const handleOpen = () => {
+        setShowModal(true)
+    }
+
+    const handleClose = () => {
+        setShowModal(false)
     }
 
     const memberdatas = [
@@ -42,25 +51,12 @@ const MemberTable = () => {
                     </TableHead>
                     <TableBody>
                         {memberdatas.map((data, index) => (
-                            <StyledTableRow key={index}>
-                                <StyledTableCell component="th" scope="row">
-                                    <div onClick={() => setShowModal(true)} className='cursor-pointer hover:text-ct4-orange-start hover:underline'>
-                                        {data.fullname}
-                                    </div>
-                                </StyledTableCell>
-                                <StyledTableCell align="left">{data.username}</StyledTableCell>
-                                <StyledTableCell align="left">{data.role}</StyledTableCell>
-                                <StyledTableCell align="left">{data.groupName}</StyledTableCell>
-                                <StyledTableCell align="left">{data.email}</StyledTableCell>
-                                <StyledTableCell align="left">{data.phoneNumber}</StyledTableCell>
-                                <StyledTableCell align="left">{data.DOB}</StyledTableCell>
-                                <StyledTableCell align="left">{data.weight}</StyledTableCell>
-                            </StyledTableRow>
+                            <MemberTR data={data} handleOpen={handleOpen} key={index} />
                         ))}
                     </TableBody>
                 </Table>
             </TableContainer>
-            {showModal && <MemberModal isShow={showModal} onClose={() => setShowModal(false)} />}
+            {showModal && <MemberModal isShow={showModal} onClose={handleClose} />}
         </div>
     )
 }
