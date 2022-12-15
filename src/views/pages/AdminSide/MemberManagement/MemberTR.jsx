@@ -1,22 +1,22 @@
 import React from 'react'
 import { StyledTableCell, StyledTableRow } from './style';
 
-const MemberTR = ({ data, handleOpen }) => {
+const MemberTR = ({ item, handleOpen }) => {
 
     return (
         <StyledTableRow>
             <StyledTableCell component="th" scope="row">
-                <div onClick={() => handleOpen()} className='cursor-pointer hover:text-ct4-orange-start hover:underline'>
-                    {data.fullname}
+                <div onClick={handleOpen} className='cursor-pointer hover:text-ct4-orange-start hover:underline'>
+                    {item.fullname}
                 </div>
             </StyledTableCell>
-            <StyledTableCell align="left">{data.username}</StyledTableCell>
-            <StyledTableCell align="left">{data.role}</StyledTableCell>
-            <StyledTableCell align="left">{data.groupName}</StyledTableCell>
-            <StyledTableCell align="left">{data.email}</StyledTableCell>
-            <StyledTableCell align="left">{data.phoneNumber}</StyledTableCell>
-            <StyledTableCell align="left">{data.DOB}</StyledTableCell>
-            <StyledTableCell align="left">{data.weight}</StyledTableCell>
+            <StyledTableCell align="left">{item.username}</StyledTableCell>
+            <StyledTableCell align="left">{item.role}</StyledTableCell>
+            <StyledTableCell align="left">{item.groupName}</StyledTableCell>
+            <StyledTableCell align="left">{item.email}</StyledTableCell>
+            <StyledTableCell align="left">{item.phoneNumber}</StyledTableCell>
+            <StyledTableCell align="left">{item.DOB}</StyledTableCell>
+            <StyledTableCell align="left">{item.weight}</StyledTableCell>
         </StyledTableRow>
     )
 }

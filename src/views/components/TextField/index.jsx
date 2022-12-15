@@ -14,11 +14,9 @@ const TextFields = ({ name, required, value, onChange, ml }) => {
                     '& .MuiTextField-root': { m: 1, width: '250px' },
                     marginLeft: ml
                 }}
-                noValidate
                 autoComplete="off"
             >
                 <TextField
-                    label={`Enter ${name}`}
                     size='small'
                     value={value}
                     onChange={onChange}

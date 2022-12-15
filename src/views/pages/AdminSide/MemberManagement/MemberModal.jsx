@@ -14,17 +14,21 @@ import { defaultMember } from '../../../../constants';
 
 const MemberModal = ({ isShow = false, onClose, data }) => {
     const [open, setOpen] = useState(isShow);
-    const [role, setRole] = useState(1);
-    const [gender, setGender] = useState(1);
     const [status, setStatus] = useState(1);
     const [formState, setFormState] = useState(defaultMember)
 
     const handleChangeRole = (event) => {
-        setRole(event.target.value);
+        setFormState({
+            ...formState,
+            role: event.target.value,
+        })
     };
 
     const handleChangeGender = (event) => {
-        setGender(event.target.value);
+        setFormState({
+            ...formState,
+            gender: event.target.value,
+        })
     };
 
     const handleChangeStatus = (event) => {
@@ -39,12 +43,53 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
         setFormState({ ...data });
     }, [data]);
 
-    const handleChangeEmail = (event) => {
+
+    const handleChangeUserName = (event) => {
         setFormState({
             ...formState,
-            email: event.target.value
+            username: event.target.value,
         })
     }
+
+    const handleChangeFullName = (event) => {
+        setFormState({
+            ...formState,
+            fullname: event.target.value,
+        })
+    }
+
+    const handleChangeGroupName = (event) => {
+        setFormState({
+            ...formState,
+            fullname: event.target.value,
+        })
+    }
+
+    const handleChangeBirthYear = (event) => {
+        setFormState({
+            ...formState,
+            DOB: event.target.value,
+        })
+    }
+
+    const handleChangePhoneNumber = (event) => {
+        setFormState({
+            ...formState,
+            phoneNumber: event.target.value,
+        })
+    }
+
+    const createRoleData = (role) => {
+        return { role };
+    }
+
+    const roleDatas = [
+        createRoleData('Super Admin'),
+        createRoleData('Admin'),
+        createRoleData('Coach'),
+        createRoleData('Member'),
+        createRoleData('Customer Service'),
+    ];
 
     return (
         <div>
@@ -61,8 +106,8 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
                     </div>
                     <div className='mt-10 grid grid-cols-2'>
                         <div>
-                            <TextFields name='User Email' required={true} ml='26px' value={formState.email || ''} onChange={handleChangeEmail} />
-                            <TextFields name='Full Name' required={true} ml='32px' />
+                            <TextFields name='User Email' required={true} ml='26px' value={formState.username} onChange={handleChangeUserName} />
+                            <TextFields name='Full Name' required={true} ml='32px' value={formState.fullname} onChange={handleChangeFullName} />
                             <div className='flex items-center text-lg  font-serif'>
                                 <p className='m-2'>Role <span className='text-red-600 ml-1'>*</span></p>
                                 <Box
@@ -73,23 +118,21 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
                                 >
                                     <FormControl fullWidth>
                                         <Select
-                                            value={role}
+                                            value={formState.role}
                                             onChange={handleChangeRole}
                                             size='small'
                                         >
-                                            <MenuItem value={1}>Super Admin</MenuItem>
-                                            <MenuItem value={2}>Admin</MenuItem>
-                                            <MenuItem value={3}>Coach</MenuItem>
-                                            <MenuItem value={4}>Member</MenuItem>
-                                            <MenuItem value={5}>Customer Service</MenuItem>
+                                            {roleDatas.map((item, index) => (
+                                                <MenuItem value={item.role} key={index}>{item.role}</MenuItem>
+                                            ))}
                                         </Select>
                                     </FormControl>
                                 </Box>
                             </div>
-                            <TextFields name='Comunity Group' required={false} />
+                            <TextFields name='Comunity Group' required={false} value={formState.groupName} onChange={handleChangeGroupName} />
                         </div>
                         <div>
-                            <TextFields name='Birth Year' required={true} ml='22px' />
+                            <TextFields name='Birth Year' required={true} ml='22px' value={formState.DOB} onChange={handleChangeBirthYear} />
                             <div className='flex items-center text-lg  font-serif'>
                                 <p className='m-2'>Gender <span className='text-red-600 ml-1'>*</span></p>
                                 <Box
@@ -100,17 +143,17 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
                                 >
                                     <FormControl fullWidth>
                                         <Select
-                                            value={gender}
+                                            value={formState.gender}
                                             onChange={handleChangeGender}
                                             size='small'
                                         >
-                                            <MenuItem value={1}>Male</MenuItem>
-                                            <MenuItem value={2}>Female</MenuItem>
+                                            <MenuItem value='Male'>Male</MenuItem>
+                                            <MenuItem value='Female'>Female</MenuItem>
                                         </Select>
                                     </FormControl>
                                 </Box>
                             </div>
-                            <TextFields name='Phone Number' required={false} />
+                            <TextFields name='Phone Number' required={false} value={formState.phoneNumber} onChange={handleChangePhoneNumber} />
                             <div className='flex items-center text-lg  font-serif'>
                                 <p className='m-2'>Profile Status<span className='text-red-600 ml-1'>*</span></p>
                                 <Box
@@ -124,7 +167,7 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
                                             value={status}
                                             onChange={handleChangeStatus}
                                             size='small'
-                                            sx={status == 1 ? { backgroundColor: '#08a848', color: 'white' } : { backgroundColor: 'gray', color: 'white' }}
+                                            sx={status === 1 ? { backgroundColor: '#08a848', color: 'white' } : { backgroundColor: 'gray', color: 'white' }}
                                         >
                                             <MenuItem value={1}>Active</MenuItem>
                                             <MenuItem value={2}>Deactive</MenuItem>

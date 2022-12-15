@@ -6,5 +6,6 @@ export const defaultMember = {
     email: '',
     phoneNumber: '',
     DOB: '',
-    weight: ''
+    weight: '',
+    gender: '',
 }
