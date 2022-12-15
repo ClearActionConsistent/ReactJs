@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'ct4-subscribe': "url('https://www.fitnessfocus.ca/images/explore.jpg')",
+        'ct4-subscribe': "url('https://evogym.vn/wp-content/uploads/2021/08/youngfitnesscenter-evogym-setup-phong-gym-banner-aspect-ratio-1300-500.jpg')",
       },
       colors: {
         'ct4-orange-start': '#f26922',
