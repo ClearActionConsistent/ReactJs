@@ -11,6 +11,7 @@ import WorkoutHistory from '../views/components/WorkoutHistory';
 import ListPost from '../views/components/Posts';
 import NotFoundPage from '../views/pages/NotFoundPage';
 import MemberManagement from '../views/pages/AdminSide/MemberManagement';
+import ExerciseManagement from '../views/pages/AdminSide/ExerciseManagement';
 
 const Router = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -30,6 +31,7 @@ const Router = () => {
       <Route path='/community' element={<ListPost />} />
       <Route path='/not-found-page' element={<NotFoundPage />} />
       <Route path='/member-management' element={<MemberManagement />} />
+      <Route path='/exercise-management' element={<ExerciseManagement />} />
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );

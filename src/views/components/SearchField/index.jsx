@@ -7,6 +7,7 @@ const SearchField = () => {
     <div>
       <FormControl className='m-0'>
         <TextField
+          placeholder="Search"
           size="small"
           variant="outlined"
           InputProps={{
@@ -16,6 +17,7 @@ const SearchField = () => {
               </InputAdornment>
             )
           }}
+          sx={{ width: '300px' }}
         />
       </FormControl>
     </div>
