@@ -12,7 +12,7 @@ class HomePage extends Component {
         return (
             <>
                 <Header />
-                <div className='m-auto max-w-1400'>
+                <div className='m-auto max-w-1800'>
                     <Classes />
                     <Subscribe />
                     {isOpenDetailClass && <ShowDetail />}

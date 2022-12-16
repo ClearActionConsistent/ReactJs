@@ -26,7 +26,7 @@ class Header extends Component {
                 </div>
                 <div className='flex gap-5 p-3'>
                     <div className='w-12 h-12'>
-                        <img className='rounded-full' src={this.props.avatar} />
+                        <img className='rounded-full' src={this.props.avatar || 'https://ionicframework.com/docs/img/demos/avatar.svg'} />
                     </div>
                     <div >
                         <p className='font-bold'>Welcome, {this.props.name} </p>
