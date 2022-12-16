@@ -20,7 +20,7 @@ class Header extends Component {
         return (
             <div className='w-full flex justify-between bg-white shadow-lg font-tnr'>
                 <div className='navbar_item font-bold text-lg text-gray-600'>
-                    <NavLink to='/home' >Upcomming Classes</NavLink>
+                    <NavLink to='/home'>Upcomming Classes</NavLink>
                     <NavLink to='/workout'>Your Workout Summary</NavLink>
                     <NavLink to='/community'>Our Communnity</NavLink>
                 </div>
