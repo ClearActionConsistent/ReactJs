@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navigate, NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { authActions } from '../../../slices/authSlice';
+import './style.css'
 
 class Header extends Component {
     constructor(props) {
@@ -18,8 +19,8 @@ class Header extends Component {
         const { isLoggedIn } = this.props
         return (
             <div className='w-full flex justify-between bg-white shadow-lg font-tnr'>
-                <div className='flex gap-4 p-6 ml-5 text-lg text-gray-600 font-bold'>
-                    <NavLink to='/home'>Upcomming Classes</NavLink>
+                <div className='navbar_item font-bold text-lg text-gray-600'>
+                    <NavLink to='/home' >Upcomming Classes</NavLink>
                     <NavLink to='/workout'>Your Workout Summary</NavLink>
                     <NavLink to='/community'>Our Communnity</NavLink>
                 </div>
