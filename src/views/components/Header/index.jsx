@@ -17,7 +17,7 @@ class Header extends Component {
 
   render() {
     const { isLoggedIn } = this.props;
-    const isAdmin = this.props.userRoles;
+    const isAdmin = this.props.admin;
 
     return (
       <div className='w-full flex justify-between bg-white shadow-lg font-tnr'>
@@ -57,7 +57,7 @@ const mapStateToProps = (state) => {
     email: state.auth.credentials.email,
     name: state.auth.credentials.name,
     avatar: state.auth.credentials.avatar,
-    userRoles: state.auth.credentials.userRoles[0].admin
+    admin: state.auth.credentials.admin
   };
 };
 
