@@ -6,7 +6,7 @@ const initialAuthState = {
     email: '',
     name: '',
     avatar: '',
-    userRoles: [{ admin: false }]
+    admin: false
   },
   error: false
 };
@@ -19,7 +19,7 @@ const authSlice = createSlice({
       state.credentials.email = action.payload.email;
       state.credentials.name = action.payload.name;
       state.credentials.avatar = action.payload.avatar;
-      state.credentials.userRoles[0].admin = action.payload.userRoles[0].admin;
+      state.credentials.admin = action.payload.admin;
       state.error = false;
     },
     logout(state) {
@@ -27,7 +27,7 @@ const authSlice = createSlice({
       state.credentials.email = '';
       state.credentials.name = '';
       state.credentials.avatar = '';
-      state.credentials.userRoles[0].admin = false;
+      state.credentials.admin = false;
 
     },
     signUp(state, action) {

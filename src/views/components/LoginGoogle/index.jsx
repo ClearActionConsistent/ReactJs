@@ -11,7 +11,7 @@ const LoginGoogle = () => {
 
   const onSuccess = (res) => {
     const decoded = jwt_decode(res.credential);
-    const userProfile = { email: decoded.email, name: decoded.family_name, avatar: decoded.picture, userRoles: [{ admin: false }] };
+    const userProfile = { email: decoded.email, name: decoded.family_name, avatar: decoded.picture, admin: false };
     dispatch(authActions.login(userProfile));
   };
 
