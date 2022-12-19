@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import FormInput from '../../components/FormInput';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../../services/auth/authService';
@@ -34,12 +34,12 @@ const LoginPage = () => {
     e.preventDefault();
     if (email === 'tuananh@gmail.com' && password === '12345678') {
       const isLogin = await login(email, password);
-      const userProfile = { email: email, name: 'Tuan Anh', avatar: 'http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128', admin: false };
+      const userProfile = { email: email, name: 'Tuan Anh', avatar: 'http://www.gravatar.com/avatar/9017a5f22556ae0eb7fb0710711ec125?s=128', userRoles: [{ admin: false }] };
       isLogin ? dispatch(authActions.login(userProfile)) : dispatch(authActions.loginFail());
     }
     else if (email === 'ct4admin@gmail.com' && password === '12345678') {
       const isLogin = await login(email, password);
-      const userProfile = { email: email, name: 'CT4 Admin', avatar: 'https://thumbs.dreamstime.com/b/admin-icon-vector-male-user-person-profile-avatar-gear-cogwheel-settings-configuration-flat-color-glyph-pictogram-150138136.jpg', admin: true };
+      const userProfile = { email: email, name: 'CT4 Admin', avatar: 'https://thumbs.dreamstime.com/b/admin-icon-vector-male-user-person-profile-avatar-gear-cogwheel-settings-configuration-flat-color-glyph-pictogram-150138136.jpg', userRoles: [{ admin: true }] };
       isLogin ? dispatch(authActions.login(userProfile)) : dispatch(authActions.loginFail());
     }
     else {

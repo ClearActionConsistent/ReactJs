@@ -17,10 +17,11 @@ class Header extends Component {
 
   render() {
     const { isLoggedIn } = this.props;
-    const admin = this.props.admin;
+    const isAdmin = this.props.userRoles;
+
     return (
       <div className='w-full flex justify-between bg-white shadow-lg font-tnr'>
-        {admin ?
+        {isAdmin ?
           <div className='navbar_item font-bold text-lg text-gray-600'>
             <NavLink to='/member-management'>Member Management</NavLink>
             <NavLink to='/exercise-management'>Exercise Management</NavLink>
@@ -56,7 +57,7 @@ const mapStateToProps = (state) => {
     email: state.auth.credentials.email,
     name: state.auth.credentials.name,
     avatar: state.auth.credentials.avatar,
-    admin: state.auth.credentials.admin
+    userRoles: state.auth.credentials.userRoles[0].admin
   };
 };
 
