@@ -5,7 +5,8 @@ const initialLoginGoogleState = {
     credentials: {
         email: '',
         name: '',
-        avatar: ''
+        avatar: '',
+        userRoles: [{ admin: false }]
     },
     error: false
 };
@@ -19,6 +20,7 @@ const LoginGoogleSlice = createSlice({
             state.credentials.email = action.payload.email;
             state.credentials.name = action.payload.name;
             state.credentials.avatar = action.payload.avatar;
+            state.credentials.userRoles[0].admin = action.payload.userRoles[0].admin;
             state.error = false;
         },
         logout(state) {
@@ -26,6 +28,7 @@ const LoginGoogleSlice = createSlice({
             state.credentials.email = '';
             state.credentials.name = '';
             state.credentials.avatar = '';
+            state.credentials.userRoles[0].admin = false;
         },
         loginFail(state) {
             state.error = true;
