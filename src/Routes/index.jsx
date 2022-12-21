@@ -14,14 +14,11 @@ import MemberManagement from '../views/pages/AdminSide/MemberManagement';
 import ExerciseManagement from '../views/pages/AdminSide/ExerciseManagement';
 
 const Router = () => {
-  const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
+    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return (
     <Routes>
-      <Route
-        exact
-        path='/'
-        element={<PrivateRoute isLoggedIn={isLoggedIn} />}
-      />
+      
+      <Route path='/' element={<HomePage />} />
       <Route path='/home' element={<HomePage />} />
       <Route path='/login' element={<LoginPage />} />
       <Route path='/register' element={<SignupPage />} />
