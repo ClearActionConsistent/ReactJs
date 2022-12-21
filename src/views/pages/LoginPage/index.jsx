@@ -4,8 +4,8 @@ import FormInput from '../../components/FormInput';
 import { useSelector, useDispatch } from 'react-redux';
 import { login } from '../../../services/auth/authService';
 import { authActions } from '../../../slices/authSlice';
-import LoginGoogle from '../../components/LoginGoogle';
-import LoginFacebook from '../../components/LoginFacebook';
+//import LoginGoogle from '../../components/LoginGoogle';
+//import LoginFacebook from '../../components/LoginFacebook';
 
 const LoginPage = () => {
   const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
@@ -69,11 +69,7 @@ const LoginPage = () => {
           {isLoggedIn && <Navigate to='/home' replace />}
           <Link to='/register' className='text-sm hover:underline'>New to GTT? Sign up.</Link>
         </form>
-        <div className='flex flex-row justify-between items-center'>
-          <LoginFacebook />
-          <div>OR</div>
-          <LoginGoogle />
-        </div>
+        
       </div>
     </div >
   );
