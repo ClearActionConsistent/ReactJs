@@ -24,8 +24,8 @@ export const msalConfig = {
         authority: 'https://utradib2c.b2clogin.com/utradib2c.onmicrosoft.com/B2C_1_signupandsigninflow', 
         //knownAuthorities: ['https://utradib2c.b2clogin.com/utradib2c.onmicrosoft.com/B2C_1_signupandsigninflow/oauth2/v2.0/authorize'],
         knownAuthorities: ['https://utradib2c.b2clogin.com/utradib2c.onmicrosoft.com'],
-        redirectUri: '/',
-        postLogoutRedirectUri: '/',
+        redirectUri: 'https://www.izibds.com',
+        postLogoutRedirectUri: 'https://www.izibds.com',
         navigateToLoginRequestUrl: false,
     },
     cache: {

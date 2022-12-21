@@ -17,7 +17,7 @@ const Header = (props) => {
         instance
             .loginPopup({
                 ...loginRequest,
-                redirectUri: '/',
+                redirectUri: 'https://www.izibds.com',
             })
             .catch((error) => console.log(error));
     };
