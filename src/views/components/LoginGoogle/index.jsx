@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { GoogleLogin, googleLogout } from '@react-oauth/google'
+import React from 'react'
+import { GoogleLogin } from '@react-oauth/google'
 import jwt_decode from "jwt-decode";
 import { useDispatch, useSelector } from 'react-redux';
 import { authActions } from '../../../slices/authSlice';
