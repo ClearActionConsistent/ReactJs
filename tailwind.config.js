@@ -35,6 +35,7 @@ module.exports = {
         350: '350px'
       },
       maxWidth: {
+        400: '400px',
         500: '500px',
         600: '600px',
         700: '700px',
@@ -44,10 +45,12 @@ module.exports = {
       },
       minWidth: {
         280: '280px',
+        400: '400px'
       }
       ,
       minHeight: {
-        200: '200px'
+        200: '200px',
+        250: '250px'
       },
       padding: {
         30: '120px',
