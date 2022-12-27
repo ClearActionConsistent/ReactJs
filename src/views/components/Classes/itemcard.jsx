@@ -40,9 +40,9 @@ export class ItemCard extends Component {
     render() {
         const { value } = this.props
         return (
-            <div className='flex w-400 items-center border flex-row flex-wrap shadow-xl gap-1 min-h-250 font-tnr hover:bg-gradient-to-b from-orange-100 to-ct4-orange  rounded-lg' onClick={this.handlePopup}>
+            <div className='flex w-420 items-center border flex-row flex-wrap shadow-xl gap-1 min-h-200 font-tnr hover:bg-gradient-to-b from-orange-200 to-gradient-to-b from-orange-100 to-ct4-orange  rounded-lg' onClick={this.handlePopup}>
                 <div className='mx-2'>
-                    <img src={value.avatar || null} alt="class" className='ml-1 w-100 h-100 bg-gray-400 rounded-full' />
+                    <img src='https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420' alt="class" className='ml-1 w-100 h-100 bg-gray-400 rounded-full' />
                 </div>
                 <div className='w-2/3'>
                     <h1 className='text-xl font-bold mb-4 tracking-tighter' >{value.name || null}</h1>
