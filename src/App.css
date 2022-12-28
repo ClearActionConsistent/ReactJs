@@ -100,8 +100,5 @@
     width: 22px;
     height: 22px;
     content: url('../src/assets/icons/distance.svg');
-}
 
-.subcribe {
-    @apply absolute grid justify-center w-800 h-40 bg-black/40 font-bold border top-1/2 left-1/2 border-gray-700 -translate-x-1/2 -translate-y-1/2 z-10 rounded-2xl
 }
