@@ -139,6 +139,18 @@ export const classes = {
                 "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
+        },
+        {
+            name: '60-Minute Run and Strength Combo Workout',
+            avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
+            coach_name: 'John',
+            date: '16/12/2022',
+            time: '10:45 AM',
+            duration: '60 Minutes',
+            detail: [
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
+            ],
+            classId: uuidv4()
         }
     ],
     ride: [
@@ -172,6 +184,18 @@ export const classes = {
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
+            duration: '60 Minutes',
+            detail: [
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
+            ],
+            classId: uuidv4()
+        },
+        {
+            name: 'SUPER LONG DISTANCE ROWING',
+            avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
+            coach_name: 'John',
+            date: '22/11/2022',
+            time: '10:30 AM',
             duration: '60 Minutes',
             detail: [
                 "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
@@ -215,6 +239,18 @@ export const classes = {
                 "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
+        },
+        {
+            name: 'SUPER LONG WALKING',
+            avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
+            coach_name: 'John',
+            date: '22/11/2022',
+            time: '10:30 AM',
+            duration: '60 Minutes',
+            detail: [
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
+            ],
+            classId: uuidv4()
         }
     ],
     hike: [
@@ -253,6 +289,18 @@ export const classes = {
                 "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
             ],
             classId: uuidv4()
+        },
+        {
+            name: 'SUPER LONG HIKE',
+            avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
+            coach_name: 'John',
+            date: '22/11/2022',
+            time: '10:45 AM',
+            duration: '60 Minutes',
+            detail: [
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
+            ],
+            classId: uuidv4()
         }
     ],
     distance: [
@@ -286,6 +334,18 @@ export const classes = {
             coach_name: 'John',
             date: '22/11/2022',
             time: '09:45 AM',
+            duration: '60 Minutes',
+            detail: [
+                "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"
+            ],
+            classId: uuidv4()
+        },
+        {
+            name: 'RUN COORDINARY SUPER LONG DISTANCE',
+            avatar: 'https://play-lh.googleusercontent.com/bF4XlileDVnh-FNUc0iQSKeJJ6XBYxyBHALfhQJ4bVcU8yVBO0jP6f5YMVsdNuy1420',
+            coach_name: 'John',
+            date: '22/11/2022',
+            time: '10:45 AM',
             duration: '60 Minutes',
             detail: [
                 "Slow Tempo Squat with Row - 5 Minute", "Slow Tempo Deep Squat - 55 Minute"

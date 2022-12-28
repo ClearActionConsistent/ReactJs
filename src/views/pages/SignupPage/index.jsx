@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Navigate, Link } from 'react-router-dom';
-import { increaseNumber, decreaseNumber, updateHistory, getPostsThunk } from '../../../slices/countSlice';
-import './styles.css';
-import { unwrapResult } from '@reduxjs/toolkit';
 import FormInput from '../../components/FormInput';
 import { authActions } from '../../../slices/authSlice';
 
@@ -23,13 +20,13 @@ class SignupPage extends Component {
         };
     }
 
-    UserName = '';
+    Email = '';
 
     changeEmail(event) {
         const value = event.target.value;
         this.setState({ email: value });
 
-        this.UserName = value;
+        this.Email = value;
     }
 
     changePassword(event) {
@@ -39,7 +36,7 @@ class SignupPage extends Component {
 
     handleSignup(e) {
         e.preventDefault();
-        this.props.onSignUp({ userName: this.UserName });
+        this.props.onSignUp({ email: this.Email });
     }
 
     handleClickShowPassword() {
@@ -48,8 +45,8 @@ class SignupPage extends Component {
 
     render() {
         return (
-            <div className='sign-up-form'>
-                <div className='title-signup'>
+            <div className='max-w-500 m-auto py-240 font-tnr'>
+                <div className='text-center leading-5 uppercase text-2xl font-bold'>
                     <h1>Sign up with email</h1>
                 </div>
                 <form onSubmit={this.handleSignup}>
@@ -63,20 +60,20 @@ class SignupPage extends Component {
                         onClick={this.handleClickShowPassword}
                         isRegister={true}
                     />
-                    <div className='term-condititon'>
+                    <div className='text-base mt-2 leading-7'>
                         <span> By siging up you are agreeing to our{' '}
-                            <Link to='/'> Ters of Service.</Link>
+                            <Link to='/' className='underline'> Ters of Service.</Link>
                         </span>
                         <br />
                         <span>
                             View our{' '}
-                            <Link to='/'> Privacy Policy.</Link>
+                            <Link to='/' className='underline'> Privacy Policy.</Link>
                         </span>
                     </div>
                     <div>
                         <button
                             type='submit'
-                            className='btn btn-signup'
+                            className='btn mt-4 text-black bg-gray-300 font-bold rounded-sm text-base'
                         >
                             Agree and Sign Up
                         </button>

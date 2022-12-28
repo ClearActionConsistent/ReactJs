@@ -6,7 +6,7 @@ class ListItem extends Component {
     render() {
         const { type } = this.props;
         return (
-            <div className='list_item'>
+            <div className='flex justify-between'>
                 {
                     type.map((item, index) => {
                         return <ItemCard value={item} key={index} />

@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { setStatusPopup, setDataPopup } from '../../../slices/popupSlice';
 import { v4 as uuidv4 } from 'uuid';
 import Button from '@mui/material/Button';
+import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
     position: 'absolute',
@@ -97,8 +98,8 @@ export default function ShowDetail() {
                         <Typography sx={{ fontWeight: "bold", fontSize: 20 }} id="modal-modal-title" variant="h6" component="h2">
                             {(popup.data && popup.isOpenDetailClass == true) && popup?.data.name || ""}
                         </Typography>
+                        <CloseIcon onClick={() => handleClose()} />
                     </Box>
-
                     <Box sx={styleItem}>
                         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
                             Coach Name

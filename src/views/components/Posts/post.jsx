@@ -7,8 +7,8 @@ class Post extends Component {
     render() {
         const { value } = this.props
         return (
-            <div className='post_container'>
-                <div className='post_item'>
+            <div className='border shadow-2xl mb-8 rounded-xl'>
+                <div>
                     <Profile value={value} />
                     <ChallengeMetric />
                 </div>

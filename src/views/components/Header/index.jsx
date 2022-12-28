@@ -1,57 +1,71 @@
-import React, { Component } from 'react';
-import { Navigate, NavLink } from 'react-router-dom';
-import { connect } from 'react-redux';
-import { authActions } from '../../../slices/authSlice';
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './style.css'
 
-import './style.css';
+import { AuthenticatedTemplate, UnauthenticatedTemplate, useMsal } from '@azure/msal-react';
+import { loginRequest } from '../../../authconfig';
 
-class Header extends Component {
-    constructor(props) {
-        super(props);
-        this.SignOut = this.SignOut.bind(this);
+const Header = (props) => {
+    const isAdmin = props.admin;
+    const { instance} = useMsal();
+    let activeAccount;
+    if (instance) {
+        activeAccount = instance.getActiveAccount();
     }
 
-    SignOut() {
-        const { logout } = this.props;
-        logout();
-    }
+    const handleLoginPopup = () => {
+        instance
+            .loginPopup({
+                ...loginRequest,
+                redirectUri: 'https://www.izibds.com',
+            })
+            .catch((error) => console.log(error));
+    };
 
-    render() {
-        const { isLoggedIn } = this.props
-        return (
-            <div className='navbar'>
-                <div className='navbar_item'>
+    const handleLogoutPopup = () => {
+        instance.logoutPopup({
+            mainWindowRedirectUri: '/',
+        });
+    };
+
+    return (
+        <div className='w-full flex justify-between bg-white shadow-lg font-tnr'>
+            {isAdmin ?
+                <div className='navbar_item font-bold text-lg text-gray-600'>
+                    <NavLink to='/member-management'>Member Management</NavLink>
+                    <NavLink to='/exercise-management'>Exercise Management</NavLink>
+                </div>
+                :
+                <div className='navbar_item font-bold text-lg text-gray-600'>
                     <NavLink to='/home'>Upcomming Classes</NavLink>
                     <NavLink to='/workout'>Your Workout Summary</NavLink>
                     <NavLink to='/community'>Our Communnity</NavLink>
                 </div>
-                <div className='user'>
-                    <div className='user_inform'>
-                        <p id='user_usernname'>Welcome, </p>
-                        <p className='cus_span_right'>{this.props.userName}</p>
+            }
+
+            <AuthenticatedTemplate>
+                <div className='flex gap-5 p-3'>
+                    <div className='w-12 h-12'>
+                        <img className='rounded-full' src={props.avatar || 'https://ionicframework.com/docs/img/demos/avatar.svg'} />
                     </div>
-                    <button className='signout' onClick={this.SignOut}>
+                    <div >
+                        <p className='font-bold'>Welcome, {activeAccount && activeAccount.name ? activeAccount.name : ''} </p>
+                        <p >{activeAccount && activeAccount.username ? activeAccount.username : 'Unknown'}</p>
+                    </div>
+                    <button className='cursor-pointer w-36 h-12 bg-ct4-orange font-bold rounded-3xl text-white' onClick={handleLogoutPopup}>
                         Sign Out
-                        {!isLoggedIn && <Navigate to='/login' />}
                     </button>
                 </div>
-            </div>
-        )
-    }
-}
-
-const mapStateToProps = (state) => {
-    return {
-        isLoggedIn: state.auth.isLoggedIn,
-        userName: state.auth.credentials.userName
-    }
+            </AuthenticatedTemplate>
+            <UnauthenticatedTemplate>
+                <div className='flex gap-5 p-3'>
+                    <button className='cursor-pointer w-36 h-12 bg-ct4-orange font-bold rounded-3xl text-white' onClick={handleLoginPopup}>
+                        Sign In
+                    </button>
+                </div>
+            </UnauthenticatedTemplate>
+        </div>
+    );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-    logout: () => {
-        dispatch(authActions.logout());
-    },
-});
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;
