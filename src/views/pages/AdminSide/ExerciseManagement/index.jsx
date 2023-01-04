@@ -2,11 +2,13 @@ import React from 'react'
 import Header from '../../../components/Header'
 import Paginations from '../../../components/Pagination'
 import SearchField from '../../../components/SearchField'
+import ExerciseDetails from './ExerciseDetails';
 import ExerciseLibrary from './ExerciseLibrary';
 
 const ExerciseManagement = () => {
   return (
     <div>
+      <ExerciseDetails />
       <Header />
       <div className='m-auto max-w-1800'>
         <div>

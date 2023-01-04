@@ -14,7 +14,7 @@ import { defaultMember, roleDatas } from '../../../../constants';
 
 const MemberModal = ({ isShow = false, onClose, data }) => {
   const [open, setOpen] = useState(isShow);
-  const [status, setStatus] = useState(1);
+  const [status, setStatus] = useState(0);
   const [formState, setFormState] = useState(defaultMember);
 
   const handleChangeRole = (event) => {
@@ -159,7 +159,7 @@ const MemberModal = ({ isShow = false, onClose, data }) => {
                       value={status}
                       onChange={handleChangeStatus}
                       size='small'
-                      sx={status === 1 ? { backgroundColor: '#08a848', color: 'white' } : { backgroundColor: 'gray', color: 'white' }}
+                      sx={status === 0 ? { backgroundColor: '#08a848', color: 'white' } : { backgroundColor: 'gray', color: 'white' }}
                     >
                       <MenuItem value={0}>Active</MenuItem>
                       <MenuItem value={1}>Deactive</MenuItem>
