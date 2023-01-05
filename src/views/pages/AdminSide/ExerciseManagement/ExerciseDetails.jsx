@@ -4,14 +4,13 @@ import Modal from '@mui/material/Modal';
 import Box from '@mui/material/Box';
 import { ThemeProvider } from '@mui/material/styles';
 import { Button } from '@mui/material';
-import Typography from '@mui/material/Typography';
-import CloseIcon from '@mui/icons-material/Close';
 import { modalStyleExerciseDetail } from './style';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import TextArea from '../../../components/TextArea';
 import { defaultExerciseLibrary } from '../../../../constants';
+import TextFields from '../../../components/TextField';
 
 const ExerciseDetails = ({ isShow = false, onClose, data }) => {
     const [open, setOpen] = useState(isShow);
@@ -52,20 +51,16 @@ const ExerciseDetails = ({ isShow = false, onClose, data }) => {
                 open={open}
             >
                 <Box sx={modalStyleExerciseDetail}>
-                    <div className='flex justify-between'>
-                        <div />
-                        <Typography align='center' variant="h5" component="h2" >
-                            {formState.name}
-                        </Typography>
-                        <CloseIcon onClick={() => onClose()} />
-                    </div>
                     <div className='flex w-650 justify-center mt-2'>
-                        <img className='border border-gray-700 border-double w-500 h-320 rounded-xl my-2' src={formState.img} />
+                        <img className='border border-gray-700 border-double w-600 h-320 rounded-xl my-2' src={formState.img} />
                     </div>
-                    <div >
-                        <TextArea name='Exercise Details' required={true} width='400px' />
+                    <div className='flex justify-center'>
+                        <TextFields name='Exercise Name' required={true} width='400px' ml='10px' placeholder={'Enter Name'} />
                     </div>
-                    <div className='flex items-center text-lg  font-serif'>
+                    <div className='flex justify-center'>
+                        <TextArea name='Exercise Details' required={true} width='400px' placeholder={'Enter Description'} />
+                    </div>
+                    <div className='flex items-center ml-30px text-lg  font-serif'>
                         <p className='m-2'> Equipment <span className='text-red-600 ml-1'>*</span></p>
                         <Box
                             sx={{
@@ -86,7 +81,7 @@ const ExerciseDetails = ({ isShow = false, onClose, data }) => {
                             </FormControl>
                         </Box>
                     </div>
-                    <div className='flex items-center text-lg  font-serif'>
+                    <div className='flex items-center ml-30px text-lg  font-serif'>
                         <p className='m-2'>Focus Area <span className='text-red-600 ml-1'>*</span></p>
                         <Box
                             sx={{
@@ -108,7 +103,7 @@ const ExerciseDetails = ({ isShow = false, onClose, data }) => {
                             </FormControl>
                         </Box>
                     </div>
-                    <div className='flex items-center text-lg  font-serif'>
+                    <div className='flex items-center ml-30px text-lg  font-serif'>
                         <p className='m-2'>Assign Group<span className='text-red-600 ml-1'>*</span></p>
                         <Box
                             sx={{
@@ -131,7 +126,7 @@ const ExerciseDetails = ({ isShow = false, onClose, data }) => {
                             </FormControl>
                         </Box>
                     </div>
-                    <div className='flex items-center text-lg  font-serif'>
+                    <div className='flex items-center ml-30px text-lg  font-serif'>
                         <p className='m-2'>Status<span className='text-red-600 ml-1'>*</span></p>
                         <Box
                             sx={{

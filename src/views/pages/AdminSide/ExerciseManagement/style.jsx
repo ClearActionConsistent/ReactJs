@@ -1,5 +1,3 @@
-
-
 export const modalStyleExerciseDetail = {
     position: 'absolute',
     top: '50%',
