@@ -2,7 +2,7 @@ import React from 'react'
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 
-const TextFields = ({ name, required, value, onChange, ml, type }) => {
+const TextFields = ({ name, required, value, onChange, ml, type, width = '250px', placeholder }) => {
   return (
     <div className='flex items-center text-lg font-serif'>
       <p className='m-2 '>{name} {required && <span className='text-red-600 ml-1'>*</span>}
@@ -10,7 +10,7 @@ const TextFields = ({ name, required, value, onChange, ml, type }) => {
       <Box
         component="form"
         sx={{
-          '& .MuiTextField-root': { m: 1, width: '250px' },
+          '& .MuiTextField-root': { m: 1, width: width },
           marginLeft: ml
         }}
         autoComplete="off"
@@ -21,6 +21,7 @@ const TextFields = ({ name, required, value, onChange, ml, type }) => {
           onChange={onChange}
           required={required ?? null}
           type={type}
+          placeholder={placeholder}
         />
       </Box>
     </div>

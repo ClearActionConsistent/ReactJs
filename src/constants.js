@@ -10,6 +10,11 @@ export const defaultMember = {
   gender: '',
 };
 
+export const defaultExerciseLibrary = {
+  name: '',
+  img: ''
+}
+
 const createRoleData = (role) => {
   return { role };
 };

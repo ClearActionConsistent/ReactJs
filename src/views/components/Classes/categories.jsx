@@ -52,25 +52,25 @@ export class Categories extends Component {
             <div className='flex gap-4 mb-1 items-center font-tnr'>
                 <p className='font-bold text-4xl'>Demo Classes</p>
                 <div className=' shadow-xl border flex justify-around gap-4 round h-60px'>
-                    <button className={`${active === 'run' ? ' bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleRun}>
+                    <button className={`${active === 'run' ? ' bg-ct4-green-neon' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleRun}>
                         <span className='icon-run ml-2'></span>
-                        <p className='text-base mr-2'>Run</p>
+                        <p className='text-base mr-2 font-bold'>Run</p>
                     </button>
-                    <button className={`${active === 'ride' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleRide}>
+                    <button className={`${active === 'ride' ? 'bg-ct4-green-neon' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleRide}>
                         <span className='icon-ride ml-2'></span>
-                        <p className='text-base mr-2'>Ride</p>
+                        <p className='text-base mr-2 font-bold'>Ride</p>
                     </button>
-                    <button className={`${active === 'walk' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleWalk}>
+                    <button className={`${active === 'walk' ? 'bg-ct4-green-neon' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleWalk}>
                         <span className='icon-walk ml-2'></span>
-                        <p className='text-base mr-2'>Walk</p>
+                        <p className='text-base mr-2 font-bold'>Walk</p>
                     </button>
-                    <button className={`${active === 'hike' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleHike}>
+                    <button className={`${active === 'hike' ? 'bg-ct4-green-neon' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleHike}>
                         <span className='icon-hike ml-2'></span>
-                        <p className='text-base mr-2'>Hike</p>
+                        <p className='text-base mr-2 font-bold'>Hike</p>
                     </button>
-                    <button className={`${active === 'distance' ? 'bg-ct4-orange' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleDistance}>
+                    <button className={`${active === 'distance' ? 'bg-ct4-green-neon' : 'bg-white'} flex items-center justify-center gap-1 border border-gray-500 rounded-lg m-2`} onClick={this.handleDistance}>
                         <span className='icon-distance ml-2'></span>
-                        <p className='text-base mr-2'>Distance</p>
+                        <p className='text-base mr-2 font-bold'>Distance</p>
                     </button>
                 </div>
             </div>

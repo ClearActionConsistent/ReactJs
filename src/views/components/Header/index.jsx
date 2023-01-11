@@ -7,7 +7,7 @@ import { loginRequest } from '../../../authconfig';
 
 const Header = (props) => {
     const isAdmin = props.admin;
-    const { instance} = useMsal();
+    const { instance } = useMsal();
     let activeAccount;
     if (instance) {
         activeAccount = instance.getActiveAccount();
@@ -52,19 +52,19 @@ const Header = (props) => {
                         <p className='font-bold'>Welcome, {activeAccount && activeAccount.name ? activeAccount.name : ''} </p>
                         <p >{activeAccount && activeAccount.username ? activeAccount.username : 'Unknown'}</p>
                     </div>
-                    <button className='cursor-pointer w-36 h-12 bg-ct4-orange font-bold rounded-3xl text-white' onClick={handleLogoutPopup}>
+                    <button className='cursor-pointer uppercase border border-ct4-mossy-green w-36 h-12 bg-ct4-green-neon font-bold rounded-3xl text-ct4-mossy-green ' onClick={handleLogoutPopup}>
                         Sign Out
                     </button>
                 </div>
-            </AuthenticatedTemplate>
+            </AuthenticatedTemplate >
             <UnauthenticatedTemplate>
                 <div className='flex gap-5 p-3'>
-                    <button className='cursor-pointer w-36 h-12 bg-ct4-orange font-bold rounded-3xl text-white' onClick={handleLoginPopup}>
+                    <button className='cursor-pointer uppercase border border-ct4-mossy-green w-36 h-12 bg-ct4-green-neon font-bold rounded-3xl text-ct4-mossy-green ' onClick={handleLoginPopup}>
                         Sign In
                     </button>
                 </div>
             </UnauthenticatedTemplate>
-        </div>
+        </div >
     );
 };
 

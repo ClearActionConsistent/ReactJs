@@ -2,11 +2,13 @@ import React from 'react'
 import Header from '../../../components/Header'
 import Paginations from '../../../components/Pagination'
 import SearchField from '../../../components/SearchField'
+import ExerciseDetails from './ExerciseDetails';
 import ExerciseLibrary from './ExerciseLibrary';
 
 const ExerciseManagement = () => {
   return (
     <div>
+      <ExerciseDetails />
       <Header />
       <div className='m-auto max-w-1800'>
         <div>
@@ -16,7 +18,7 @@ const ExerciseManagement = () => {
           <div className='flex justify-end mt-10'>
             <SearchField />
           </div>
-          <button className='uppercase w-50 bg-gradient-to-r from-orange-700 to-ct4-orange text-base p-4 font-bold text-white rounded-full mt-5'>Create New Exercise</button>
+          <button className='uppercase w-50 bg-ct4-green-neon text-base p-4 font-bold text-ct4-mossy-green border border-ct4-mossy-green rounded-full mt-5'>Create New Exercise</button>
         </div>
         <div>
           <ExerciseLibrary />

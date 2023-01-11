@@ -16,7 +16,11 @@ module.exports = {
         'ct4-green': '#39ac31',
         'ct4-red': '#c20000',
         'ct4-red-1': '#ff0000',
-        'ct4-gray': '#d9d9d9'
+        'ct4-gray': '#d9d9d9',
+        'ct4-mossy-green': '#151515',
+        'ct4-green-neon': '#a0e50f',
+        'ct4-green-2': '#f3ffe7',
+        'ct4-green-3': '#598300',
       },
       fontFamily: {
         'tnr': '"Times New Roman"',
@@ -25,11 +29,13 @@ module.exports = {
         '60px': '60px',
         100: '100px',
         180: '180px',
+        320: '320px',
         400: '400px',
         480: '480px'
       },
       margin: {
         0.35: '35%',
+        '30px': '30px',
         30: '120px',
         '50px': '50px',
         350: '350px'
@@ -65,6 +71,9 @@ module.exports = {
         330: '330px',
         400: '400px',
         420: '420px',
+        500: '500px',
+        600: '600px',
+        650: '650px',
         800: '800px',
       },
     },
