@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setDataPopup, setStatusPopup } from '../../../slices/popupSlice';
+import TRunnerLogo from '../Icons/logo';
 
 export class ItemCard extends Component {
     constructor(props) {
@@ -40,9 +41,11 @@ export class ItemCard extends Component {
     render() {
         const { value } = this.props
         return (
-            <div className='flex w-400 items-center border flex-row flex-wrap shadow-xl gap-1 min-h-250 font-tnr hover:bg-gradient-to-b from-orange-100 to-ct4-orange  rounded-lg' onClick={this.handlePopup}>
-                <div className='mx-2'>
-                    <img alt="class" className='icon-logo ml-1 w-100 h-100 bg-gray-400 rounded-full' />
+            <div className='flex w-400 items-center border flex-row flex-wrap shadow-xl gap-1 min-h-250 font-tnr hover:bg-gradient-to-b from-ct4-green-2 to-ct4-green-neon rounded-lg' onClick={this.handlePopup}>
+                <div className='mx-2 w-100 h-100 bg-ct4-mossy-green rounded-full'>
+                    <div className='ml-2'>
+                        <TRunnerLogo />
+                    </div>
                 </div>
                 <div className='w-2/3'>
                     <h1 className='text-xl font-bold mb-4 tracking-tighter' >{value.name || null}</h1>

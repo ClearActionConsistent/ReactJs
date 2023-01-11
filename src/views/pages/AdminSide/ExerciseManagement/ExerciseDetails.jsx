@@ -51,8 +51,8 @@ const ExerciseDetails = ({ isShow = false, onClose, data }) => {
                 open={open}
             >
                 <Box sx={modalStyleExerciseDetail}>
-                    <div className='flex w-650 justify-center mt-2'>
-                        <img className='border border-gray-700 border-double w-600 h-320 rounded-xl my-2' src={formState.img} />
+                    <div className='flex w-650 justify-center mt-2 '>
+                        <img className='border border-gray-700 border-double w-600 h-320 rounded-xl my-2 -ml-3' src={formState.img} />
                     </div>
                     <div className='flex justify-center'>
                         <TextFields name='Exercise Name' required={true} width='400px' ml='10px' placeholder={'Enter Name'} />
@@ -139,7 +139,7 @@ const ExerciseDetails = ({ isShow = false, onClose, data }) => {
                                     value={status}
                                     onChange={handleChangeStatus}
                                     size='small'
-                                    sx={status === 0 ? { backgroundColor: '#08a848', color: 'white' } : { backgroundColor: 'gray', color: 'white' }}
+                                    sx={status === 0 ? { backgroundColor: '#39ac31', color: 'white' } : { backgroundColor: 'gray', color: 'white' }}
                                 >
                                     <MenuItem value={0}>Active</MenuItem>
                                     <MenuItem value={1}>Deactive</MenuItem>

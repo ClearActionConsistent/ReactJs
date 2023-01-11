@@ -19,8 +19,8 @@ export const styleButton = { width: '100px', height: '40px', fontWeight: 'bold',
 export const modalTheme = createTheme({
     palette: {
         save: {
-            main: '#e67e22',
-            contrastText: '#fff',
+            main: '#a0e50f',
+            contrastText: '#151515',
         },
         cancel: {
             main: '#303030',

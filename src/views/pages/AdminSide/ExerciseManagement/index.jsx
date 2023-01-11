@@ -18,7 +18,7 @@ const ExerciseManagement = () => {
           <div className='flex justify-end mt-10'>
             <SearchField />
           </div>
-          <button className='uppercase w-50 bg-gradient-to-r from-orange-700 to-ct4-orange text-base p-4 font-bold text-white rounded-full mt-5'>Create New Exercise</button>
+          <button className='uppercase w-50 bg-ct4-green-neon text-base p-4 font-bold text-ct4-mossy-green border border-ct4-mossy-green rounded-full mt-5'>Create New Exercise</button>
         </div>
         <div>
           <ExerciseLibrary />
