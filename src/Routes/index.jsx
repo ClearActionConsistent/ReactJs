@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import AboutPage from '../views/pages/AboutPage';
 import LoginPage from '../views/pages/LoginPage';
 import SignupPage from '../views/pages/SignupPage';
-import PrivateRoute from '../views/components/PrivateRoute';
 import HomePage from '../views/pages/HomePage';
 import ChallengeBoard from '../views/components/ChallengeBoard';
 import WorkoutHistory from '../views/components/WorkoutHistory';
@@ -12,12 +11,13 @@ import ListPost from '../views/components/Posts';
 import NotFoundPage from '../views/pages/NotFoundPage';
 import MemberManagement from '../views/pages/AdminSide/MemberManagement';
 import ExerciseManagement from '../views/pages/AdminSide/ExerciseManagement';
+import GroupManagement from '../views/pages/AdminSide/GroupManagement';
+import SportManagement from '../views/pages/AdminSide/SportManagement';
+import Dashboard from '../views/pages/AdminSide/Dashboard';
 
 const Router = () => {
-    const isLoggedIn = useSelector((state) => state.auth.isLoggedIn);
   return (
     <Routes>
-      
       <Route path='/' element={<HomePage />} />
       <Route path='/home' element={<HomePage />} />
       <Route path='/login' element={<LoginPage />} />
@@ -29,6 +29,9 @@ const Router = () => {
       <Route path='/not-found-page' element={<NotFoundPage />} />
       <Route path='/member-management' element={<MemberManagement />} />
       <Route path='/exercise-management' element={<ExerciseManagement />} />
+      <Route path='/group-management' element={<GroupManagement />} />
+      <Route path='/sport-management' element={<SportManagement />} />
+      <Route path='/dashboard' element={<Dashboard />} />
       <Route path='*' element={<NotFoundPage />} />
     </Routes>
   );
