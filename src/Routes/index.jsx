@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import AboutPage from '../views/pages/AboutPage';
 import LoginPage from '../views/pages/LoginPage';
 import SignupPage from '../views/pages/SignupPage';

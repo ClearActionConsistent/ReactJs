@@ -1,12 +1,12 @@
 import React from 'react'
-import AdminHeader from '../../../components/Header/admin-header';
-import LeftSideBar from '../../../components/LeftSidebar';
+import PageLayout from '../../../components/PageLayout';
 
 const GroupManagement = () => {
   return (
     <div>
-      <AdminHeader />
-      <LeftSideBar />
+      <PageLayout>
+        Groups
+      </PageLayout>
     </div>
   )
 };
