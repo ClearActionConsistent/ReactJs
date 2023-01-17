@@ -1,7 +1,5 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import './App.css';
-@import "../src/styles/fonts.css";
-
+@import './App.css'
 

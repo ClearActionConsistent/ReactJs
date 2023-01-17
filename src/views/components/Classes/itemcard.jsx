@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { setDataPopup, setStatusPopup } from '../../../slices/popupSlice';
-import TRunnerLogo from '../Icons/TRunner-logo';
+import TRunnerLogo from '../Icons/logo';
 
 export class ItemCard extends Component {
     constructor(props) {
