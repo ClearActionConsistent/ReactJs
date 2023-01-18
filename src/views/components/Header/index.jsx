@@ -17,8 +17,8 @@ const Header = (props) => {
     instance
       .loginPopup({
         ...loginRequest,
-        // redirectUri: 'http://localhost:3000/',
-        redirectUri: 'https://www.izibds.com',
+        redirectUri: 'http://localhost:3000/',
+        // redirectUri: 'https://www.izibds.com',
       })
       .catch((error) => console.log(error));
   };

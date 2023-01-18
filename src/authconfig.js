@@ -20,14 +20,14 @@ export const b2cPolicies = {
 
 export const msalConfig = {
   auth: {
-    clientId: '7aa1c720-d0a1-4798-a8f9-a7346a6bcd07',
-    // clientId: '3d8db61b-c61e-43cb-a99e-42bb9121465b',
+    // clientId: '7aa1c720-d0a1-4798-a8f9-a7346a6bcd07',
+    clientId: '3d8db61b-c61e-43cb-a99e-42bb9121465b',
     authority: 'https://utradib2c.b2clogin.com/utradib2c.onmicrosoft.com/B2C_1_signupandsigninflow',
     knownAuthorities: ['https://utradib2c.b2clogin.com/utradib2c.onmicrosoft.com'],
-    // redirectUri: 'http://localhost:3000/',
-    // postLogoutRedirectUri: 'http://localhost:3000/',
-    redirectUri: 'https://www.izibds.com',
-    postLogoutRedirectUri: 'https://www.izibds.com',
+    redirectUri: 'http://localhost:3000/',
+    postLogoutRedirectUri: 'http://localhost:3000/',
+    // redirectUri: 'https://www.izibds.com',
+    // postLogoutRedirectUri: 'https://www.izibds.com',
     navigateToLoginRequestUrl: false,
   },
   cache: {

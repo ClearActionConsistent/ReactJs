@@ -6,8 +6,12 @@ const PageLayout = ({ children }) => {
   return (
     <div>
       <AdminHeader />
-      <LeftSideBar />
-      <main>{children}</main>
+      <div className='grid grid-cols-8 '>
+        <LeftSideBar />
+        <div className='px-8 my-6 col-span-7'>
+          {children}
+        </div>
+      </div>
     </div>
   )
 }

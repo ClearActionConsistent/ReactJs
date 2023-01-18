@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import SportIcon from "../Icons/sport-icon";
 import GroupIcon from "../Icons/group-icon";
-import './style.css'
 import DashboardIcon from "../Icons/dashboard-icon";
 
 const LeftSideBar = () => {
@@ -14,7 +13,7 @@ const LeftSideBar = () => {
   const pathname = window.location.pathname;
 
   return (
-    <div className="w-60 h-screen border-r border-ct4-border-gray">
+    <div className="w-60 h-913 border-r border-ct4-border-gray">
       <NavLink
         to="/dashboard"
         className={({ isActive }) => isActive ? activeClassname : unactiveClassname}
