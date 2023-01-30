@@ -59,17 +59,18 @@ export const exercisesdata = [
   createDataExercise('https://www.mensjournal.com/wp-content/uploads/2018/05/1380-dumbbell-curl1.jpg?quality=86&strip=all', 'Dumbbell workout'),
 ];
 
-const createDataSports = (groupName, desc, location, sport, groupType, createdDate, totalRunners, active) => {
+const createDataGroups = (groupName, desc, location, sport, groupType, createdDate, totalRunners, active) => {
   return { groupName, desc, location, sport, groupType, createdDate, totalRunners, active };
 };
 
-export const sportData = [
-  createDataSports('Group A', 'We are the one. We ride, we run...', 'Tucson, Oklahoma', 'Canoe', 'Company/Workplace', '01/15/2023', 200, 'Disabled'),
-  createDataSports('Group B', 'Enjoy the moment that you...', 'Sioux Falls, Wisconsin', 'CrossFit', 'Other ', '01/07/2023', 178, 'Disabled'),
-  createDataSports('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
-  createDataSports('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
-  createDataSports('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
-  createDataSports('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
-  createDataSports('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
-  createDataSports('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
+export const groupData = [
+  createDataGroups('Group A', 'We are the one. We ride, we run...', 'Tucson, Oklahoma', 'Canoe', 'Company/Workplace', '01/15/2023', 200, 'Disabled'),
+  createDataGroups('Group B', 'Enjoy the moment that you...', 'Sioux Falls, Wisconsin', 'CrossFit', 'Other ', '01/07/2023', 178, 'Disabled'),
+  createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
+  createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
+  createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
+  createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
+  createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
+  createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
+  createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
 ]

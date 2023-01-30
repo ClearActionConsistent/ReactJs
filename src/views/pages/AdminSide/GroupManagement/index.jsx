@@ -1,5 +1,5 @@
 import React from 'react'
-import { sportData } from '../../../../constants';
+import { groupData } from '../../../../constants';
 import FilterIcon from '../../../components/Icons/filter-icon';
 import PageLayout from '../../../components/PageLayout';
 import SearchFields from '../../../components/SearchFields';
@@ -12,6 +12,7 @@ import Paper from '@mui/material/Paper'
 import { StyledTableCell } from './style';
 import GroupTR from './groupTR';
 import Paginations from '../../../components/Pagination';
+import TotalResult from '../../../components/Pagination/total-result';
 
 const GroupManagement = () => {
   return (
@@ -29,9 +30,9 @@ const GroupManagement = () => {
             </div>
           </div>
           <div className='mt-4'>
-            <TableContainer component={Paper}>
+            <TableContainer sx={{ maxHeight: 640 }} component={Paper}>
               <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                <TableHead>
+                <TableHead >
                   <TableRow>
                     <StyledTableCell></StyledTableCell>
                     <StyledTableCell align="left">GROUP NAME</StyledTableCell>
@@ -46,7 +47,7 @@ const GroupManagement = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {sportData.map((item, index) =>
+                  {groupData.map((item, index) =>
                   (
                     <GroupTR item={item} key={index} />
                   ))}
@@ -54,9 +55,9 @@ const GroupManagement = () => {
               </Table>
             </TableContainer>
           </div>
-          <div className='flex justify-end m-4'>
-            <p className='font-barlow text-sm mr-4 flex items-center'>1-50 of 500</p>
-            <Paginations />
+          <div className='flex items-center justify-end m-4'>
+            <TotalResult total={500} limit={50} />
+            <Paginations count={10} />
           </div>
         </div>
       </PageLayout>
