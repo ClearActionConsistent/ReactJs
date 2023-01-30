@@ -73,4 +73,4 @@ export const groupData = [
   createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
   createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
   createDataGroups('Group C', 'No description', 'Baytown, Oregon', 'E-Bike Ride', 'Racing Team', '12/21/2022', 23, 'Disabled'),
-]
+];
