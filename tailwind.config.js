@@ -19,6 +19,7 @@ module.exports = {
         'ct4-gray': '#d9d9d9',
         'ct4-gray-2': '#f3f3f3',
         'ct4-gray-3': '#888888',
+        'ct4-gray-4': '#f6f6f6',
         'ct4-mossy-green': '#151515',
         'ct4-green-neon': '#a0e50f',
         'ct4-green-2': '#f3ffe7',
@@ -29,9 +30,12 @@ module.exports = {
       },
       fontFamily: {
         'tnr': '"Times New Roman"',
-        'barlow': ['Barlow-Regular'],
+        'barlow-regular': ['Barlow-Regular'],
         'barlow-medium': ['Barlow-Medium'],
-
+        'barlow': ['Barlow'],
+      },
+      fontSize: {
+        28: '28px'
       },
       height: {
         '60px': '60px',
@@ -40,7 +44,8 @@ module.exports = {
         180: '180px',
         320: '320px',
         400: '400px',
-        480: '480px'
+        480: '480px',
+        913: '913px'
       },
       margin: {
         0.35: '35%',
@@ -60,7 +65,8 @@ module.exports = {
       },
       minWidth: {
         280: '280px',
-        400: '400px'
+        400: '400px',
+        1600: '1600px'
       }
       ,
       minHeight: {
@@ -69,11 +75,13 @@ module.exports = {
       },
       padding: {
         30: '120px',
+        186: '186px',
         240: '240px'
       },
       width: {
         0.3: '30%',
         100: '100px',
+        189: '189px',
         272: '272px',
         288: '288px',
         250: '250px',

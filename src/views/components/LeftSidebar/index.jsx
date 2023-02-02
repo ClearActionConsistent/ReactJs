@@ -2,19 +2,18 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import SportIcon from "../Icons/sport-icon";
 import GroupIcon from "../Icons/group-icon";
-import './style.css'
 import DashboardIcon from "../Icons/dashboard-icon";
 
 const LeftSideBar = () => {
   const activeClassname =
-    "border-l-2 border-ct4-dark-green bg-ct4-gray-2 h-10 flex justify-start items-center cursor-pointer font-barlow-medium text-ct4-dark-green uppercase";
+    "border-l-2 border-ct4-dark-green bg-ct4-gray-2 h-10 flex justify-start items-center cursor-pointer font-barlow font-bold text-ct4-dark-green uppercase";
   const unactiveClassname =
     "h-10 flex justify-start items-center cursor-pointer font-barlow text-ct4-gray-3 uppercase";
 
   const pathname = window.location.pathname;
 
   return (
-    <div className="w-60 h-screen border-r border-ct4-border-gray">
+    <div className="w-60 h-913 border-r border-ct4-border-gray">
       <NavLink
         to="/dashboard"
         className={({ isActive }) => isActive ? activeClassname : unactiveClassname}
