@@ -26,6 +26,7 @@ module.exports = {
         'ct4-green-3': '#598300',
         'ct4-green-4': '#d8decc',
         'ct4-border-gray': '#ececec',
+        'ct4-border-gray-2': '#d0d0d0',
         'ct4-dark-green': '#457900',
       },
       fontFamily: {
@@ -81,6 +82,7 @@ module.exports = {
       width: {
         0.3: '30%',
         100: '100px',
+        140: '140px',
         189: '189px',
         272: '272px',
         288: '288px',

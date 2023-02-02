@@ -13,6 +13,7 @@ import { StyledTableCell } from './style';
 import GroupTR from './groupTR';
 import Paginations from '../../../components/Pagination';
 import TotalResult from '../../../components/Pagination/total-result';
+import { Link, NavLink } from 'react-router-dom';
 
 const GroupManagement = () => {
   return (
@@ -21,7 +22,9 @@ const GroupManagement = () => {
         <div>
           <div className='flex justify-between'>
             <p className='uppercase font-barlow font-bold text-28'>Groups</p>
-            <button className='uppercase w-189 h-10 bg-ct4-green-neon font-barlow font-bold text-sm rounded'>Create a New Group</button>
+            <Link to="/create-group">
+              <button className='uppercase w-189 h-10 bg-ct4-green-neon font-barlow font-bold text-sm rounded'>Create a New Group</button>
+            </Link>
           </div>
           <div className='flex justify-between mt-4 font-barlow text-sm'>
             <SearchFields placeholder='Search by group name...' />
