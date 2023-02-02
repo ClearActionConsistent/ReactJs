@@ -6,7 +6,7 @@ import DashboardIcon from "../Icons/dashboard-icon";
 
 const LeftSideBar = () => {
   const activeClassname =
-    "border-l-2 border-ct4-dark-green bg-ct4-gray-2 h-10 flex justify-start items-center cursor-pointer font-barlow-medium text-ct4-dark-green uppercase";
+    "border-l-2 border-ct4-dark-green bg-ct4-gray-2 h-10 flex justify-start items-center cursor-pointer font-barlow font-bold text-ct4-dark-green uppercase";
   const unactiveClassname =
     "h-10 flex justify-start items-center cursor-pointer font-barlow text-ct4-gray-3 uppercase";
 

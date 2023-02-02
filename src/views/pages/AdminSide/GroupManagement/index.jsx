@@ -9,7 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper'
-import { StyledTableCell } from './style';
+import { StyledTableCell, StyledTableRow } from './style';
 import GroupTR from './groupTR';
 import Paginations from '../../../components/Pagination';
 import TotalResult from '../../../components/Pagination/total-result';
@@ -20,8 +20,8 @@ const GroupManagement = () => {
       <PageLayout>
         <div>
           <div className='flex justify-between'>
-            <p className='uppercase font-barlow-medium text-28'>Groups</p>
-            <button className='uppercase w-189 h-10 bg-ct4-green-neon font-barlow-medium text-sm rounded'>Create a New Group</button>
+            <p className='uppercase font-barlow font-bold text-28'>Groups</p>
+            <button className='uppercase w-189 h-10 bg-ct4-green-neon font-barlow font-bold text-sm rounded'>Create a New Group</button>
           </div>
           <div className='flex justify-between mt-4 font-barlow text-sm'>
             <SearchFields />
@@ -47,12 +47,15 @@ const GroupManagement = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {groupData.map((item, index) =>
+                  {groupData.length > 0 && groupData.map((item, index) =>
                   (
                     <GroupTR item={item} key={index} />
                   ))}
                 </TableBody>
               </Table>
+              {groupData.length == 0 && (
+                <div className='w-full h-14 flex justify-center items-center'>There is no data to display.</div>
+              )}
             </TableContainer>
           </div>
           <div className='flex items-center justify-end m-4'>
