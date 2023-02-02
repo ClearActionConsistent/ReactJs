@@ -2,7 +2,7 @@ import React from 'react'
 import { FormControl, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from '../Icons/search-icon';
 
-const SearchFields = ({ placeholder = 'Search by group name...', sx = { width: '360px', height: '40px', borderRadius: '4px' } }) => {
+const SearchFields = ({ placeholder = 'Search...', sx = { width: '360px', height: '40px', borderRadius: '4px' } }) => {
   return (
     <div>
       <FormControl>

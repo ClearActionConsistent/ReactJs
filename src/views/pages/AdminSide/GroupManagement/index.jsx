@@ -9,7 +9,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper'
-import { StyledTableCell, StyledTableRow } from './style';
+import { StyledTableCell } from './style';
 import GroupTR from './groupTR';
 import Paginations from '../../../components/Pagination';
 import TotalResult from '../../../components/Pagination/total-result';
@@ -24,7 +24,7 @@ const GroupManagement = () => {
             <button className='uppercase w-189 h-10 bg-ct4-green-neon font-barlow font-bold text-sm rounded'>Create a New Group</button>
           </div>
           <div className='flex justify-between mt-4 font-barlow text-sm'>
-            <SearchFields />
+            <SearchFields placeholder='Search by group name...' />
             <div className='cursor-pointer'>
               <FilterIcon />
             </div>
