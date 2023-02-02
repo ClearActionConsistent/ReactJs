@@ -32,18 +32,18 @@ const GroupManagement = () => {
           <div className='mt-4'>
             <TableContainer sx={{ maxHeight: 640 }} component={Paper}>
               <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                <TableHead >
+                <TableHead sx={{ textTransform: 'uppercase' }}>
                   <TableRow>
                     <StyledTableCell></StyledTableCell>
-                    <StyledTableCell align="left">GROUP NAME</StyledTableCell>
-                    <StyledTableCell align="left">DESCRIPTION</StyledTableCell>
-                    <StyledTableCell align="left">LOCATION</StyledTableCell>
-                    <StyledTableCell align="left">SPORT</StyledTableCell>
-                    <StyledTableCell align="left">GROUP TYPE</StyledTableCell>
-                    <StyledTableCell align="left">CREATED DATE</StyledTableCell>
-                    <StyledTableCell align="left">TOTAL RUNNERS</StyledTableCell>
-                    <StyledTableCell align="left">ACTIVE</StyledTableCell>
-                    <StyledTableCell align="left">ACTION</StyledTableCell>
+                    <StyledTableCell align="left">Group Name</StyledTableCell>
+                    <StyledTableCell align="left">Description</StyledTableCell>
+                    <StyledTableCell align="left">Location</StyledTableCell>
+                    <StyledTableCell align="left">Sport</StyledTableCell>
+                    <StyledTableCell align="left">Group Type</StyledTableCell>
+                    <StyledTableCell align="left">Created Date</StyledTableCell>
+                    <StyledTableCell align="left">Total Runners</StyledTableCell>
+                    <StyledTableCell align="left">Active</StyledTableCell>
+                    <StyledTableCell align="left">Action</StyledTableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>

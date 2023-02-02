@@ -2,12 +2,12 @@ import React from 'react'
 import { FormControl, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from '../Icons/search-icon';
 
-const SearchFields = () => {
+const SearchFields = ({ placeholder = 'Search by group name...', sx = { width: '360px', height: '40px', borderRadius: '4px' } }) => {
   return (
     <div>
       <FormControl>
         <TextField
-          placeholder="Search by group name..."
+          placeholder={placeholder}
           size="small"
           variant="outlined"
           InputProps={{
@@ -17,7 +17,7 @@ const SearchFields = () => {
               </InputAdornment>
             )
           }}
-          sx={{ width: '360px', height: '40px', borderRadius: '4px' }}
+          sx={sx}
         />
       </FormControl>
     </div>
