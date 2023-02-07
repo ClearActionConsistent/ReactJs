@@ -1,25 +1,36 @@
 import * as React from 'react';
 import MenuItem from '@mui/material/MenuItem';
-import Select from '@mui/material/Select';
-import { FormControl } from '@mui/material';
+import { StyledFormControl, StyledMenuItem, StyledSelect } from '../../pages/AdminSide/GroupManagement/style';
+import { Checkbox, ListItemIcon, ListItemText } from '@mui/material';
+import CheckedIcon from '../Icons/checked-icon';
 
 //fake data sports
+const ITEM_HEIGHT = 50;
+const ITEM_PADDING_TOP = 5;
+const MenuProps = {
+  PaperProps: {
+    style: {
+      maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
+    },
+  },
+};
+
 const sportDatas = [
-  'Golf',
-  'Run',
-  'Ride',
-  'Row',
-  'Other',
+  "Run",
+  "Ride",
+  "Row",
+  "Bike",
+  "Other",
 ];
 
 const MultipleSelect = ({ name, required }) => {
-  const [personName, setPersonName] = React.useState([]);
+  const [sportName, setSportName] = React.useState(['Run']);
 
   const handleChange = (event) => {
     const {
       target: { value },
     } = event;
-    setPersonName(
+    setSportName(
       typeof value === 'string' ? value.split(',') : value,
     );
   };
@@ -27,23 +38,28 @@ const MultipleSelect = ({ name, required }) => {
   return (
     <div className='text-sm font-barlow-regular'>
       <p >{name} {required && <span className='text-red-600'>*</span>}</p>
-      <FormControl sx={{ width: 600 }}>
-        <Select
+      <StyledFormControl sx={{ width: 600 }}>
+        <StyledSelect
           multiple
-          value={personName}
+          value={sportName}
           onChange={handleChange}
           sx={{ marginTop: '4px', height: '40px' }}
+          renderValue={(selected) => selected.join(", ")}
+          MenuProps={MenuProps}
         >
           {sportDatas.map((item) => (
-            <MenuItem
+            <StyledMenuItem
               key={item}
               value={item}
             >
+              <ListItemIcon>
+                <Checkbox checked={sportName.indexOf(item) > -1} checkedIcon={<CheckedIcon />} />
+              </ListItemIcon>
               {item}
-            </MenuItem>
+            </StyledMenuItem>
           ))}
-        </Select>
-      </FormControl>
+        </StyledSelect>
+      </StyledFormControl>
     </div>
   );
 }

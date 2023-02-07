@@ -78,8 +78,9 @@ export const groupData = [
 ];
 
 //fake data location list
-const createLocationData = (location) => {
-  return { location };
+
+const createLocationData = (value) => {
+  return { value };
 };
 
 export const locationDatas = [
@@ -91,8 +92,8 @@ export const locationDatas = [
 ];
 
 //fake data group type
-const createGroupTypeData = (groupType) => {
-  return { groupType };
+const createGroupTypeData = (value) => {
+  return { value };
 };
 
 export const groupTypeDatas = [
@@ -104,8 +105,8 @@ export const groupTypeDatas = [
 ];
 
 //fake data sport
-const createSportData = (sport) => {
-  return { sport };
+const createSportData = (value) => {
+  return { value };
 };
 
 export const sportDatas = [
@@ -114,4 +115,14 @@ export const sportDatas = [
   createSportData('Ride'),
   createSportData('Row'),
   createSportData('Sail'),
+];
+
+//fake data active
+const createActiveData = (value) => {
+  return { value };
+};
+
+export const activeDatas = [
+  createActiveData('Enable'),
+  createActiveData('Disable'),
 ];

@@ -1,6 +1,7 @@
 import React from 'react'
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
+import { StyledTextField } from '../../pages/AdminSide/GroupManagement/style';
 
 const TextFields = ({ name, required, value, onChange, ml, type, width = '250px', height = '40px', placeholder }) => {
   return (
@@ -13,7 +14,7 @@ const TextFields = ({ name, required, value, onChange, ml, type, width = '250px'
         }}
         autoComplete="off"
       >
-        <TextField
+        <StyledTextField
           size='small'
           value={value}
           onChange={onChange}

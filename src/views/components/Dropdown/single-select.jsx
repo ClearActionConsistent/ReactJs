@@ -1,8 +1,18 @@
-import { Box, FormControl, MenuItem, Select } from '@mui/material';
-import React from 'react'
-import { groupTypeDatas, locationDatas } from '../../../constants';
+import { Box } from '@mui/material';
+import React, { useEffect, useState } from 'react'
+import { StyledFormControl, StyledMenuItem, StyledSelect } from '../../pages/AdminSide/GroupManagement/style';
 
-const SingleSelect = ({ name, width = '600px', required }) => {
+const SingleSelect = ({ name, width = '600px', required, options }) => {
+  const [value, setValue] = useState('');
+
+  // useEffect(() => {
+  //   setValue(name);
+  // }, [name]);
+
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   return (
     <div className='text-sm font-barlow-regular'>
       <p >{name} {required && <span className='text-red-600'>*</span>}</p>
@@ -11,17 +21,21 @@ const SingleSelect = ({ name, width = '600px', required }) => {
           "& .MuiInputBase-root": { width: width, marginTop: '4px' },
         }}
       >
-        <FormControl fullWidth>
-          <Select
-            value='Location'
-            // onChange={handleChangeRole}
+        <StyledFormControl fullWidth>
+          <StyledSelect
+            value={value}
+            onChange={handleChange}
             size='small'
+            displayEmpty
+            renderValue={
+              value !== '' ? undefined : value == 'Active' ? 'Disable' : () => <ul>{name}</ul>
+            }
           >
-            {groupTypeDatas.map((item, index) => (
-              <MenuItem value={item.groupType} key={index}>{item.groupType}</MenuItem>
+            {options.map((item, index) => (
+              <StyledMenuItem value={item.value} key={index}>{item.value}</StyledMenuItem>
             ))}
-          </Select>
-        </FormControl>
+          </StyledSelect>
+        </StyledFormControl>
       </Box>
     </div>
   )
